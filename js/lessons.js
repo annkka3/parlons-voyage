@@ -4,13 +4,10 @@ UI.lesson = null;
 const lessonTitle = l => tt(l.en, l.ru);
 function lessonBest(l) { const g = S.gram[l.id]; return g ? g : null; }
 
-function screenGrammar() {
-  if (UI.lesson) return screenLesson(UI.lesson);
+function screenQuickLessons() {
   const done = LESSONS.filter(l => S.gram[l.id]).length;
   return [
-    el('div', { class: 'row between' }, el('h1', { class: 'h1' }, tt('Learn', 'Курс')),
-      seg([['days', tt('Phrases', 'Фразы')], ['grammar', tt('Grammar', 'Грамматика')]], UI.ctab, v => { UI.ctab = v; UI.lesson = null; render(); })),
-    el('p', { class: 'muted' }, tt(`Basic grammar for travel, built on the phrases you learn. ${done} of ${LESSONS.length} lessons practised.`, `Базовая грамматика для путешествий на материале твоих фраз. Пройдено уроков: ${done} из ${LESSONS.length}.`)),
+    el('p', { class: 'muted' }, tt(`Short bilingual lessons on the constructions behind the travel phrases. ${done} of ${LESSONS.length} lessons practised.`, `Короткие уроки на двух языках по конструкциям из путевых фраз. Пройдено уроков: ${done} из ${LESSONS.length}.`)),
     el('div', { class: 'stack' }, LESSONS.map((l, i) => {
       const b = lessonBest(l);
       return el('button', { type: 'button', class: 'day', onclick: () => { UI.lesson = l.id; render(); window.scrollTo(0, 0); } },
@@ -138,7 +135,7 @@ function lessonSummary(g) {
     ],
     foot: el('div', { class: 'stack' },
       missed.length ? btn(tt(`Practise the ${missed.length} you missed`, `Повторить ошибки (${missed.length})`), 'primary big block', () => startLesson(g.l.id, missed)) : null,
-      btn(tt('Back to the lesson', 'К уроку'), 'block', () => { closeAll(); UI.ctab = 'grammar'; UI.lesson = g.l.id; go('course'); UI.lesson = g.l.id; render(); }),
-      btn(tt('All lessons', 'Все уроки'), 'block', () => { closeAll(); UI.ctab = 'grammar'; UI.lesson = null; go('course'); })),
+      btn(tt('Back to the lesson', 'К уроку'), 'block', () => { closeAll(); UI.ctab = 'grammar'; UI.gsub = 'quick'; go('course'); UI.lesson = g.l.id; render(); }),
+      btn(tt('All lessons', 'Все уроки'), 'block', () => { closeAll(); UI.ctab = 'grammar'; UI.gsub = 'quick'; UI.lesson = null; go('course'); })),
   });
 }

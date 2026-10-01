@@ -230,6 +230,7 @@ function frNum(n) {
   return (h === 1 ? 'cent' : U_[h] + ' cent') + ' ' + frNum(r);
 }
 function priceFr(e, c) { return frNum(e) + ' euro' + (e > 1 ? 's' : '') + (c ? ' ' + frNum(c) : ''); }
+function priceParts(e, c) { return [frNum(e), e > 1 ? 'euros' : 'euro'].concat(c ? [frNum(c)] : []); }
 function priceNum(e, c) { return c ? `${e},${pad2(c)} €` : `${e} €`; }
 function priceEn(e, c) { return c ? `€${e}.${pad2(c)}` : `€${e}`; }
 const rnd = a => a[Math.floor(Math.random() * a.length)];

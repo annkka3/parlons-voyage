@@ -33,10 +33,15 @@ if (cfg) {
       const base = 'users/' + uid + '/';
       const cardsRef = fsMod.collection(fs, base + 'fr_cards');
       const metaRef = fsMod.doc(fs, base + 'fr_meta/main');
+      const gcRef = fsMod.doc(fs, base + 'fr_meta/gc');
       return {
         // Writes resolve at once: Firestore keeps them locally and syncs when it can.
         setCard(id, data) { fsMod.setDoc(fsMod.doc(fs, base + 'fr_cards/' + id), JSON.parse(JSON.stringify(data))).catch(report); },
         setMeta(data) { fsMod.setDoc(metaRef, JSON.parse(JSON.stringify(data))).catch(report); },
+        setGc(data) { fsMod.setDoc(gcRef, JSON.parse(JSON.stringify(data))).catch(report); },
+        onGc(cb, err) {
+          return fsMod.onSnapshot(gcRef, { includeMetadataChanges: true }, s => cb(s.exists() ? s.data() : null, s.metadata), err);
+        },
         onCards(cb, err) {
           return fsMod.onSnapshot(cardsRef, { includeMetadataChanges: true }, s => {
             cb(s.docChanges().map(ch => ({ type: ch.type, id: ch.doc.id, data: ch.doc.data() })), s.metadata);

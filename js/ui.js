@@ -181,6 +181,9 @@ function screenToday() {
           el('div', { class: 'muted small' }, hard ? tt('Shown more often until you get them right twice in a row', 'Показываются чаще, пока не ответишь верно два раза подряд') : tt('Missed cards land here', 'Сюда попадают ошибки'))),
         hard ? btn(tt('Practice', 'Тренировать'), 'small', startHard) : null))));
 
+  const gDue = Object.values(S.gc.topics).filter(r => r.n > 0 && r.due && r.due <= today()).length;
+  if (gDue) parts.push(el('section', { class: 'card flat row between' }, el('div', { class: 'grow cell' }, el('div', { style: { fontWeight: 700 } }, tt(`Grammar: ${gDue} ${gDue === 1 ? 'topic' : 'topics'} to review`, `Грамматика: тем к повторению ${gDue}`)), el('div', { class: 'muted small' }, tt('A short round of 3, 5 or 10 tasks.', 'Короткий подход на 3, 5 или 10 заданий.'))),
+    btn(tt('Practise', 'Повторить'), 'small primary', () => { UI.ctab = 'grammar'; UI.gsub = 'year'; UI.gv = 'practice'; go('course'); })));
   parts.push(el('section', { class: 'stack' },
     el('div', { class: 'eyebrow' }, tt('Quick practice', 'Быстрая практика')),
     el('div', { class: 'grid2' },
@@ -332,7 +335,7 @@ function screenWords() {
     out.push(el('section', { class: 'card stack' },
       el('div', { class: 'eyebrow' }, tt('Sample prices', 'Примеры цен')),
       PRICES_FIXED.map(([e, c]) => {
-        const it = { fr: priceFr(e, c) };
+        const it = { fr: priceFr(e, c), parts: priceParts(e, c) };
         return el('div', { class: 'list-row' }, el('b', { class: 'num', style: { width: '84px', fontFamily: 'var(--f-display)', fontSize: '20px' } }, priceNum(e, c)),
           el('span', { class: 'grow cell' }, it.fr), audioBtn(it));
       })));
@@ -448,8 +451,17 @@ function screenMe() {
     row(tt('New words per day', 'Новых слов в день'), seg([0, 5, 10, 15, 20].map(n => [n, String(n)]), c.perDayWords, v => { setCfg({ perDayWords: v }); render(); }, true)),
     row(tt('Order of word topics', 'Порядок тем слов'), seg([['travel', tt('Travel first', 'Сначала путешествия')], ['list', tt('As in the list', 'Как в списке')]], c.order, v => { setCfg({ order: v }); render(); }, true),
       tt('Travel first starts with basics, numbers, transport, city and hotel, restaurant, directions.', 'Сначала основы, числа, транспорт, город и отель, ресторан, направления.')),
-    row(tt('Sound in silent mode (this device)', 'Звук в беззвучном режиме (это устройство)'), seg([[true, tt('On', 'Вкл')], [false, tt('Off', 'Выкл')]], DEV.loud, v => { DEV.loud = v; saveDev(); audioMode(); render(); if (v) sayIt(PH[7]); }, true),
-      tt('On: the voice plays even when the iPhone side switch is on silent. This can pause music from other apps while you study.', 'Вкл: голос звучит, даже когда боковой переключатель iPhone в беззвучном режиме. Это может ставить на паузу музыку из других приложений.')),
+    row(tt('Sound in silent mode (this device)', 'Звук в беззвучном режиме (это устройство)'), seg([[true, tt('On', 'Вкл')], [false, tt('Off', 'Выкл')]], DEV.loud, v => { DEV.loud = v; saveDev(); audioMode(); render(); sayIt(PH[7]); }, true),
+      tt('On: the app plays its recorded French voice, which sounds even when the iPhone side switch is on silent. Off: the voice of your device, which follows the silent switch. Recorded audio may pause music from other apps.', 'Вкл: приложение проигрывает записанный французский голос, он звучит даже когда боковой переключатель iPhone в беззвучном режиме. Выкл: голос самого устройства, он подчиняется переключателю. Записанный звук может ставить на паузу музыку из других приложений.')),
+    row(tt('Audio for offline use (this device)', 'Звук без интернета (это устройство)'), el('div', { class: 'stack' },
+      el('p', { class: 'muted small', id: 'audiostat' }, tt(`${CLIPS.size} recorded clips. Download them once so they play without internet.`, `Записей: ${CLIPS.size}. Скачай их один раз, чтобы они звучали без интернета.`)),
+      btn(tt('Download all audio (about 22 MB)', 'Скачать весь звук (около 22 МБ)'), 'small', async e => {
+        const b = e.currentTarget; b.disabled = true;
+        const r = await AudioPlayer.download((d, t) => { b.textContent = `${d} / ${t}`; });
+        b.disabled = false; b.textContent = tt('Download all audio (about 22 MB)', 'Скачать весь звук (около 22 МБ)');
+        toast(r.failed ? tt(`${r.failed} clips could not be downloaded. Try again online.`, `Не скачалось записей: ${r.failed}. Попробуй ещё раз при интернете.`) : tt('All audio is saved on this device', 'Весь звук сохранён на устройстве'));
+        AudioPlayer.cached().then(n => { const st = $('#audiostat'); if (st) st.textContent = tt(`${n} of ${CLIPS.size} clips are saved on this device.`, `Сохранено на устройстве: ${n} из ${CLIPS.size}.`); });
+      }))),
     row(tt('French voice (this device)', 'Французский голос (это устройство)'), el('div', { class: 'stack' },
       voices.length ? vSel : el('p', { class: 'note' }, tt('No French voice found. On iPhone: Settings → Accessibility → Spoken Content → Voices → French. On Mac: System Settings → Accessibility → Spoken Content → System Voice → Manage Voices.', 'Французский голос не найден. На iPhone: Настройки → Универсальный доступ → Речь → Голоса → Французский. На Mac: Системные настройки → Универсальный доступ → Речь → Системный голос → Управлять голосами.')),
       el('div', { class: 'row' }, el('span', { class: 'muted small' }, tt('Speed', 'Скорость')),
@@ -475,6 +487,7 @@ function screenMe() {
         el('div', { class: 'grid2' }, btn(tt('Cancel', 'Отмена'), '', () => { UI.confirmReset = false; render(); }),
           btn(tt('Erase progress', 'Стереть'), 'danger', () => { resetAll(); UI.confirmReset = false; toast(tt('Progress erased', 'Прогресс стёрт')); render(); })))
       : btn(tt('Reset progress…', 'Сбросить прогресс…'), 'danger small', () => { UI.confirmReset = true; render(); })));
+  setTimeout(() => AudioPlayer.cached().then(n => { const st = $('#audiostat'); if (st && n) st.textContent = tt(`${n} of ${CLIPS.size} clips are saved on this device.`, `Сохранено на устройстве: ${n} из ${CLIPS.size}.`); }), 50);
   if (UI.focusAccount) { UI.focusAccount = false; setTimeout(() => { const a = $('#account'); if (a) a.scrollIntoView({ block: 'start' }); }, 30); }
   return out;
 }

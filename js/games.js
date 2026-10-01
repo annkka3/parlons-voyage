@@ -124,7 +124,7 @@ function nextNumber(g) {
   const r = g.range;
   if (r === 'price') {
     const p = Math.random() < 0.3 ? rnd(PRICES_FIXED) : [1 + Math.floor(Math.random() * 99), rnd([0, 0, 0, 10, 20, 30, 50, 50, 80, 90])];
-    g.cur = { kind: 'price', e: p[0], c: p[1], fr: priceFr(p[0], p[1]), digits: priceNum(p[0], p[1]) };
+    g.cur = { kind: 'price', e: p[0], c: p[1], fr: priceFr(p[0], p[1]), parts: priceParts(p[0], p[1]), digits: priceNum(p[0], p[1]) };
   } else {
     const max = r === '10' ? 10 : r === '20' ? 20 : 100;
     const n = Math.floor(Math.random() * (max + 1));
@@ -144,13 +144,13 @@ function numbersView(g) {
           seg([['hear', tt('Hear → type', 'Слышу → ввожу')], ['say', tt('See → say', 'Вижу → говорю')]], g.mode, v => { g.mode = v; renderOverlay(); }, true),
           el('p', { class: 'muted small' }, g.mode === 'hear' ? tt('You hear a number or price in French and type it with digits.', 'Слышишь число или цену по-французски и вводишь цифрами.') : tt('You see digits, say them in French, then check yourself.', 'Видишь цифры, говоришь по-французски, затем проверяешь себя.'))),
       ],
-      foot: btn(tt('Start', 'Начать'), 'primary big block', () => { g.stage = 'play'; nextNumber(g); renderOverlay(); if (g.mode === 'hear') speak(g.cur.fr); }),
+      foot: btn(tt('Start', 'Начать'), 'primary big block', () => { g.stage = 'play'; nextNumber(g); renderOverlay(); if (g.mode === 'hear') sayIt(g.cur); }),
     });
   }
   if (g.i >= g.n) return endCard(tt('Numbers', 'Числа'), `${g.ok} / ${g.n}`, tt('Right on the first try', 'Верно с первой попытки'), startNumbers);
   const c = g.cur, done = g.status === 'done';
   const body = [el('div', { class: 'row' }, el('span', { class: 'chip accent' }, g.mode === 'hear' ? tt('Understand', 'Пойми') : tt('Say it', 'Скажи')))];
-  const finish = (good) => { g.status = 'done'; g.good = good; if (good && g.tries === 0) g.ok++; logAnswer(good ? 3 : 0, 0); persist(); renderOverlay(); speak(c.fr); };
+  const finish = (good) => { g.status = 'done'; g.good = good; if (good && g.tries === 0) g.ok++; logAnswer(good ? 3 : 0, 0); persist(); renderOverlay(); sayIt(c); };
   const check = () => {
     const raw = ($('#numans') || {}).value || ''; g.val = raw; if (!raw.trim()) return;
     const v = Number(raw.replace(',', '.').replace(/[^\d.]/g, ''));
@@ -159,8 +159,8 @@ function numbersView(g) {
   };
   if (g.mode === 'hear') {
     body.push(el('div', { class: 'listen' },
-      el('button', { type: 'button', class: 'btn primary', onclick: () => speak(c.fr) }, icon('vol'), tt('Play', 'Слушать')),
-      el('button', { type: 'button', class: 'btn', onclick: () => speak(c.fr, true) }, icon('vol'), tt('Slow', 'Медленно'))));
+      el('button', { type: 'button', class: 'btn primary', onclick: () => sayIt(c) }, icon('vol'), tt('Play', 'Слушать')),
+      el('button', { type: 'button', class: 'btn', onclick: () => sayIt(c, true) }, icon('vol'), tt('Slow', 'Медленно'))));
     body.push(el('div', { class: 'muted' }, c.kind === 'price' ? tt('Type the price in euros, for example 12,50', 'Введи цену в евро, например 12,50') : tt('Type the number.', 'Введи число.')));
     if (!done) {
       body.push(el('input', { id: 'numans', class: 'field', type: 'text', inputmode: 'decimal', autocomplete: 'off', value: g.val, 'aria-label': tt('Your answer', 'Твой ответ'), onkeydown: e => { if (e.key === 'Enter') check(); } }));
@@ -174,15 +174,15 @@ function numbersView(g) {
   if (done) {
     if (g.mode === 'hear') body.push(el('div', { class: 'verdict g' + (g.good ? '3' : '0') }, el('span', null, g.good ? tt('Right!', 'Верно!') : tt('Not this time', 'В этот раз не вышло'))));
     body.push(el('div', { class: 'stack' }, el('div', { class: 'plate' + (c.kind === 'num' ? ' num-plate' : '') }, c.fr),
-      el('div', { class: 'row' }, el('b', { class: 'h2 num' }, c.digits), el('span', { class: 'grow' }), audioBtn({ fr: c.fr }), audioBtn({ fr: c.fr }, true))));
+      el('div', { class: 'row' }, el('b', { class: 'h2 num' }, c.digits), el('span', { class: 'grow' }), audioBtn(c), audioBtn(c, true))));
   }
   let foot;
-  const nxt = () => { g.i++; if (g.i < g.n) { nextNumber(g); } renderOverlay(); if (g.i < g.n && g.mode === 'hear') speak(g.cur.fr); };
+  const nxt = () => { g.i++; if (g.i < g.n) { nextNumber(g); } renderOverlay(); if (g.i < g.n && g.mode === 'hear') sayIt(g.cur); };
   if (done) foot = btn(g.i + 1 < g.n ? tt('Next', 'Дальше') : tt('Finish', 'Завершить'), 'primary big block', nxt);
   else if (g.mode === 'hear') foot = el('div', { class: 'grid2' },
     el('button', { type: 'button', class: 'btn', onclick: () => { g.shown = true; g.tries = Math.max(g.tries, 1); renderOverlay(); } }, icon('bulb'), tt('Show words', 'Показать слова')),
     el('button', { type: 'button', class: 'btn primary', onclick: check }, tt('Check', 'Проверить')));
-  else foot = btn(tt('Show answer', 'Показать ответ'), 'primary big block', () => { g.status = 'done'; g.good = null; renderOverlay(); speak(c.fr); });
+  else foot = btn(tt('Show answer', 'Показать ответ'), 'primary big block', () => { g.status = 'done'; g.good = null; renderOverlay(); sayIt(c); });
   if (done && g.mode === 'say') {
     foot = el('div', { class: 'rate', style: { gridTemplateColumns: '1fr 1fr' } },
       el('button', { type: 'button', class: 'btn', onclick: () => { logAnswer(0, 0); persist(); nxt(); } }, tt('Missed', 'Не вспомнила')),

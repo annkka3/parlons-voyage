@@ -1,0 +1,408 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "French grammar author course package v1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "course_id",
+    "counts",
+    "modules",
+    "weeks",
+    "checkpoints",
+    "sources",
+    "routes",
+    "mastery_policy",
+    "grading_contract",
+    "verb_reference"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "course_id": {
+      "const": "french-grammar-a1-b2-year-v1"
+    },
+    "modules": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/module"
+      }
+    },
+    "weeks": {
+      "type": "array",
+      "minItems": 52,
+      "maxItems": 52,
+      "items": {
+        "type": "object",
+        "required": [
+          "week",
+          "stage",
+          "kind",
+          "new_module_ids",
+          "review_module_ids"
+        ],
+        "properties": {
+          "week": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 52
+          },
+          "stage": {
+            "enum": [
+              "A1",
+              "A2",
+              "B1",
+              "B2"
+            ]
+          },
+          "kind": {
+            "enum": [
+              "new_topics",
+              "review",
+              "assessment"
+            ]
+          },
+          "new_module_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "review_module_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "checkpoints": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "stage",
+          "exercises"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "stage": {
+            "enum": [
+              "A1",
+              "A2",
+              "B1",
+              "B2"
+            ]
+          },
+          "exercises": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/exercise"
+            }
+          }
+        }
+      }
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "title",
+          "url",
+          "use_ru"
+        ]
+      }
+    }
+  },
+  "$defs": {
+    "exercise": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "prompt_ru",
+        "grading",
+        "is_held_out"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "type": {
+          "enum": [
+            "cloze",
+            "choice",
+            "transform",
+            "production"
+          ]
+        },
+        "prompt_ru": {
+          "type": "string",
+          "minLength": 1
+        },
+        "is_held_out": {
+          "type": "boolean"
+        },
+        "grading": {
+          "enum": [
+            "exact_normalized",
+            "option_id",
+            "manual_rubric"
+          ]
+        },
+        "stimulus_fr": {
+          "type": "string"
+        },
+        "accepted_answers": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "feedback_ru": {
+          "type": "string"
+        },
+        "model_answer_fr": {
+          "type": "string"
+        },
+        "rubric_ru": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "options": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "text"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "text": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "correct_option_id": {
+          "type": "string"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "cloze"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "stimulus_fr",
+              "accepted_answers",
+              "feedback_ru"
+            ],
+            "properties": {
+              "grading": {
+                "const": "exact_normalized"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "transform"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "accepted_answers",
+              "feedback_ru"
+            ],
+            "properties": {
+              "grading": {
+                "const": "exact_normalized"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "choice"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "options",
+              "correct_option_id",
+              "feedback_ru"
+            ],
+            "properties": {
+              "grading": {
+                "const": "option_id"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "production"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "rubric_ru"
+            ],
+            "properties": {
+              "grading": {
+                "const": "manual_rubric"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "module": {
+      "type": "object",
+      "required": [
+        "id",
+        "order",
+        "stage",
+        "title_ru",
+        "can_do_ru",
+        "prerequisites",
+        "rules_ru",
+        "examples",
+        "exercises",
+        "suggested_week",
+        "reference_ids",
+        "mastery_status_initial"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^fr-grammar-[0-9]{3}$"
+        },
+        "order": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "stage": {
+          "enum": [
+            "A1",
+            "A2",
+            "B1",
+            "B2"
+          ]
+        },
+        "title_ru": {
+          "type": "string",
+          "minLength": 1
+        },
+        "can_do_ru": {
+          "type": "string",
+          "minLength": 1
+        },
+        "prerequisites": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "rules_ru": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "examples": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": [
+              "fr",
+              "ru",
+              "tts_text",
+              "audio_url"
+            ],
+            "properties": {
+              "fr": {
+                "type": "string",
+                "minLength": 1
+              },
+              "ru": {
+                "type": "string",
+                "minLength": 1
+              },
+              "tts_text": {
+                "type": "string",
+                "minLength": 1
+              },
+              "audio_url": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        },
+        "exercises": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/exercise"
+          }
+        },
+        "suggested_week": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 52
+        },
+        "reference_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "mastery_status_initial": {
+          "const": "not_started"
+        }
+      }
+    }
+  }
+}

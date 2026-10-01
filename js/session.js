@@ -20,7 +20,7 @@ function frame(o) {
     el('div', { class: 's-body' }, o.body),
     o.foot ? el('div', { class: 'sticky-bottom' }, o.foot) : null);
 }
-function closeAll() { if (GAME && GAME.dispose) GAME.dispose(); SES = null; GAME = null; try { window.speechSynthesis.cancel(); } catch (e) { /* no speech */ } renderOverlay(); render(); }
+function closeAll() { if (GAME && GAME.dispose) GAME.dispose(); SES = null; GAME = null; try { window.speechSynthesis.cancel(); } catch (e) { /* no speech */ } AudioPlayer.stop(); renderOverlay(); render(); }
 
 /* ---------- building sessions ---------- */
 function addNew(steps, fresh) {

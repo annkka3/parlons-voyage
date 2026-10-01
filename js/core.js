@@ -21,7 +21,8 @@ function el(tag, props, ...kids) {
 /* ---------- state (local-first, one local copy per account) ---------- */
 const LS_ANON = 'pv_state_v1', LS_UID = 'pv_last_uid', DEV_KEY = 'pv_dev_v1';
 const defCfg = () => ({ lang: 'en', tr: 'both', ans: 'speak', accent: true, perDay: 7, perDayWords: 10, order: 'travel' });
-const freshState = () => ({ v: 1, cfg: defCfg(), cfgT: 0, cards: {}, days: {}, gram: {}, rst: 0 });
+const freshGc = () => ({ v: 1, t: 0, rt: 0, route: 'b1_core', week: 1, topics: {}, log: [], prod: {}, cp: {} });
+const freshState = () => ({ v: 1, cfg: defCfg(), cfgT: 0, cards: {}, days: {}, gram: {}, rst: 0, gc: freshGc() });
 function lsGet(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
 function lsSet(k, v) { try { localStorage.setItem(k, v); } catch (e) { /* storage unavailable */ } }
 function lsDel(k) { try { localStorage.removeItem(k); } catch (e) { /* storage unavailable */ } }
@@ -32,6 +33,11 @@ function parseState(raw) {
     if (s && s.v === 1) {
       s.cfg = Object.assign(defCfg(), s.cfg); s.cards = s.cards || {}; s.days = s.days || {}; s.gram = s.gram || {};
       s.rst = s.rst || 0; s.cfgT = s.cfgT || 0;
+      if (!s.gc || s.gc.v !== 1) {
+        // first start with the year grammar course: keep a copy of the state as it was before
+        if (Object.keys(s.cards).length && lsGet('pv_backup_pre_gc') == null) lsSet('pv_backup_pre_gc', raw);
+        s.gc = freshGc();
+      }
       return s;
     }
   } catch (e) { /* ignore */ }
@@ -53,7 +59,7 @@ function switchAccount(uid) {
     if (uid && wasAnon && hasProgress(outgoing)) { incoming = outgoing; lsSet(keyFor(null), JSON.stringify(freshState())); } // first sign-in on this device keeps what was practised before signing in
     else incoming = freshState();
   }
-  S = incoming; dirtyCards.clear(); metaDirty = false;
+  S = incoming; dirtyCards.clear(); metaDirty = false; gcDirty = false;
   saveLocal();
 }
 let DEV = (() => {
@@ -62,7 +68,7 @@ let DEV = (() => {
   return Object.assign({ voice: '', rate: 0.95, loud: true }, d);
 })();
 const dirtyCards = new Set();
-let metaDirty = false;
+let metaDirty = false, gcDirty = false;
 function saveDev() { lsSet(DEV_KEY, JSON.stringify(DEV)); }
 function persist() {
   saveLocal();
@@ -224,39 +230,26 @@ function bestVoice() {
   const sc = v => (/fr[-_]FR/i.test(v.lang) ? 100 : 0) + (/premium|enhanced|siri/i.test(v.name + v.voiceURI) ? 40 : 0) + (v.localService ? 10 : 0) + (/thomas|audrey|amélie|aurélie|marie/i.test(v.name) ? 5 : 0);
   return TTS.voices.slice().sort((a, b) => sc(b) - sc(a))[0] || null;
 }
-// iPhone mutes web audio when the silent switch is on. Two known ways around it: tell Safari the page plays media
-// (navigator.audioSession) and keep a silent audio clip running, which switches iOS to the "playback" category.
-let silentEl = null, curUtt = null, unlocked = false;
-function silentWav() {
-  const n = 3200, buf = new Uint8Array(44 + n), dv = new DataView(buf.buffer);
-  const w = (o, t) => { for (let i = 0; i < t.length; i++) buf[o + i] = t.charCodeAt(i); };
-  w(0, 'RIFF'); dv.setUint32(4, 36 + n, true); w(8, 'WAVE'); w(12, 'fmt '); dv.setUint32(16, 16, true); dv.setUint16(20, 1, true);
-  dv.setUint16(22, 1, true); dv.setUint32(24, 8000, true); dv.setUint32(28, 8000, true); dv.setUint16(32, 1, true); dv.setUint16(34, 8, true);
-  w(36, 'data'); dv.setUint32(40, n, true); buf.fill(128, 44);
-  return URL.createObjectURL(new Blob([buf], { type: 'audio/wav' }));
-}
+// The iPhone mutes the device voice (speechSynthesis) when the silent switch is on and no web trick reliably
+// changes that. So the app plays recorded clips (js/audio.js): they count as media playback and ignore the switch.
+// The device voice is the fallback for texts without a clip, and the choice when "Sound in silent mode" is off.
+let curUtt = null, unlocked = false;
 function audioMode() {
   try { if (navigator.audioSession) navigator.audioSession.type = DEV.loud ? 'playback' : 'auto'; } catch (e) { /* not supported */ }
-  try {
-    if (DEV.loud) {
-      if (!silentEl) { silentEl = new Audio(silentWav()); silentEl.loop = true; silentEl.setAttribute('playsinline', ''); }
-      const p = silentEl.play(); if (p && p.catch) p.catch(() => { /* needs a tap first */ });
-    } else if (silentEl) silentEl.pause();
-  } catch (e) { /* ignore */ }
+  if (!DEV.loud) AudioPlayer.stop();
 }
-// Safari only lets a page speak after a real tap (touchend/click/key), so unlock speech on the first one.
+// Safari only lets a page play sound after a real tap (touchend/click/key), so unlock audio and speech on the first one.
 function unlockSpeech() {
-  audioMode();
+  AudioPlayer.unlock();
   if (!unlocked && 'speechSynthesis' in window) {
     unlocked = true;
     try { const u = new SpeechSynthesisUtterance(''); u.volume = 0; speechSynthesis.speak(u); } catch (e) { /* ignore */ }
   }
 }
 ['touchend', 'click', 'keydown'].forEach(ev => document.addEventListener(ev, unlockSpeech, { capture: true, passive: true }));
-document.addEventListener('visibilitychange', () => { if (document.hidden && silentEl) silentEl.pause(); });
-try { if (navigator.audioSession && DEV.loud) navigator.audioSession.type = 'playback'; } catch (e) { /* not supported */ }
+audioMode();
 
-function speak(text, slow) {
+function speakTTS(text, slow) {
   const ss = window.speechSynthesis;
   if (!ss) { toast(tt('This browser cannot speak.', 'Этот браузер не умеет озвучивать.')); return; }
   try {
@@ -272,7 +265,20 @@ function speak(text, slow) {
     if (ss.speaking || ss.pending) { ss.cancel(); setTimeout(() => ss.speak(u), 80); } else ss.speak(u);
   } catch (e) { /* ignore */ }
 }
-const sayIt = (it, slow) => speak(it.fr, slow);
+function speak(text, slow) {
+  if (DEV.loud && AudioPlayer.has(text)) {
+    try { if (window.speechSynthesis) speechSynthesis.cancel(); } catch (e) { /* ignore */ }
+    AudioPlayer.play(text, slow).catch(() => speakTTS(text, slow));
+  } else { AudioPlayer.stop(); speakTTS(text, slow); }
+}
+// A price is played as separate clips: twelve, euros, fifty
+function speakParts(parts, slow) {
+  if (DEV.loud && parts.every(p => AudioPlayer.has(p))) {
+    try { if (window.speechSynthesis) speechSynthesis.cancel(); } catch (e) { /* ignore */ }
+    AudioPlayer.play(parts, slow).catch(() => speakTTS(parts.join(' '), slow));
+  } else { AudioPlayer.stop(); speakTTS(parts.join(' '), slow); }
+}
+const sayIt = (it, slow) => (it.parts ? speakParts(it.parts, slow) : speak(it.fr, slow));
 
 /* ---------- toast ---------- */
 let toastTm;
@@ -300,13 +306,28 @@ function adoptMeta(d) {
   Object.keys(d.days || {}).forEach(k => { const x = S.days[k], y = d.days[k]; if ((y.t || 0) >= S.rst && (!x || (y.a || 0) > (x.a || 0))) S.days[k] = y; });
   Object.keys(d.gram || {}).forEach(k => { const x = S.gram[k], y = d.gram[k]; if (!x || (y.t || 0) > (x.t || 0)) S.gram[k] = y; });
   Object.keys(S.cards).forEach(id => { if ((S.cards[id].t || 0) < S.rst) delete S.cards[id]; });
+  if (S.gc) { Object.keys(S.gc.topics).forEach(id => { if ((S.gc.topics[id].t || 0) < S.rst) delete S.gc.topics[id]; }); S.gc.log = S.gc.log.filter(l => (l.t || 0) >= S.rst); }
   return before !== JSON.stringify([S.cfg, S.days, S.gram, S.rst]);
+}
+// Grammar progress: per topic the newer copy wins, the attempt log and open-task records are merged.
+function adoptGc(d) {
+  if (!d || d.v !== 1) return false;
+  const g = S.gc, before = JSON.stringify(g);
+  Object.keys(d.topics || {}).forEach(id => { const y = d.topics[id], x = g.topics[id]; if ((y.t || 0) >= S.rst && (!x || (y.t || 0) > (x.t || 0))) g.topics[id] = y; });
+  const seen = new Set(g.log.map(l => l.id));
+  (d.log || []).forEach(l => { if (!seen.has(l.id) && (l.t || 0) >= S.rst) { g.log.push(l); seen.add(l.id); } });
+  g.log.sort((a, b) => a.t - b.t); if (g.log.length > 300) g.log = g.log.slice(-300);
+  Object.keys(d.prod || {}).forEach(id => { const y = d.prod[id], x = g.prod[id]; if (!x || (y.t || 0) > (x.t || 0)) g.prod[id] = y; });
+  Object.keys(d.cp || {}).forEach(id => { const y = d.cp[id], x = g.cp[id]; if (!x || (y.t || 0) > (x.t || 0)) g.cp[id] = y; });
+  if ((d.rt || 0) > (g.rt || 0)) { g.route = d.route; g.week = d.week; g.rt = d.rt; }
+  g.t = Math.max(g.t || 0, d.t || 0);
+  return before !== JSON.stringify(g);
 }
 const metaPayload = () => JSON.parse(JSON.stringify({ v: 1, cfg: S.cfg, cfgT: S.cfgT, days: S.days, gram: S.gram, rst: S.rst }));
 
 /* ---------- cloud sync (Firebase, same project and rules as the other app) ---------- */
 const Cloud = {
-  api: null, user: null, status: 'local', tm: null, remote: {}, firstCards: true, firstMeta: true, unsubs: [],
+  api: null, user: null, status: 'local', tm: null, remote: {}, firstCards: true, firstMeta: true, firstGc: true, unsubs: [],
   configured: !!window.FIREBASE_CONFIG,
   soon() { if (!this.api) return; clearTimeout(this.tm); this.tm = setTimeout(() => this.flush(), 1000); },
   flush() {
@@ -314,6 +335,7 @@ const Cloud = {
     dirtyCards.forEach(id => { const r = S.cards[id]; if (r) this.api.setCard(id, r); });
     dirtyCards.clear();
     if (metaDirty) { this.api.setMeta(metaPayload()); metaDirty = false; }
+    if (gcDirty && this.api.setGc) { this.api.setGc(JSON.parse(JSON.stringify(S.gc))); gcDirty = false; }
   },
   setStatus(meta) {
     this.status = !navigator.onLine ? 'offline' : (meta && (meta.hasPendingWrites || meta.fromCache)) ? 'syncing' : 'synced';
@@ -322,7 +344,7 @@ const Cloud = {
   fail(e) { this.status = (e && e.code === 'permission-denied') ? 'denied' : 'error'; refreshBadge(); },
   attach(user, api) {
     this.detach(); this.user = user; this.api = api; this.status = 'syncing'; this.remote = {};
-    this.firstCards = true; this.firstMeta = true; refreshBadge();
+    this.firstCards = true; this.firstMeta = true; this.firstGc = true; refreshBadge();
     this.unsubs.push(api.onCards((changes, meta) => {
       let changed = false;
       changes.forEach(ch => {
@@ -344,6 +366,12 @@ const Cloud = {
       if (changed) { saveLocal(); onRemoteChange(); }
       this.setStatus(meta);
     }, e => this.fail(e)));
+    if (api.onGc) this.unsubs.push(api.onGc((data, meta) => {
+      const changed = adoptGc(data);
+      if (this.firstGc && !meta.fromCache) { this.firstGc = false; gcDirty = true; this.flush(); }
+      if (changed) { saveLocal(); onRemoteChange(); }
+      this.setStatus(meta);
+    }, e => this.fail(e)));
   },
   detach() { this.unsubs.forEach(u => { try { u(); } catch (e) { /* ignore */ } }); this.unsubs = []; this.api = null; this.user = null; this.status = 'local'; },
 };
@@ -362,11 +390,12 @@ function importCode(txt) {
   if (!o || o.v !== 1 || typeof o.cards !== 'object') throw new Error('bad');
   Object.keys(o.cards).forEach(id => { if (adoptCard(id, o.cards[id])) dirtyCards.add(id); });
   adoptMeta(o); metaDirty = true;
+  if (o.gc && adoptGc(o.gc)) gcDirty = true;
   persist();
 }
 function resetAll() {
   const keep = Object.assign({}, S.cfg), keepT = S.cfgT;
   S = freshState(); S.cfg = keep; S.cfgT = Math.max(keepT, Date.now()); S.rst = Date.now();
-  dirtyCards.clear(); metaDirty = true;
+  dirtyCards.clear(); metaDirty = true; gcDirty = true;
   persist();
 }
