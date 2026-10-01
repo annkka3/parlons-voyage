@@ -1,8 +1,11 @@
 /* Service worker: keeps the app on the device so it opens without internet.
    Page, scripts and styles: network first (updates arrive at once), cache when offline or slow.
    Libraries, icons, fonts: cache first. Firebase traffic is never touched. */
-const VERSION = 'v1';
-const CACHE = 'shell-' + VERSION;
+// The cache name has its own prefix: both apps live on annkka3.github.io and share Cache Storage, so a generic
+// 'shell-' prefix would let one app's cleanup delete the other's cache.
+const VERSION = 'v2';
+const PREFIX = 'pv-shell-';
+const CACHE = PREFIX + VERSION;
 const CORE = [
   './', 'index.html', 'config.js', 'store.js', 'manifest.webmanifest', 'css/style.css',
   'js/vocab.js', 'js/data.js', 'js/grammar.js', 'js/core.js', 'js/ui.js', 'js/session.js', 'js/games.js',
@@ -17,17 +20,17 @@ self.addEventListener('install', e => {
 self.addEventListener('activate', e => {
   e.waitUntil(
     caches.keys()
-      .then(keys => Promise.all(keys.filter(k => k.startsWith('shell-') && k !== CACHE).map(k => caches.delete(k))))
+      .then(keys => Promise.all(keys.filter(k => (k.startsWith(PREFIX) && k !== CACHE) || k === 'shell-v1').map(k => caches.delete(k))))
       .then(() => self.clients.claim())
   );
 });
 
 const put = (req, res) => { if (res && (res.ok || res.type === 'opaque')) { const copy = res.clone(); caches.open(CACHE).then(c => c.put(req, copy)); } return res; };
-const fromCache = req => caches.match(req, { ignoreSearch: true });
+const fromCache = req => caches.open(CACHE).then(c => c.match(req, { ignoreSearch: true }));
 function networkFirst(req) {
   return new Promise(resolve => {
     let settled = false;
-    const fallback = () => fromCache(req).then(hit => hit || caches.match('index.html'));
+    const fallback = () => fromCache(req).then(hit => hit || caches.open(CACHE).then(c => c.match('index.html')));
     const timer = setTimeout(() => { if (!settled) { settled = true; fallback().then(r => r ? resolve(r) : fetch(req).then(resolve)); } }, 4000);
     fetch(req).then(res => { clearTimeout(timer); put(req, res); if (!settled) { settled = true; resolve(res); } })
       .catch(() => { clearTimeout(timer); if (!settled) { settled = true; fallback().then(r => resolve(r || Response.error())); } });
