@@ -37,6 +37,11 @@ const AudioPlayer = {
     this.urls.set(key, u);
     return u;
   },
+  // iOS Safari can leave the microphone recogniser hanging after HTML audio has played, so let the element go first.
+  release() {
+    this.stop();
+    try { if (this.el) { this.el.removeAttribute('src'); this.el.load(); } } catch (e) { /* ignore */ }
+  },
   stop() {
     this.seq++;
     try { if (this.el) this.el.pause(); } catch (e) { /* ignore */ }

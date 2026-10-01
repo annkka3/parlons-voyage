@@ -21,7 +21,7 @@ function frame(o) {
     el('div', { class: 's-body' }, o.body),
     o.foot ? el('div', { class: 'sticky-bottom' }, o.foot) : null);
 }
-function closeAll() { if (GAME && GAME.dispose) GAME.dispose(); SES = null; GAME = null; try { window.speechSynthesis.cancel(); } catch (e) { /* no speech */ } AudioPlayer.stop(); renderOverlay(); render(); }
+function closeAll() { if (typeof stopListen === 'function') stopListen(); if (GAME && GAME.dispose) GAME.dispose(); SES = null; GAME = null; try { window.speechSynthesis.cancel(); } catch (e) { /* no speech */ } AudioPlayer.stop(); renderOverlay(); render(); }
 
 /* ---------- building sessions ---------- */
 function addNew(steps, fresh) {
@@ -189,34 +189,55 @@ function micAvailable() {
   const standalone = navigator.standalone === true || (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches);
   return !!SpeechRec && !(ios && standalone);
 }
+let LISTEN_MS = 12000;
+function stopListen() {
+  const Q = SES && SES.Q;
+  if (Q && Q.recog) { Q.recog.quiet = true; try { Q.recog.abort(); } catch (e) { /* ignore */ } }
+}
 function listenQ() {
   const Q = SES.Q;
-  if (!SpeechRec || Q.listening || Q.status !== 'ask') return;
+  if (!SpeechRec || Q.status !== 'ask') return;
+  // second tap while listening = "Done": ask the recogniser for what it has heard so far
+  if (Q.recog) { try { Q.recog.stop(); } catch (e) { /* ignore */ } return; }
+  AudioPlayer.release();
+  try { if (window.speechSynthesis) speechSynthesis.cancel(); } catch (e) { /* ignore */ }
+  try { if (navigator.audioSession) navigator.audioSession.type = 'play-and-record'; } catch (e) { /* not supported */ }
   let rec;
   try { rec = new SpeechRec(); } catch (e) { return; }
   rec.lang = 'fr-FR'; rec.interimResults = false; rec.maxAlternatives = 5; rec.continuous = false;
-  Q.listening = true; Q.msg = ''; renderOverlay();
+  let timer, over = false;
+  const end = msg => {
+    if (over) return;
+    over = true; clearTimeout(timer);
+    Q.recog = null; Q.listening = false; Q.listenState = '';
+    audioMode();
+    if (msg !== undefined) Q.msg = msg;
+    renderOverlay();
+  };
+  const help = tt(' Another way: tap “Type instead” and dictate with the microphone key on the iPhone keyboard (Settings → General → Keyboard → Enable Dictation).', ' Можно иначе: нажми «Ввести» и продиктуй ответ кнопкой микрофона на клавиатуре iPhone (Настройки → Основные → Клавиатура → Включить диктовку).');
+  Q.recog = rec; Q.listening = true; Q.listenState = 'start'; Q.msg = ''; renderOverlay();
+  rec.onaudiostart = () => { if (!over) { Q.listenState = 'mic'; renderOverlay(); } };
+  rec.onspeechstart = () => { if (!over) { Q.listenState = 'speech'; renderOverlay(); } };
   rec.onresult = ev => {
     const alts = Array.from(ev.results[0] || []).map(a => a.transcript);
-    Q.listening = false;
     if (alts.some(t => matchAnswer(Q.it, t, true).ok)) {
-      finishQ(Q.tries === 0 && Q.hints === 0 ? 3 : (Q.hints >= 3 || Q.tries >= 3) ? 1 : 2);
+      end(''); finishQ(Q.tries === 0 && Q.hints === 0 ? 3 : (Q.hints >= 3 || Q.tries >= 3) ? 1 : 2);
       renderOverlay(); sayIt(Q.it);
     } else {
       Q.tries++;
-      Q.msg = tt(`I heard: “${alts[0] || ''}”. Try again, or tap “Show answer”.`, `Я услышала: «${alts[0] || ''}». Попробуй ещё или нажми «Показать ответ».`);
-      renderOverlay();
+      end(tt(`I heard: “${alts[0] || ''}”. Try again, or tap “Show answer”.`, `Я услышала: «${alts[0] || ''}». Попробуй ещё или нажми «Показать ответ».`));
     }
   };
   rec.onerror = ev => {
-    Q.listening = false;
-    Q.msg = ev.error === 'not-allowed' || ev.error === 'service-not-allowed' ? tt('Microphone access was refused. Allow it in the browser settings.', 'Доступ к микрофону запрещён. Разреши его в настройках браузера.')
-      : ev.error === 'no-speech' ? tt('I heard nothing. Try again.', 'Ничего не услышала. Попробуй ещё раз.')
-        : tt('Voice check failed: ', 'Проверка голосом не сработала: ') + ev.error;
-    renderOverlay();
+    const e = ev && ev.error;
+    end(e === 'not-allowed' || e === 'service-not-allowed' ? tt('The microphone or dictation is not allowed. Allow the microphone for this site, and make sure Dictation is on in iPhone Settings.', 'Микрофон или диктовка не разрешены. Разреши микрофон для этого сайта и включи диктовку в настройках iPhone.')
+      : e === 'no-speech' ? tt('I heard nothing. Tap the microphone and speak right away.', 'Ничего не услышала. Нажми микрофон и говори сразу.')
+        : e === 'aborted' ? (rec.quiet ? '' : tt('Listening stopped.', 'Слушание остановлено.') + help)
+          : tt('Voice check failed (' + e + ').', 'Проверка голосом не сработала (' + e + ').') + help);
   };
-  rec.onend = () => { if (Q.listening) { Q.listening = false; renderOverlay(); } };
-  try { rec.start(); } catch (e) { Q.listening = false; renderOverlay(); }
+  rec.onend = () => { if (!over) end(tt('Nothing was recognised.', 'Ничего не распознано.') + help); };
+  timer = setTimeout(() => { if (!over) { try { rec.abort(); } catch (e) { /* ignore */ } end(tt('No answer from the microphone.', 'Микрофон не ответил.') + help); } }, LISTEN_MS);
+  try { rec.start(); } catch (e) { end(tt('Could not start the microphone.', 'Не удалось включить микрофон.') + help); }
 }
 function pickOpt(o) {
   const Q = SES.Q;
@@ -269,7 +290,7 @@ function questionView(common) {
       Q.isNew ? el('span', { class: 'chip hint' }, tt('First check', 'Первая проверка')) : null,
       Q.retry ? el('span', { class: 'chip bad' }, tt('Again', 'Ещё раз')) : null,
       statusChipSmall(it)),
-    Q.mode === 'say' && Q.status === 'ask' ? btn(Q.ans === 'type' ? tt('Say aloud instead', 'Говорить вслух') : tt('Type instead', 'Ввести'), 'small ghost', () => { Q.ans = Q.ans === 'type' ? 'speak' : 'type'; renderOverlay(); if (Q.ans === 'type') focusAnswer(); }) : null));
+    Q.mode === 'say' && Q.status === 'ask' ? btn(Q.ans === 'type' ? tt('Say aloud instead', 'Говорить вслух') : tt('Type instead', 'Ввести'), 'small ghost', () => { stopListen(); Q.ans = Q.ans === 'type' ? 'speak' : 'type'; renderOverlay(); if (Q.ans === 'type') focusAnswer(); }) : null));
 
   const mood = done ? (Q.grade >= 2 ? 'cheer' : 'think') : 'happy';
   const asks = inner => el('div', { class: 'ask' + (done ? (Q.grade >= 2 ? ' cheer' : ' think') : '') }, mascot(mood, 66), el('div', { class: 'speech' }, inner));
@@ -306,7 +327,7 @@ function questionView(common) {
   }
 
   if (Q.ans === 'speak' && Q.mode === 'say' && Q.status === 'ask') {
-    if (Q.listening) body.push(el('div', { class: 'chip accent', style: { alignSelf: 'flex-start' } }, tt('Listening… say it now', 'Слушаю… говори')));
+    if (Q.listening) body.push(el('div', { class: 'chip accent', style: { alignSelf: 'flex-start', whiteSpace: 'normal' } }, Q.listenState === 'speech' ? tt('I hear you… tap “Done” when you finish', 'Слышу речь… нажми «Готово», когда закончишь') : Q.listenState === 'mic' ? tt('Listening… say it now, then tap “Done”', 'Слушаю… говори, затем нажми «Готово»') : tt('Switching the microphone on…', 'Включаю микрофон…')));
     else if (Q.msg) body.push(el('div', { class: 'chip bad', style: { alignSelf: 'flex-start', whiteSpace: 'normal' } }, Q.msg));
   }
 
@@ -335,7 +356,7 @@ function questionView(common) {
     if (Q.ans === 'type' && Q.mode === 'say') act.push(el('button', { type: 'button', class: 'btn primary', onclick: checkTyped }, tt('Check', 'Проверить')));
     else if (Q.mode === 'say') act.push(el('button', { type: 'button', class: 'btn primary', onclick: revealQ }, tt('Show answer', 'Показать ответ')));
     else act.push(el('button', { type: 'button', class: 'btn', onclick: revealQ }, tt('I don’t know', 'Не знаю')));
-    const micRow = Q.ans === 'speak' && Q.mode === 'say' && micAvailable() ? el('button', { type: 'button', class: 'btn big', disabled: Q.listening ? true : null, onclick: listenQ }, icon('mic'), tt('Check my voice', 'Проверить голосом')) : null;
+    const micRow = Q.ans === 'speak' && Q.mode === 'say' && micAvailable() ? el('button', { type: 'button', class: 'btn big' + (Q.listening ? ' primary' : ''), onclick: listenQ }, icon('mic'), Q.listening ? tt('Done: check what I said', 'Готово: проверить') : tt('Check my voice', 'Проверить голосом')) : null;
     foot = el('div', { class: 'stack' }, micRow, el('div', { class: 'grid2' }, act),
       Q.ans === 'type' && Q.mode === 'say' && Q.tries ? el('button', { type: 'button', class: 'btn ghost small', onclick: revealQ }, tt('Show answer', 'Показать ответ')) : null);
   }
