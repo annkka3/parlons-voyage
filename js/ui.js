@@ -11,6 +11,7 @@ const IC = {
   bulb: [['path', { d: 'M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.3 1 2.1h5c0-.8.4-1.6 1-2.1A6 6 0 0 0 12 3z' }]],
   back: [['path', { d: 'M15 5l-7 7 7 7' }]],
   search: [['circle', { cx: 11, cy: 11, r: 6 }], ['path', { d: 'M20 20l-4-4' }]],
+  mic: [['rect', { x: 9, y: 3, width: 6, height: 11, rx: 3 }], ['path', { d: 'M5 11a7 7 0 0 0 14 0M12 18v3' }]],
 };
 function icon(name) {
   const s = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
@@ -447,10 +448,13 @@ function screenMe() {
     row(tt('New words per day', 'Новых слов в день'), seg([0, 5, 10, 15, 20].map(n => [n, String(n)]), c.perDayWords, v => { setCfg({ perDayWords: v }); render(); }, true)),
     row(tt('Order of word topics', 'Порядок тем слов'), seg([['travel', tt('Travel first', 'Сначала путешествия')], ['list', tt('As in the list', 'Как в списке')]], c.order, v => { setCfg({ order: v }); render(); }, true),
       tt('Travel first starts with basics, numbers, transport, city and hotel, restaurant, directions.', 'Сначала основы, числа, транспорт, город и отель, ресторан, направления.')),
+    row(tt('Sound in silent mode (this device)', 'Звук в беззвучном режиме (это устройство)'), seg([[true, tt('On', 'Вкл')], [false, tt('Off', 'Выкл')]], DEV.loud, v => { DEV.loud = v; saveDev(); audioMode(); render(); if (v) sayIt(PH[7]); }, true),
+      tt('On: the voice plays even when the iPhone side switch is on silent. This can pause music from other apps while you study.', 'Вкл: голос звучит, даже когда боковой переключатель iPhone в беззвучном режиме. Это может ставить на паузу музыку из других приложений.')),
     row(tt('French voice (this device)', 'Французский голос (это устройство)'), el('div', { class: 'stack' },
       voices.length ? vSel : el('p', { class: 'note' }, tt('No French voice found. On iPhone: Settings → Accessibility → Spoken Content → Voices → French. On Mac: System Settings → Accessibility → Spoken Content → System Voice → Manage Voices.', 'Французский голос не найден. На iPhone: Настройки → Универсальный доступ → Речь → Голоса → Французский. На Mac: Системные настройки → Универсальный доступ → Речь → Системный голос → Управлять голосами.')),
       el('div', { class: 'row' }, el('span', { class: 'muted small' }, tt('Speed', 'Скорость')),
         el('input', { type: 'range', min: '0.6', max: '1.2', step: '0.05', value: String(DEV.rate), id: 'rate', style: { flex: 1 }, oninput: e => { DEV.rate = Number(e.target.value); saveDev(); }, onchange: () => sayIt(PH[7]) })),
+      el('p', { class: 'muted small' }, voices.length ? tt(`${voices.length} French voice(s) found: using ${(bestVoice() || {}).name || 'default'}.`, `Найдено французских голосов: ${voices.length}. Используется: ${(bestVoice() || {}).name || 'по умолчанию'}.`) : ''),
       btn(tt('Test voice', 'Проверить голос'), 'small', () => sayIt(PH[7]))))));
 
   out.push(el('section', { class: 'card stack' },

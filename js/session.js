@@ -179,6 +179,42 @@ function checkTyped() {
     renderOverlay(); focusAnswer();
   }
 }
+// Optional voice check: works where the browser offers speech recognition (Safari and Chrome tabs, not the iPhone home-screen app).
+const SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
+function micAvailable() {
+  const ios = /iPhone|iPad|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  const standalone = navigator.standalone === true || (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches);
+  return !!SpeechRec && !(ios && standalone);
+}
+function listenQ() {
+  const Q = SES.Q;
+  if (!SpeechRec || Q.listening || Q.status !== 'ask') return;
+  let rec;
+  try { rec = new SpeechRec(); } catch (e) { return; }
+  rec.lang = 'fr-FR'; rec.interimResults = false; rec.maxAlternatives = 5; rec.continuous = false;
+  Q.listening = true; Q.msg = ''; renderOverlay();
+  rec.onresult = ev => {
+    const alts = Array.from(ev.results[0] || []).map(a => a.transcript);
+    Q.listening = false;
+    if (alts.some(t => matchAnswer(Q.it, t, true).ok)) {
+      finishQ(Q.tries === 0 && Q.hints === 0 ? 3 : (Q.hints >= 3 || Q.tries >= 3) ? 1 : 2);
+      renderOverlay(); sayIt(Q.it);
+    } else {
+      Q.tries++;
+      Q.msg = tt(`I heard: “${alts[0] || ''}”. Try again, or tap “Show answer”.`, `Я услышала: «${alts[0] || ''}». Попробуй ещё или нажми «Показать ответ».`);
+      renderOverlay();
+    }
+  };
+  rec.onerror = ev => {
+    Q.listening = false;
+    Q.msg = ev.error === 'not-allowed' || ev.error === 'service-not-allowed' ? tt('Microphone access was refused. Allow it in the browser settings.', 'Доступ к микрофону запрещён. Разреши его в настройках браузера.')
+      : ev.error === 'no-speech' ? tt('I heard nothing. Try again.', 'Ничего не услышала. Попробуй ещё раз.')
+        : tt('Voice check failed: ', 'Проверка голосом не сработала: ') + ev.error;
+    renderOverlay();
+  };
+  rec.onend = () => { if (Q.listening) { Q.listening = false; renderOverlay(); } };
+  try { rec.start(); } catch (e) { Q.listening = false; renderOverlay(); }
+}
 function pickOpt(o) {
   const Q = SES.Q;
   if (Q.status !== 'ask' || Q.wrong.has(o.id) || Q.removed.has(o.id)) return;
@@ -235,7 +271,10 @@ function questionView(common) {
   if (Q.mode === 'say') {
     body.push(it.kind === 'nm'
       ? el('div', { class: 'stack' }, el('div', { class: 'plate num-plate' }, String(it.n)), el('div', { class: 'muted' }, tt('Say this number in French.', 'Скажи это число по-французски.')))
-      : el('div', { class: 'stack', style: { gap: '4px' } }, el('div', { class: 'prompt' }, mean(it)), el('div', { class: 'muted' }, tt('Say it in French.', 'Скажи это по-французски.'))));
+      : el('div', { class: 'stack', style: { gap: '4px' } }, el('div', { class: 'prompt' }, mean(it)),
+        el('div', { class: 'muted' }, Q.ans === 'type' ? tt('Type it in French.', 'Напиши это по-французски.')
+          : micAvailable() ? tt('Say it out loud in French. Tap the microphone to be checked, or “Show answer” to compare yourself.', 'Скажи вслух по-французски. Нажми микрофон, чтобы приложение проверило, или «Показать ответ», чтобы сравнить самой.')
+            : tt('Say it out loud in French, then tap “Show answer” and compare with what you said.', 'Скажи вслух по-французски, затем нажми «Показать ответ» и сравни со своим вариантом.'))));
   } else {
     body.push(el('div', { class: 'listen' },
       el('button', { type: 'button', class: 'btn primary', onclick: () => sayIt(it) }, icon('vol'), tt('Play', 'Слушать')),
@@ -259,6 +298,11 @@ function questionView(common) {
         onkeydown: e => { if (e.key === 'Enter') checkTyped(); }, oninput: e => { Q.typed = e.target.value; } }),
       el('div', { class: 'accents' }, ['é', 'è', 'ê', 'à', 'â', 'ç', 'ô', 'î', 'û', 'ù', 'œ', '’'].map(ch => el('button', { type: 'button', 'aria-label': ch, onclick: () => insertChar(ch) }, ch))),
       Q.msg ? el('div', { class: 'chip bad', style: { alignSelf: 'flex-start', whiteSpace: 'normal' } }, Q.msg) : null));
+  }
+
+  if (Q.ans === 'speak' && Q.mode === 'say' && Q.status === 'ask') {
+    if (Q.listening) body.push(el('div', { class: 'chip accent', style: { alignSelf: 'flex-start' } }, tt('Listening… say it now', 'Слушаю… говори')));
+    else if (Q.msg) body.push(el('div', { class: 'chip bad', style: { alignSelf: 'flex-start', whiteSpace: 'normal' } }, Q.msg));
   }
 
   // after the answer
@@ -286,7 +330,8 @@ function questionView(common) {
     if (Q.ans === 'type' && Q.mode === 'say') act.push(el('button', { type: 'button', class: 'btn primary', onclick: checkTyped }, tt('Check', 'Проверить')));
     else if (Q.mode === 'say') act.push(el('button', { type: 'button', class: 'btn primary', onclick: revealQ }, tt('Show answer', 'Показать ответ')));
     else act.push(el('button', { type: 'button', class: 'btn', onclick: revealQ }, tt('I don’t know', 'Не знаю')));
-    foot = el('div', { class: 'stack' }, el('div', { class: 'grid2' }, act),
+    const micRow = Q.ans === 'speak' && Q.mode === 'say' && micAvailable() ? el('button', { type: 'button', class: 'btn big', disabled: Q.listening ? true : null, onclick: listenQ }, icon('mic'), tt('Check my voice', 'Проверить голосом')) : null;
+    foot = el('div', { class: 'stack' }, micRow, el('div', { class: 'grid2' }, act),
       Q.ans === 'type' && Q.mode === 'say' && Q.tries ? el('button', { type: 'button', class: 'btn ghost small', onclick: revealQ }, tt('Show answer', 'Показать ответ')) : null);
   }
   return frame(Object.assign({}, common, { body, foot }));

@@ -59,7 +59,7 @@ function switchAccount(uid) {
 let DEV = (() => {
   let d = {};
   try { d = JSON.parse(lsGet(DEV_KEY)) || {}; } catch (e) { /* ignore */ }
-  return Object.assign({ voice: '', rate: 0.95 }, d);
+  return Object.assign({ voice: '', rate: 0.95, loud: true }, d);
 })();
 const dirtyCards = new Set();
 let metaDirty = false;
@@ -224,16 +224,52 @@ function bestVoice() {
   const sc = v => (/fr[-_]FR/i.test(v.lang) ? 100 : 0) + (/premium|enhanced|siri/i.test(v.name + v.voiceURI) ? 40 : 0) + (v.localService ? 10 : 0) + (/thomas|audrey|amélie|aurélie|marie/i.test(v.name) ? 5 : 0);
   return TTS.voices.slice().sort((a, b) => sc(b) - sc(a))[0] || null;
 }
+// iPhone mutes web audio when the silent switch is on. Two known ways around it: tell Safari the page plays media
+// (navigator.audioSession) and keep a silent audio clip running, which switches iOS to the "playback" category.
+let silentEl = null, curUtt = null, unlocked = false;
+function silentWav() {
+  const n = 3200, buf = new Uint8Array(44 + n), dv = new DataView(buf.buffer);
+  const w = (o, t) => { for (let i = 0; i < t.length; i++) buf[o + i] = t.charCodeAt(i); };
+  w(0, 'RIFF'); dv.setUint32(4, 36 + n, true); w(8, 'WAVE'); w(12, 'fmt '); dv.setUint32(16, 16, true); dv.setUint16(20, 1, true);
+  dv.setUint16(22, 1, true); dv.setUint32(24, 8000, true); dv.setUint32(28, 8000, true); dv.setUint16(32, 1, true); dv.setUint16(34, 8, true);
+  w(36, 'data'); dv.setUint32(40, n, true); buf.fill(128, 44);
+  return URL.createObjectURL(new Blob([buf], { type: 'audio/wav' }));
+}
+function audioMode() {
+  try { if (navigator.audioSession) navigator.audioSession.type = DEV.loud ? 'playback' : 'auto'; } catch (e) { /* not supported */ }
+  try {
+    if (DEV.loud) {
+      if (!silentEl) { silentEl = new Audio(silentWav()); silentEl.loop = true; silentEl.setAttribute('playsinline', ''); }
+      const p = silentEl.play(); if (p && p.catch) p.catch(() => { /* needs a tap first */ });
+    } else if (silentEl) silentEl.pause();
+  } catch (e) { /* ignore */ }
+}
+// Safari only lets a page speak after a real tap (touchend/click/key), so unlock speech on the first one.
+function unlockSpeech() {
+  audioMode();
+  if (!unlocked && 'speechSynthesis' in window) {
+    unlocked = true;
+    try { const u = new SpeechSynthesisUtterance(''); u.volume = 0; speechSynthesis.speak(u); } catch (e) { /* ignore */ }
+  }
+}
+['touchend', 'click', 'keydown'].forEach(ev => document.addEventListener(ev, unlockSpeech, { capture: true, passive: true }));
+document.addEventListener('visibilitychange', () => { if (document.hidden && silentEl) silentEl.pause(); });
+try { if (navigator.audioSession && DEV.loud) navigator.audioSession.type = 'playback'; } catch (e) { /* not supported */ }
+
 function speak(text, slow) {
-  if (!('speechSynthesis' in window)) { toast(tt('This browser cannot speak.', 'Этот браузер не умеет озвучивать.')); return; }
+  const ss = window.speechSynthesis;
+  if (!ss) { toast(tt('This browser cannot speak.', 'Этот браузер не умеет озвучивать.')); return; }
   try {
     if (!TTS.voices.length) loadVoices();
-    speechSynthesis.cancel();
     const u = new SpeechSynthesisUtterance(String(text).replace(/ \/ /g, ', '));
     const v = bestVoice();
     u.lang = v ? v.lang : 'fr-FR'; if (v) u.voice = v;
     u.rate = slow ? Math.max(0.45, DEV.rate - 0.32) : DEV.rate;
-    speechSynthesis.speak(u);
+    u.onerror = e => { if (e && e.error && e.error !== 'interrupted' && e.error !== 'canceled') toast(tt('Sound problem: ', 'Проблема со звуком: ') + e.error); };
+    curUtt = u; // keep a reference: Safari can drop an utterance that is only held by the queue
+    if (ss.resume) ss.resume();
+    // cancel() and speak() in the same tick can leave iOS silent, so cancel only when something is playing and wait a moment
+    if (ss.speaking || ss.pending) { ss.cancel(); setTimeout(() => ss.speak(u), 80); } else ss.speak(u);
   } catch (e) { /* ignore */ }
 }
 const sayIt = (it, slow) => speak(it.fr, slow);
