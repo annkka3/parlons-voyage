@@ -1,0 +1,50 @@
+la nature|la natyʁ
+le monde|lə mɔ̃d
+le pays|lə pei
+la région|la ʁeʒjɔ̃
+le paysage|lə peizaʒ
+la montagne|la mɔ̃taɲ
+la forêt|la fɔʁɛ
+l’arbre|laʁbʁ
+la fleur|la flœʁ
+l’animal|lanimal
+le chien / la chienne|lə ʃjɛ̃ / la ʃjɛn
+le chat / la chatte|lə ʃa / la ʃat
+l’oiseau|lwazo
+la mer|la mɛʁ
+l’océan|lɔseɑ̃
+le lac|lə lak
+la rivière|la ʁivjɛʁ
+l’île|lil
+la campagne|la kɑ̃paɲ
+le ciel|lə sjɛl
+le soleil|lə sɔlɛj
+la lune|la lyn
+l’étoile|letwal
+le nuage|lə nɥaʒ
+la pluie|la plɥi
+la neige|la nɛʒ
+le vent|lə vɑ̃
+l’orage|lɔʁaʒ
+la température|la tɑ̃peʁatyʁ
+le climat|lə klima
+l’environnement|lɑ̃viʁɔnmɑ̃
+la pollution|la pɔlysjɔ̃
+la saison|la sɛzɔ̃
+le printemps|lə pʁɛ̃tɑ̃
+l’été|lete
+l’automne|lotɔn
+l’hiver|livɛʁ
+le temps|lə tɑ̃
+le moment|lə mɔmɑ̃
+le jour|lə ʒuʁ
+la journée|la ʒuʁne
+la semaine|la smɛn
+le mois|lə mwa
+l’année|lane
+le matin|lə matɛ̃
+midi|midi
+l’après-midi|lapʁɛmidi
+le soir|lə swaʁ
+l’heure|lœʁ
+la minute|la minyt

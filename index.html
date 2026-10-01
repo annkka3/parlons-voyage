@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Parlons Voyage</title>
+<meta name="description" content="Французский для путешествий: фразы, 1000 слов, грамматика и игры. Работает без интернета.">
+<meta name="theme-color" content="#1B49B0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0A1224" media="(prefers-color-scheme: dark)">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Parlons Voyage">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="app"></div>
+<noscript>Для работы приложения нужен JavaScript.</noscript>
+<script src="config.js"></script>
+<script src="js/vocab.js"></script>
+<script src="js/data.js"></script>
+<script src="js/grammar.js"></script>
+<script src="js/core.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/session.js"></script>
+<script src="js/games.js"></script>
+<script src="js/lessons.js"></script>
+<script src="js/crossword.js"></script>
+<script src="js/wordle.js"></script>
+<script src="js/main.js"></script>
+<script type="module" src="store.js"></script>
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function () { navigator.serviceWorker.register('sw.js').catch(function () {}); });
+  }
+</script>
+</body>
+</html>

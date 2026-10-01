@@ -1,0 +1,16 @@
+{
+  "name": "Parlons Voyage",
+  "short_name": "Parlons",
+  "description": "Французский для путешествий: фразы, 1000 слов, грамматика и игры. Работает без интернета.",
+  "lang": "ru",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#ECEFF5",
+  "theme_color": "#1B49B0",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

@@ -1,0 +1,452 @@
+la personne|🧑
+l’homme|👨
+la femme|👩
+l’enfant|🧒
+le bébé|👶
+le garçon|👦
+la fille|👧
+la famille|👪
+les parents|👪
+la mère|👩
+le père|👨
+la grand-mère|👵
+le grand-père|👴
+le couple|👫
+l’ami / l’amie|🧑‍🤝‍🧑
+le cadeau|🎁
+la fête|🎉
+l’anniversaire|🎂
+le mariage|💒
+l’amour|❤️
+l’invitation|💌
+le mari|🤵
+la maison|🏠
+l’appartement|🏢
+la chambre|🛏️
+le salon|🛋️
+la cuisine|🍳
+la salle de bains|🛁
+les toilettes|🚻
+l’escalier|🪜
+l’ascenseur|🛗
+la porte|🚪
+la fenêtre|🪟
+le toit|🏠
+le balcon|🌇
+le jardin|🌳
+le garage|🚗
+la clé|🔑
+le lit|🛏️
+le canapé|🛋️
+la chaise|🪑
+la table|🪑
+le bureau|🖥️
+la lampe|💡
+la lumière|💡
+le miroir|🪞
+la douche|🚿
+la baignoire|🛁
+le savon|🧼
+le réfrigérateur|🧊
+le lave-linge|🧺
+le chauffage|♨️
+la prise|🔌
+l’eau|💧
+le pain|🍞
+le lait|🥛
+le fromage|🧀
+le beurre|🧈
+l’œuf|🥚
+la viande|🥩
+le bœuf|🥩
+le porc|🐖
+le poulet|🍗
+le poisson|🐟
+le fruit|🍎
+le légume|🥦
+la pomme|🍎
+la poire|🍐
+la banane|🍌
+l’orange|🍊
+le citron|🍋
+la fraise|🍓
+le raisin|🍇
+la pêche|🍑
+la tomate|🍅
+la pomme de terre|🥔
+la carotte|🥕
+la salade|🥗
+l’oignon|🧅
+l’ail|🧄
+le champignon|🍄
+le haricot|🫘
+le petit pois|🫛
+le concombre|🥒
+l’aubergine|🍆
+le riz|🍚
+les pâtes|🍝
+le sel|🧂
+le poivre|🌶️
+l’huile|🫒
+le miel|🍯
+le chocolat|🍫
+la noix|🌰
+l’amande|🌰
+les céréales|🥣
+le sucre|🍬
+le café|☕
+le thé|🍵
+le jus|🧃
+le vin|🍷
+la bière|🍺
+la bouteille|🍾
+le verre|🥂
+la tasse|☕
+l’assiette|🍽️
+le bol|🥣
+la fourchette|🍴
+le couteau|🔪
+la cuillère|🥄
+le restaurant|🍽️
+la carte|📖
+le menu|📋
+la soupe|🍲
+le sandwich|🥪
+la pizza|🍕
+le gâteau|🍰
+la tarte|🥧
+la glace|🍦
+le croissant|🥐
+la baguette|🥖
+le petit-déjeuner|🍳
+l’addition|🧾
+le pourboire|💶
+le serveur / la serveuse|🤵
+l’huître|🦪
+la moule|🦪
+la crevette|🦐
+la coquille Saint-Jacques|🐚
+les fruits de mer|🦞
+la boulangerie|🥖
+le voyage|🧳
+les vacances|🏖️
+le départ|🛫
+l’arrivée|🛬
+le billet|🎫
+la réservation|📅
+le passeport|🛂
+les bagages|🧳
+la valise|🧳
+le sac|👜
+le sac à dos|🎒
+l’aéroport|🛫
+l’avion|✈️
+le vol|🛫
+la douane|🛃
+la gare|🚉
+le train|🚆
+le quai|🚉
+le bus|🚌
+l’autocar|🚌
+le métro|🚇
+le tramway|🚋
+le taxi|🚕
+la voiture|🚗
+le vélo|🚲
+la moto|🏍️
+le bateau|🚢
+le ferry|⛴️
+la route|🛣️
+l’autoroute|🛣️
+le carrefour|🚦
+le feu|🚦
+le pont|🌉
+le parking|🅿️
+la station-service|⛽
+l’essence|⛽
+le permis de conduire|🪪
+le retard|⏰
+l’annulation|🚫
+la ville|🏙️
+le village|🏘️
+le trottoir|🚶
+la place|⛲
+le plan|🗺️
+le panneau|🪧
+le bâtiment|🏢
+l’immeuble|🏢
+le magasin|🏪
+le marché|🧺
+le supermarché|🛒
+la boutique|🛍️
+le centre commercial|🏬
+la pharmacie|💊
+l’hôpital|🏥
+la banque|🏦
+la poste|📮
+la mairie|🏛️
+le commissariat|👮
+la bibliothèque|📚
+le musée|🖼️
+le théâtre|🎭
+le cinéma|🎬
+le parc|🌳
+la piscine|🏊
+le stade|🏟️
+l’église|⛪
+le château|🏰
+le monument|🗽
+la plage|🏖️
+le port|⚓
+l’hôtel|🏨
+la réception|🛎️
+la nuit|🌙
+la climatisation|❄️
+la sortie|🚪
+l’arrêt|🚏
+la connexion|📶
+le prix|🏷️
+l’argent|💶
+les espèces|💵
+la monnaie|🪙
+la carte bancaire|💳
+la facture|🧾
+le reçu|🧾
+la caisse|🛒
+le portefeuille|👛
+la remise|🏷️
+les soldes|🏷️
+la boîte|📦
+le paquet|📦
+le kilo|⚖️
+le pantalon|👖
+le jean|👖
+la robe|👗
+la jupe|👗
+la chemise|👔
+le tee-shirt|👕
+le pull|🧶
+la veste|🧥
+le manteau|🧥
+la chaussure|👟
+la chaussette|🧦
+le chapeau|🎩
+l’écharpe|🧣
+le gant|🧤
+les lunettes|👓
+le parapluie|☂️
+le vêtement|👚
+le visage|🙂
+l’œil / les yeux|👁️
+le nez|👃
+la bouche|👄
+la dent|🦷
+la langue|👅
+l’oreille|👂
+les cheveux|💇
+le bras|💪
+la main|✋
+le doigt|☝️
+le pied|🦶
+la jambe|🦵
+le cœur|❤️
+le sang|🩸
+la santé|🩺
+la maladie|🤒
+la douleur|😖
+la fièvre|🤒
+le rhume|🤧
+la toux|😷
+l’accident|💥
+l’urgence|🚑
+le médecin / la médecin|🧑‍⚕️
+le dentiste / la dentiste|🦷
+le rendez-vous|📅
+l’ordonnance|📝
+le médicament|💊
+le comprimé|💊
+le pansement|🩹
+l’assurance|📄
+le sommeil|😴
+le stress|😰
+la fatigue|🥱
+le travail|💼
+l’entreprise|🏢
+l’usine|🏭
+l’équipe|👥
+le projet|📋
+le contrat|📄
+le salaire|💰
+l’école|🏫
+l’université|🎓
+le diplôme|🎓
+le livre|📖
+le cahier|📓
+le stylo|🖊️
+le crayon|✏️
+la feuille|📄
+le papier|📄
+le dictionnaire|📚
+l’examen|📝
+la leçon|📖
+le professeur / la professeure|🧑‍🏫
+l’étudiant / l’étudiante|🧑‍🎓
+le téléphone|📱
+l’ordinateur|💻
+l’écran|🖥️
+l’application|📲
+le site|🌐
+Internet|🌐
+le mot de passe|🔐
+le courriel|📧
+le message|💬
+le fichier|📁
+le document|📄
+le lien|🔗
+le réseau|📡
+la photo|📷
+la vidéo|🎥
+le journal|📰
+le magazine|📰
+l’article|📰
+la lettre|✉️
+la page|📄
+le film|🎬
+la série|📺
+la musique|🎵
+la chanson|🎶
+le concert|🎤
+le spectacle|🎭
+l’exposition|🖼️
+l’art|🎨
+le dessin|✏️
+la peinture|🎨
+la danse|💃
+le jeu|🎲
+le sport|🏅
+la promenade|🚶
+la randonnée|🥾
+la natation|🏊
+le football|⚽
+le cyclisme|🚴
+la lecture|📖
+le numéro|🔢
+la nature|🌿
+le monde|🌍
+la montagne|⛰️
+la forêt|🌲
+l’arbre|🌳
+la fleur|🌸
+l’animal|🐾
+le chien / la chienne|🐕
+le chat / la chatte|🐈
+l’oiseau|🐦
+la mer|🌊
+l’océan|🌊
+le lac|🏞️
+la rivière|🏞️
+l’île|🏝️
+la campagne|🌾
+le ciel|🌤️
+le soleil|☀️
+la lune|🌙
+l’étoile|⭐
+le nuage|☁️
+la pluie|🌧️
+la neige|❄️
+le vent|💨
+l’orage|⛈️
+la température|🌡️
+le printemps|🌷
+l’été|🏖️
+l’automne|🍂
+l’hiver|⛄
+l’heure|🕐
+la minute|⏱️
+le jour|🌞
+le matin|🌅
+le soir|🌆
+la semaine|📆
+le mois|🗓️
+l’année|📅
+midi|🕛
+à gauche|⬅️
+à droite|➡️
+tout droit|⬆️
+ici|📍
+aujourd’hui|📅
+blanc / blanche|⚪
+noir / noire|⚫
+rouge|🔴
+bleu / bleue|🔵
+vert / verte|🟢
+jaune|🟡
+gris / grise|🩶
+rose|🩷
+chaud / chaude|🔥
+froid / froide|🥶
+ouvert / ouverte|🔓
+fermé / fermée|🔒
+lourd / lourde|🏋️
+content / contente|🙂
+heureux / heureuse|😊
+triste|😢
+calme|😌
+inquiet / inquiète|😟
+fatigué / fatiguée|😴
+malade|🤒
+timide|😳
+drôle|😄
+courageux / courageuse|🦁
+dangereux / dangereuse|⚠️
+manger|🍽️
+boire|🥤
+dormir|😴
+lire|📖
+écrire|✍️
+courir|🏃
+marcher|🚶
+voyager|✈️
+conduire|🚗
+payer|💳
+acheter|🛍️
+vendre|🏪
+ouvrir|🔓
+fermer|🔒
+jouer|🎮
+parler|🗣️
+écouter|👂
+regarder|👀
+voir|👀
+cuisiner|🍳
+laver|🧼
+travailler|💼
+appeler|📞
+envoyer|📤
+recevoir|📥
+réserver|📅
+louer|🔑
+signer|✍️
+réparer|🔧
+aimer|❤️
+penser|🤔
+attendre|⏳
+monter|⬆️
+descendre|⬇️
+entrer|🚪
+sortir|🚪
+partir|🚶
+arriver|🏁
+apprendre|📚
+compter|🔢
+annuler|❌
+confirmer|✅
+remercier|🙏
+inviter|💌
+aider|🤝
+oublier|🤷
+traduire|🌐
+étudier|📚
+habiter|🏠
+le ticket de caisse|🧾
+les noix de Saint-Jacques|🐚

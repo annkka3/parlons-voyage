@@ -1,0 +1,50 @@
+partir|paʁtiʁ
+arriver|aʁive
+entrer|ɑ̃tʁe
+sortir|sɔʁtiʁ
+rentrer|ʁɑ̃tʁe
+retourner|ʁətuʁne
+passer|pase
+monter|mɔ̃te
+descendre|desɑ̃dʁ
+marcher|maʁʃe
+courir|kuʁiʁ
+conduire|kɔ̃dɥiʁ
+voyager|vwajaʒe
+visiter|vizite
+suivre|sɥivʁ
+tourner|tuʁne
+traverser|tʁavɛʁse
+arrêter|aʁete
+porter|pɔʁte
+apporter|apɔʁte
+amener|amne
+emmener|ɑ̃mne
+laisser|lese
+changer|ʃɑ̃ʒe
+choisir|ʃwaziʁ
+utiliser|ytilize
+avoir besoin de|avwaʁ bəzwɛ̃ də
+garder|gaʁde
+perdre|pɛʁdʁ
+oublier|ublije
+se souvenir de|sə suvniʁ də
+aider|ede
+préparer|pʁepaʁe
+cuisiner|kɥizine
+laver|lave
+nettoyer|netwaje
+ranger|ʁɑ̃ʒe
+s’habiller|sabije
+se lever|sə ləve
+se coucher|sə kuʃe
+se réveiller|sə ʁeveje
+se reposer|sə ʁəpoze
+s’asseoir|saswaʁ
+rencontrer|ʁɑ̃kɔ̃tʁe
+appeler|aple
+envoyer|ɑ̃vwaje
+recevoir|ʁəsəvwaʁ
+commander|kɔmɑ̃de
+réserver|ʁezɛʁve
+louer|lwe

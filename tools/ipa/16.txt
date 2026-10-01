@@ -1,0 +1,50 @@
+zéro|zeʁo
+un|œ̃
+deux|dø
+trois|tʁwa
+quatre|katʁ
+cinq|sɛ̃k
+six|sis
+sept|sɛt
+huit|ɥit
+neuf|nœf
+dix|dis
+onze|ɔ̃z
+douze|duz
+treize|tʁɛz
+quatorze|katɔʁz
+quinze|kɛ̃z
+seize|sɛz
+dix-sept|disɛt
+dix-huit|dizɥit
+dix-neuf|diznœf
+vingt|vɛ̃
+trente|tʁɑ̃t
+quarante|kaʁɑ̃t
+cinquante|sɛ̃kɑ̃t
+soixante|swasɑ̃t
+soixante-dix|swasɑ̃t dis
+quatre-vingts|katʁ vɛ̃
+quatre-vingt-dix|katʁ vɛ̃ dis
+cent|sɑ̃
+mille|mil
+lundi|lœ̃di
+mardi|maʁdi
+mercredi|mɛʁkʁədi
+jeudi|ʒødi
+vendredi|vɑ̃dʁədi
+samedi|samdi
+dimanche|dimɑ̃ʃ
+janvier|ʒɑ̃vje
+février|fevʁije
+mars|maʁs
+avril|avʁil
+mai|mɛ
+juin|ʒɥɛ̃
+juillet|ʒɥijɛ
+août|ut
+septembre|sɛptɑ̃bʁ
+octobre|ɔktɔbʁ
+novembre|nɔvɑ̃bʁ
+décembre|desɑ̃bʁ
+un million|œ̃ miljɔ̃

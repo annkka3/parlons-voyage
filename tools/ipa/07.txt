@@ -1,0 +1,50 @@
+l’eau|lo
+le pain|lə pɛ̃
+le lait|lə lɛ
+le fromage|lə fʁɔmaʒ
+le beurre|lə bœʁ
+l’œuf|lœf
+le yaourt|lə jauʁt
+la crème|la kʁɛm
+la viande|la vjɑ̃d
+le bœuf|lə bœf
+le porc|lə pɔʁ
+le poulet|lə pulɛ
+le poisson|lə pwasɔ̃
+le fruit|lə fʁɥi
+le légume|lə legym
+la pomme|la pɔm
+la poire|la pwaʁ
+la banane|la banan
+l’orange|lɔʁɑ̃ʒ
+le citron|lə sitʁɔ̃
+la fraise|la fʁɛz
+le raisin|lə ʁɛzɛ̃
+la pêche|la pɛʃ
+l’abricot|labʁiko
+la tomate|la tɔmat
+la pomme de terre|la pɔm də tɛʁ
+la carotte|la kaʁɔt
+la salade|la salad
+l’oignon|lɔɲɔ̃
+l’ail|laj
+le champignon|lə ʃɑ̃piɲɔ̃
+le haricot|lə ariko
+le petit pois|lə pəti pwa
+le concombre|lə kɔ̃kɔ̃bʁ
+la courgette|la kuʁʒɛt
+l’aubergine|lobɛʁʒin
+le riz|lə ʁi
+les pâtes|le pat
+la farine|la faʁin
+le sucre|lə sykʁ
+le sel|lə sɛl
+le poivre|lə pwavʁ
+l’huile|lɥil
+le vinaigre|lə vinɛgʁ
+le miel|lə mjɛl
+la confiture|la kɔ̃fityʁ
+le chocolat|lə ʃɔkɔla
+la noix|la nwa
+l’amande|lamɑ̃d
+les céréales|le seʁeal

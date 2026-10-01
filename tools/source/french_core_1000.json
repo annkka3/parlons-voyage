@@ -1,0 +1,7173 @@
+{
+  "schema_version": "2.0.0",
+  "deck_id": "french-core-1000-ru-en-fr-v1",
+  "title_ru": "Французский: 1000 базовых карточек — к B1",
+  "created_at": "2026-10-01",
+  "card_count": 1000,
+  "display_fields": [
+    "ru",
+    "en",
+    "fr"
+  ],
+  "target_language": "fr-FR",
+  "default_prompt_language": "ru",
+  "scope_ru": "Авторская подборка базовой лексики A1–A2 и слов, полезных на пути к B1. Не полный словарь B1, не официальный список CEFR/DELF и не частотный рейтинг. Уровень каждой карточки отдельно не сертифицирован.",
+  "counting_ru": "1000 карточек: слова и небольшое число коротких выражений. Родовые и некоторые другие формы объединены в одной карточке. Разные грамматические функции могут давать отдельные карточки.",
+  "format_ru": "Три текстовых поля: русский, английский, французский. Без примеров, транскрипций и грамматических пояснений на карточках. Короткие уточнения значения входят в перевод.",
+  "topics": [
+    {
+      "id": "01",
+      "name_ru": "Местоимения, вопросы и базовое общение",
+      "card_count": 50,
+      "first_card_id": "fr-core-0001",
+      "last_card_id": "fr-core-0050"
+    },
+    {
+      "id": "02",
+      "name_ru": "Основные глаголы",
+      "card_count": 50,
+      "first_card_id": "fr-core-0051",
+      "last_card_id": "fr-core-0100"
+    },
+    {
+      "id": "03",
+      "name_ru": "Повседневные действия и передвижение",
+      "card_count": 50,
+      "first_card_id": "fr-core-0101",
+      "last_card_id": "fr-core-0150"
+    },
+    {
+      "id": "04",
+      "name_ru": "Общение, решения и сложные действия",
+      "card_count": 50,
+      "first_card_id": "fr-core-0151",
+      "last_card_id": "fr-core-0200"
+    },
+    {
+      "id": "05",
+      "name_ru": "Люди, семья и отношения",
+      "card_count": 50,
+      "first_card_id": "fr-core-0201",
+      "last_card_id": "fr-core-0250"
+    },
+    {
+      "id": "06",
+      "name_ru": "Дом и повседневные предметы",
+      "card_count": 50,
+      "first_card_id": "fr-core-0251",
+      "last_card_id": "fr-core-0300"
+    },
+    {
+      "id": "07",
+      "name_ru": "Продукты питания",
+      "card_count": 50,
+      "first_card_id": "fr-core-0301",
+      "last_card_id": "fr-core-0350"
+    },
+    {
+      "id": "08",
+      "name_ru": "Напитки, ресторан и покупки еды",
+      "card_count": 50,
+      "first_card_id": "fr-core-0351",
+      "last_card_id": "fr-core-0400"
+    },
+    {
+      "id": "09",
+      "name_ru": "Путешествия и транспорт",
+      "card_count": 50,
+      "first_card_id": "fr-core-0401",
+      "last_card_id": "fr-core-0450"
+    },
+    {
+      "id": "10",
+      "name_ru": "Город, места и гостиница",
+      "card_count": 50,
+      "first_card_id": "fr-core-0451",
+      "last_card_id": "fr-core-0500"
+    },
+    {
+      "id": "11",
+      "name_ru": "Покупки, одежда и деньги",
+      "card_count": 50,
+      "first_card_id": "fr-core-0501",
+      "last_card_id": "fr-core-0550"
+    },
+    {
+      "id": "12",
+      "name_ru": "Тело, здоровье и помощь",
+      "card_count": 50,
+      "first_card_id": "fr-core-0551",
+      "last_card_id": "fr-core-0600"
+    },
+    {
+      "id": "13",
+      "name_ru": "Работа и учёба",
+      "card_count": 50,
+      "first_card_id": "fr-core-0601",
+      "last_card_id": "fr-core-0650"
+    },
+    {
+      "id": "14",
+      "name_ru": "Связь, технологии, культура и досуг",
+      "card_count": 50,
+      "first_card_id": "fr-core-0651",
+      "last_card_id": "fr-core-0700"
+    },
+    {
+      "id": "15",
+      "name_ru": "Природа, погода и единицы времени",
+      "card_count": 50,
+      "first_card_id": "fr-core-0701",
+      "last_card_id": "fr-core-0750"
+    },
+    {
+      "id": "16",
+      "name_ru": "Числа, дни недели и месяцы",
+      "card_count": 50,
+      "first_card_id": "fr-core-0751",
+      "last_card_id": "fr-core-0800"
+    },
+    {
+      "id": "17",
+      "name_ru": "Предлоги, расположение и частотность",
+      "card_count": 50,
+      "first_card_id": "fr-core-0801",
+      "last_card_id": "fr-core-0850"
+    },
+    {
+      "id": "18",
+      "name_ru": "Размер, внешний вид и свойства",
+      "card_count": 50,
+      "first_card_id": "fr-core-0851",
+      "last_card_id": "fr-core-0900"
+    },
+    {
+      "id": "19",
+      "name_ru": "Состояния, характер и оценки",
+      "card_count": 50,
+      "first_card_id": "fr-core-0901",
+      "last_card_id": "fr-core-0950"
+    },
+    {
+      "id": "20",
+      "name_ru": "Связки, количество и выражение мыслей",
+      "card_count": 50,
+      "first_card_id": "fr-core-0951",
+      "last_card_id": "fr-core-1000"
+    }
+  ],
+  "cards": [
+    {
+      "id": "fr-core-0001",
+      "topic_id": "01",
+      "ru": "я",
+      "en": "I",
+      "fr": "je"
+    },
+    {
+      "id": "fr-core-0002",
+      "topic_id": "01",
+      "ru": "ты",
+      "en": "you (informal singular)",
+      "fr": "tu"
+    },
+    {
+      "id": "fr-core-0003",
+      "topic_id": "01",
+      "ru": "он",
+      "en": "he",
+      "fr": "il"
+    },
+    {
+      "id": "fr-core-0004",
+      "topic_id": "01",
+      "ru": "она",
+      "en": "she",
+      "fr": "elle"
+    },
+    {
+      "id": "fr-core-0005",
+      "topic_id": "01",
+      "ru": "мы",
+      "en": "we",
+      "fr": "nous"
+    },
+    {
+      "id": "fr-core-0006",
+      "topic_id": "01",
+      "ru": "вы",
+      "en": "you (formal or plural)",
+      "fr": "vous"
+    },
+    {
+      "id": "fr-core-0007",
+      "topic_id": "01",
+      "ru": "они (мужской или смешанный род)",
+      "en": "they (masculine or mixed)",
+      "fr": "ils"
+    },
+    {
+      "id": "fr-core-0008",
+      "topic_id": "01",
+      "ru": "они (женский род)",
+      "en": "they (feminine)",
+      "fr": "elles"
+    },
+    {
+      "id": "fr-core-0009",
+      "topic_id": "01",
+      "ru": "мы; люди вообще",
+      "en": "we; people in general",
+      "fr": "on"
+    },
+    {
+      "id": "fr-core-0010",
+      "topic_id": "01",
+      "ru": "меня; мне",
+      "en": "me",
+      "fr": "moi"
+    },
+    {
+      "id": "fr-core-0011",
+      "topic_id": "01",
+      "ru": "тебя; тебе",
+      "en": "you (stressed singular)",
+      "fr": "toi"
+    },
+    {
+      "id": "fr-core-0012",
+      "topic_id": "01",
+      "ru": "ему; ей",
+      "en": "to him; to her",
+      "fr": "lui"
+    },
+    {
+      "id": "fr-core-0013",
+      "topic_id": "01",
+      "ru": "до свидания",
+      "en": "goodbye",
+      "fr": "au revoir"
+    },
+    {
+      "id": "fr-core-0014",
+      "topic_id": "01",
+      "ru": "это (ближе)",
+      "en": "this",
+      "fr": "ceci"
+    },
+    {
+      "id": "fr-core-0015",
+      "topic_id": "01",
+      "ru": "то; это (дальше)",
+      "en": "that",
+      "fr": "cela"
+    },
+    {
+      "id": "fr-core-0016",
+      "topic_id": "01",
+      "ru": "весь; всё",
+      "en": "all; everything",
+      "fr": "tout"
+    },
+    {
+      "id": "fr-core-0017",
+      "topic_id": "01",
+      "ru": "что-то",
+      "en": "something",
+      "fr": "quelque chose"
+    },
+    {
+      "id": "fr-core-0018",
+      "topic_id": "01",
+      "ru": "кто-то",
+      "en": "someone",
+      "fr": "quelqu’un"
+    },
+    {
+      "id": "fr-core-0019",
+      "topic_id": "01",
+      "ru": "ничего",
+      "en": "nothing",
+      "fr": "rien"
+    },
+    {
+      "id": "fr-core-0020",
+      "topic_id": "01",
+      "ru": "никто",
+      "en": "nobody",
+      "fr": "personne"
+    },
+    {
+      "id": "fr-core-0021",
+      "topic_id": "01",
+      "ru": "каждый (самостоятельно)",
+      "en": "each one",
+      "fr": "chacun"
+    },
+    {
+      "id": "fr-core-0022",
+      "topic_id": "01",
+      "ru": "никакой; ни один",
+      "en": "no; not any",
+      "fr": "aucun"
+    },
+    {
+      "id": "fr-core-0023",
+      "topic_id": "01",
+      "ru": "каждый (перед существительным)",
+      "en": "each; every",
+      "fr": "chaque"
+    },
+    {
+      "id": "fr-core-0024",
+      "topic_id": "01",
+      "ru": "другой",
+      "en": "other",
+      "fr": "autre"
+    },
+    {
+      "id": "fr-core-0025",
+      "topic_id": "01",
+      "ru": "тот же; одинаковый",
+      "en": "same",
+      "fr": "même"
+    },
+    {
+      "id": "fr-core-0026",
+      "topic_id": "01",
+      "ru": "мой",
+      "en": "my",
+      "fr": "mon / ma / mes"
+    },
+    {
+      "id": "fr-core-0027",
+      "topic_id": "01",
+      "ru": "твой",
+      "en": "your (informal singular)",
+      "fr": "ton / ta / tes"
+    },
+    {
+      "id": "fr-core-0028",
+      "topic_id": "01",
+      "ru": "его; её",
+      "en": "his; her",
+      "fr": "son / sa / ses"
+    },
+    {
+      "id": "fr-core-0029",
+      "topic_id": "01",
+      "ru": "наш",
+      "en": "our",
+      "fr": "notre / nos"
+    },
+    {
+      "id": "fr-core-0030",
+      "topic_id": "01",
+      "ru": "ваш",
+      "en": "your (formal or plural)",
+      "fr": "votre / vos"
+    },
+    {
+      "id": "fr-core-0031",
+      "topic_id": "01",
+      "ru": "их",
+      "en": "their",
+      "fr": "leur / leurs"
+    },
+    {
+      "id": "fr-core-0032",
+      "topic_id": "01",
+      "ru": "этот; эта; эти",
+      "en": "this; these",
+      "fr": "ce / cet / cette / ces"
+    },
+    {
+      "id": "fr-core-0033",
+      "topic_id": "01",
+      "ru": "неопределённый артикль",
+      "en": "a; an; some",
+      "fr": "un / une / des"
+    },
+    {
+      "id": "fr-core-0034",
+      "topic_id": "01",
+      "ru": "определённый артикль",
+      "en": "the",
+      "fr": "le / la / les"
+    },
+    {
+      "id": "fr-core-0035",
+      "topic_id": "01",
+      "ru": "кто",
+      "en": "who",
+      "fr": "qui"
+    },
+    {
+      "id": "fr-core-0036",
+      "topic_id": "01",
+      "ru": "что (перед глаголом)",
+      "en": "what (before a verb)",
+      "fr": "que"
+    },
+    {
+      "id": "fr-core-0037",
+      "topic_id": "01",
+      "ru": "что (самостоятельно)",
+      "en": "what (standalone)",
+      "fr": "quoi"
+    },
+    {
+      "id": "fr-core-0038",
+      "topic_id": "01",
+      "ru": "какой",
+      "en": "which; what",
+      "fr": "quel / quelle / quels / quelles"
+    },
+    {
+      "id": "fr-core-0039",
+      "topic_id": "01",
+      "ru": "сколько",
+      "en": "how much; how many",
+      "fr": "combien"
+    },
+    {
+      "id": "fr-core-0040",
+      "topic_id": "01",
+      "ru": "как",
+      "en": "how",
+      "fr": "comment"
+    },
+    {
+      "id": "fr-core-0041",
+      "topic_id": "01",
+      "ru": "почему",
+      "en": "why",
+      "fr": "pourquoi"
+    },
+    {
+      "id": "fr-core-0042",
+      "topic_id": "01",
+      "ru": "где; куда",
+      "en": "where",
+      "fr": "où"
+    },
+    {
+      "id": "fr-core-0043",
+      "topic_id": "01",
+      "ru": "когда",
+      "en": "when",
+      "fr": "quand"
+    },
+    {
+      "id": "fr-core-0044",
+      "topic_id": "01",
+      "ru": "да",
+      "en": "yes",
+      "fr": "oui"
+    },
+    {
+      "id": "fr-core-0045",
+      "topic_id": "01",
+      "ru": "нет",
+      "en": "no",
+      "fr": "non"
+    },
+    {
+      "id": "fr-core-0046",
+      "topic_id": "01",
+      "ru": "если",
+      "en": "if",
+      "fr": "si"
+    },
+    {
+      "id": "fr-core-0047",
+      "topic_id": "01",
+      "ru": "здравствуйте",
+      "en": "hello",
+      "fr": "bonjour"
+    },
+    {
+      "id": "fr-core-0048",
+      "topic_id": "01",
+      "ru": "спасибо",
+      "en": "thank you",
+      "fr": "merci"
+    },
+    {
+      "id": "fr-core-0049",
+      "topic_id": "01",
+      "ru": "извините",
+      "en": "sorry; pardon",
+      "fr": "pardon"
+    },
+    {
+      "id": "fr-core-0050",
+      "topic_id": "01",
+      "ru": "пожалуйста (при просьбе)",
+      "en": "please",
+      "fr": "s’il vous plaît"
+    },
+    {
+      "id": "fr-core-0051",
+      "topic_id": "02",
+      "ru": "быть",
+      "en": "to be",
+      "fr": "être"
+    },
+    {
+      "id": "fr-core-0052",
+      "topic_id": "02",
+      "ru": "иметь",
+      "en": "to have",
+      "fr": "avoir"
+    },
+    {
+      "id": "fr-core-0053",
+      "topic_id": "02",
+      "ru": "делать",
+      "en": "to do; to make",
+      "fr": "faire"
+    },
+    {
+      "id": "fr-core-0054",
+      "topic_id": "02",
+      "ru": "идти; ехать",
+      "en": "to go",
+      "fr": "aller"
+    },
+    {
+      "id": "fr-core-0055",
+      "topic_id": "02",
+      "ru": "приходить",
+      "en": "to come",
+      "fr": "venir"
+    },
+    {
+      "id": "fr-core-0056",
+      "topic_id": "02",
+      "ru": "мочь",
+      "en": "can; to be able to",
+      "fr": "pouvoir"
+    },
+    {
+      "id": "fr-core-0057",
+      "topic_id": "02",
+      "ru": "хотеть",
+      "en": "to want",
+      "fr": "vouloir"
+    },
+    {
+      "id": "fr-core-0058",
+      "topic_id": "02",
+      "ru": "быть должным; быть обязанным",
+      "en": "must; to have to",
+      "fr": "devoir"
+    },
+    {
+      "id": "fr-core-0059",
+      "topic_id": "02",
+      "ru": "знать; уметь",
+      "en": "to know; to know how",
+      "fr": "savoir"
+    },
+    {
+      "id": "fr-core-0060",
+      "topic_id": "02",
+      "ru": "знать; быть знакомым с",
+      "en": "to know; to be familiar with",
+      "fr": "connaître"
+    },
+    {
+      "id": "fr-core-0061",
+      "topic_id": "02",
+      "ru": "брать",
+      "en": "to take",
+      "fr": "prendre"
+    },
+    {
+      "id": "fr-core-0062",
+      "topic_id": "02",
+      "ru": "давать",
+      "en": "to give",
+      "fr": "donner"
+    },
+    {
+      "id": "fr-core-0063",
+      "topic_id": "02",
+      "ru": "класть; ставить; надевать",
+      "en": "to put",
+      "fr": "mettre"
+    },
+    {
+      "id": "fr-core-0064",
+      "topic_id": "02",
+      "ru": "говорить; сказать",
+      "en": "to say; to tell",
+      "fr": "dire"
+    },
+    {
+      "id": "fr-core-0065",
+      "topic_id": "02",
+      "ru": "разговаривать",
+      "en": "to speak; to talk",
+      "fr": "parler"
+    },
+    {
+      "id": "fr-core-0066",
+      "topic_id": "02",
+      "ru": "видеть",
+      "en": "to see",
+      "fr": "voir"
+    },
+    {
+      "id": "fr-core-0067",
+      "topic_id": "02",
+      "ru": "смотреть",
+      "en": "to look at; to watch",
+      "fr": "regarder"
+    },
+    {
+      "id": "fr-core-0068",
+      "topic_id": "02",
+      "ru": "слышать",
+      "en": "to hear",
+      "fr": "entendre"
+    },
+    {
+      "id": "fr-core-0069",
+      "topic_id": "02",
+      "ru": "слушать",
+      "en": "to listen",
+      "fr": "écouter"
+    },
+    {
+      "id": "fr-core-0070",
+      "topic_id": "02",
+      "ru": "понимать",
+      "en": "to understand",
+      "fr": "comprendre"
+    },
+    {
+      "id": "fr-core-0071",
+      "topic_id": "02",
+      "ru": "учить; узнавать новое",
+      "en": "to learn",
+      "fr": "apprendre"
+    },
+    {
+      "id": "fr-core-0072",
+      "topic_id": "02",
+      "ru": "читать",
+      "en": "to read",
+      "fr": "lire"
+    },
+    {
+      "id": "fr-core-0073",
+      "topic_id": "02",
+      "ru": "писать",
+      "en": "to write",
+      "fr": "écrire"
+    },
+    {
+      "id": "fr-core-0074",
+      "topic_id": "02",
+      "ru": "спрашивать; просить",
+      "en": "to ask",
+      "fr": "demander"
+    },
+    {
+      "id": "fr-core-0075",
+      "topic_id": "02",
+      "ru": "отвечать",
+      "en": "to answer",
+      "fr": "répondre"
+    },
+    {
+      "id": "fr-core-0076",
+      "topic_id": "02",
+      "ru": "находить",
+      "en": "to find",
+      "fr": "trouver"
+    },
+    {
+      "id": "fr-core-0077",
+      "topic_id": "02",
+      "ru": "искать",
+      "en": "to look for",
+      "fr": "chercher"
+    },
+    {
+      "id": "fr-core-0078",
+      "topic_id": "02",
+      "ru": "думать",
+      "en": "to think",
+      "fr": "penser"
+    },
+    {
+      "id": "fr-core-0079",
+      "topic_id": "02",
+      "ru": "считать; верить",
+      "en": "to believe",
+      "fr": "croire"
+    },
+    {
+      "id": "fr-core-0080",
+      "topic_id": "02",
+      "ru": "любить; нравиться",
+      "en": "to love; to like",
+      "fr": "aimer"
+    },
+    {
+      "id": "fr-core-0081",
+      "topic_id": "02",
+      "ru": "предпочитать",
+      "en": "to prefer",
+      "fr": "préférer"
+    },
+    {
+      "id": "fr-core-0082",
+      "topic_id": "02",
+      "ru": "играть",
+      "en": "to play",
+      "fr": "jouer"
+    },
+    {
+      "id": "fr-core-0083",
+      "topic_id": "02",
+      "ru": "быть необходимым",
+      "en": "to be necessary",
+      "fr": "falloir"
+    },
+    {
+      "id": "fr-core-0084",
+      "topic_id": "02",
+      "ru": "есть; кушать",
+      "en": "to eat",
+      "fr": "manger"
+    },
+    {
+      "id": "fr-core-0085",
+      "topic_id": "02",
+      "ru": "пить",
+      "en": "to drink",
+      "fr": "boire"
+    },
+    {
+      "id": "fr-core-0086",
+      "topic_id": "02",
+      "ru": "спать",
+      "en": "to sleep",
+      "fr": "dormir"
+    },
+    {
+      "id": "fr-core-0087",
+      "topic_id": "02",
+      "ru": "жить; проживать",
+      "en": "to live; to experience",
+      "fr": "vivre"
+    },
+    {
+      "id": "fr-core-0088",
+      "topic_id": "02",
+      "ru": "проживать по адресу",
+      "en": "to live; to reside",
+      "fr": "habiter"
+    },
+    {
+      "id": "fr-core-0089",
+      "topic_id": "02",
+      "ru": "работать",
+      "en": "to work",
+      "fr": "travailler"
+    },
+    {
+      "id": "fr-core-0090",
+      "topic_id": "02",
+      "ru": "учиться; изучать",
+      "en": "to study",
+      "fr": "étudier"
+    },
+    {
+      "id": "fr-core-0091",
+      "topic_id": "02",
+      "ru": "покупать",
+      "en": "to buy",
+      "fr": "acheter"
+    },
+    {
+      "id": "fr-core-0092",
+      "topic_id": "02",
+      "ru": "платить",
+      "en": "to pay",
+      "fr": "payer"
+    },
+    {
+      "id": "fr-core-0093",
+      "topic_id": "02",
+      "ru": "стоить",
+      "en": "to cost",
+      "fr": "coûter"
+    },
+    {
+      "id": "fr-core-0094",
+      "topic_id": "02",
+      "ru": "продавать",
+      "en": "to sell",
+      "fr": "vendre"
+    },
+    {
+      "id": "fr-core-0095",
+      "topic_id": "02",
+      "ru": "открывать",
+      "en": "to open",
+      "fr": "ouvrir"
+    },
+    {
+      "id": "fr-core-0096",
+      "topic_id": "02",
+      "ru": "закрывать",
+      "en": "to close",
+      "fr": "fermer"
+    },
+    {
+      "id": "fr-core-0097",
+      "topic_id": "02",
+      "ru": "начинать",
+      "en": "to start",
+      "fr": "commencer"
+    },
+    {
+      "id": "fr-core-0098",
+      "topic_id": "02",
+      "ru": "заканчивать",
+      "en": "to finish",
+      "fr": "finir"
+    },
+    {
+      "id": "fr-core-0099",
+      "topic_id": "02",
+      "ru": "ждать",
+      "en": "to wait",
+      "fr": "attendre"
+    },
+    {
+      "id": "fr-core-0100",
+      "topic_id": "02",
+      "ru": "оставаться",
+      "en": "to stay",
+      "fr": "rester"
+    },
+    {
+      "id": "fr-core-0101",
+      "topic_id": "03",
+      "ru": "уходить; уезжать",
+      "en": "to leave; to depart",
+      "fr": "partir"
+    },
+    {
+      "id": "fr-core-0102",
+      "topic_id": "03",
+      "ru": "прибывать",
+      "en": "to arrive",
+      "fr": "arriver"
+    },
+    {
+      "id": "fr-core-0103",
+      "topic_id": "03",
+      "ru": "входить",
+      "en": "to enter",
+      "fr": "entrer"
+    },
+    {
+      "id": "fr-core-0104",
+      "topic_id": "03",
+      "ru": "выходить",
+      "en": "to go out",
+      "fr": "sortir"
+    },
+    {
+      "id": "fr-core-0105",
+      "topic_id": "03",
+      "ru": "возвращаться домой",
+      "en": "to go home; to come back in",
+      "fr": "rentrer"
+    },
+    {
+      "id": "fr-core-0106",
+      "topic_id": "03",
+      "ru": "возвращаться; переворачивать",
+      "en": "to go back; to turn over",
+      "fr": "retourner"
+    },
+    {
+      "id": "fr-core-0107",
+      "topic_id": "03",
+      "ru": "переходить; проходить",
+      "en": "to pass; to go through",
+      "fr": "passer"
+    },
+    {
+      "id": "fr-core-0108",
+      "topic_id": "03",
+      "ru": "подниматься",
+      "en": "to go up",
+      "fr": "monter"
+    },
+    {
+      "id": "fr-core-0109",
+      "topic_id": "03",
+      "ru": "спускаться",
+      "en": "to go down",
+      "fr": "descendre"
+    },
+    {
+      "id": "fr-core-0110",
+      "topic_id": "03",
+      "ru": "ходить пешком",
+      "en": "to walk",
+      "fr": "marcher"
+    },
+    {
+      "id": "fr-core-0111",
+      "topic_id": "03",
+      "ru": "бежать",
+      "en": "to run",
+      "fr": "courir"
+    },
+    {
+      "id": "fr-core-0112",
+      "topic_id": "03",
+      "ru": "водить машину",
+      "en": "to drive",
+      "fr": "conduire"
+    },
+    {
+      "id": "fr-core-0113",
+      "topic_id": "03",
+      "ru": "путешествовать",
+      "en": "to travel",
+      "fr": "voyager"
+    },
+    {
+      "id": "fr-core-0114",
+      "topic_id": "03",
+      "ru": "посещать место",
+      "en": "to visit a place",
+      "fr": "visiter"
+    },
+    {
+      "id": "fr-core-0115",
+      "topic_id": "03",
+      "ru": "следовать за",
+      "en": "to follow",
+      "fr": "suivre"
+    },
+    {
+      "id": "fr-core-0116",
+      "topic_id": "03",
+      "ru": "поворачивать",
+      "en": "to turn",
+      "fr": "tourner"
+    },
+    {
+      "id": "fr-core-0117",
+      "topic_id": "03",
+      "ru": "пересекать",
+      "en": "to cross",
+      "fr": "traverser"
+    },
+    {
+      "id": "fr-core-0118",
+      "topic_id": "03",
+      "ru": "останавливать",
+      "en": "to stop",
+      "fr": "arrêter"
+    },
+    {
+      "id": "fr-core-0119",
+      "topic_id": "03",
+      "ru": "нести; носить",
+      "en": "to carry; to wear",
+      "fr": "porter"
+    },
+    {
+      "id": "fr-core-0120",
+      "topic_id": "03",
+      "ru": "приносить",
+      "en": "to bring a thing",
+      "fr": "apporter"
+    },
+    {
+      "id": "fr-core-0121",
+      "topic_id": "03",
+      "ru": "приводить; привозить",
+      "en": "to bring someone",
+      "fr": "amener"
+    },
+    {
+      "id": "fr-core-0122",
+      "topic_id": "03",
+      "ru": "забирать с собой",
+      "en": "to take someone along",
+      "fr": "emmener"
+    },
+    {
+      "id": "fr-core-0123",
+      "topic_id": "03",
+      "ru": "оставлять; позволять",
+      "en": "to leave; to let",
+      "fr": "laisser"
+    },
+    {
+      "id": "fr-core-0124",
+      "topic_id": "03",
+      "ru": "менять",
+      "en": "to change",
+      "fr": "changer"
+    },
+    {
+      "id": "fr-core-0125",
+      "topic_id": "03",
+      "ru": "выбирать",
+      "en": "to choose",
+      "fr": "choisir"
+    },
+    {
+      "id": "fr-core-0126",
+      "topic_id": "03",
+      "ru": "использовать",
+      "en": "to use",
+      "fr": "utiliser"
+    },
+    {
+      "id": "fr-core-0127",
+      "topic_id": "03",
+      "ru": "нуждаться в",
+      "en": "to need",
+      "fr": "avoir besoin de"
+    },
+    {
+      "id": "fr-core-0128",
+      "topic_id": "03",
+      "ru": "хранить; оставлять у себя",
+      "en": "to keep",
+      "fr": "garder"
+    },
+    {
+      "id": "fr-core-0129",
+      "topic_id": "03",
+      "ru": "терять",
+      "en": "to lose",
+      "fr": "perdre"
+    },
+    {
+      "id": "fr-core-0130",
+      "topic_id": "03",
+      "ru": "забывать",
+      "en": "to forget",
+      "fr": "oublier"
+    },
+    {
+      "id": "fr-core-0131",
+      "topic_id": "03",
+      "ru": "вспоминать",
+      "en": "to remember",
+      "fr": "se souvenir de"
+    },
+    {
+      "id": "fr-core-0132",
+      "topic_id": "03",
+      "ru": "помогать",
+      "en": "to help",
+      "fr": "aider"
+    },
+    {
+      "id": "fr-core-0133",
+      "topic_id": "03",
+      "ru": "готовить; подготавливать",
+      "en": "to prepare",
+      "fr": "préparer"
+    },
+    {
+      "id": "fr-core-0134",
+      "topic_id": "03",
+      "ru": "готовить еду",
+      "en": "to cook",
+      "fr": "cuisiner"
+    },
+    {
+      "id": "fr-core-0135",
+      "topic_id": "03",
+      "ru": "мыть",
+      "en": "to wash",
+      "fr": "laver"
+    },
+    {
+      "id": "fr-core-0136",
+      "topic_id": "03",
+      "ru": "чистить; убирать",
+      "en": "to clean",
+      "fr": "nettoyer"
+    },
+    {
+      "id": "fr-core-0137",
+      "topic_id": "03",
+      "ru": "убирать на место",
+      "en": "to tidy away",
+      "fr": "ranger"
+    },
+    {
+      "id": "fr-core-0138",
+      "topic_id": "03",
+      "ru": "одеваться",
+      "en": "to get dressed",
+      "fr": "s’habiller"
+    },
+    {
+      "id": "fr-core-0139",
+      "topic_id": "03",
+      "ru": "вставать",
+      "en": "to get up",
+      "fr": "se lever"
+    },
+    {
+      "id": "fr-core-0140",
+      "topic_id": "03",
+      "ru": "ложиться спать",
+      "en": "to go to bed",
+      "fr": "se coucher"
+    },
+    {
+      "id": "fr-core-0141",
+      "topic_id": "03",
+      "ru": "просыпаться",
+      "en": "to wake up",
+      "fr": "se réveiller"
+    },
+    {
+      "id": "fr-core-0142",
+      "topic_id": "03",
+      "ru": "отдыхать",
+      "en": "to rest",
+      "fr": "se reposer"
+    },
+    {
+      "id": "fr-core-0143",
+      "topic_id": "03",
+      "ru": "садиться",
+      "en": "to sit down",
+      "fr": "s’asseoir"
+    },
+    {
+      "id": "fr-core-0144",
+      "topic_id": "03",
+      "ru": "встречать",
+      "en": "to meet",
+      "fr": "rencontrer"
+    },
+    {
+      "id": "fr-core-0145",
+      "topic_id": "03",
+      "ru": "звонить; звать",
+      "en": "to call",
+      "fr": "appeler"
+    },
+    {
+      "id": "fr-core-0146",
+      "topic_id": "03",
+      "ru": "отправлять",
+      "en": "to send",
+      "fr": "envoyer"
+    },
+    {
+      "id": "fr-core-0147",
+      "topic_id": "03",
+      "ru": "получать",
+      "en": "to receive",
+      "fr": "recevoir"
+    },
+    {
+      "id": "fr-core-0148",
+      "topic_id": "03",
+      "ru": "заказывать",
+      "en": "to order",
+      "fr": "commander"
+    },
+    {
+      "id": "fr-core-0149",
+      "topic_id": "03",
+      "ru": "бронировать",
+      "en": "to book; to reserve",
+      "fr": "réserver"
+    },
+    {
+      "id": "fr-core-0150",
+      "topic_id": "03",
+      "ru": "снимать; сдавать в аренду",
+      "en": "to rent",
+      "fr": "louer"
+    },
+    {
+      "id": "fr-core-0151",
+      "topic_id": "04",
+      "ru": "объяснять",
+      "en": "to explain",
+      "fr": "expliquer"
+    },
+    {
+      "id": "fr-core-0152",
+      "topic_id": "04",
+      "ru": "рассказывать",
+      "en": "to tell; to recount",
+      "fr": "raconter"
+    },
+    {
+      "id": "fr-core-0153",
+      "topic_id": "04",
+      "ru": "описывать",
+      "en": "to describe",
+      "fr": "décrire"
+    },
+    {
+      "id": "fr-core-0154",
+      "topic_id": "04",
+      "ru": "повторять",
+      "en": "to repeat",
+      "fr": "répéter"
+    },
+    {
+      "id": "fr-core-0155",
+      "topic_id": "04",
+      "ru": "выигрывать; зарабатывать",
+      "en": "to win; to earn",
+      "fr": "gagner"
+    },
+    {
+      "id": "fr-core-0156",
+      "topic_id": "04",
+      "ru": "переводить",
+      "en": "to translate",
+      "fr": "traduire"
+    },
+    {
+      "id": "fr-core-0157",
+      "topic_id": "04",
+      "ru": "становиться",
+      "en": "to become",
+      "fr": "devenir"
+    },
+    {
+      "id": "fr-core-0158",
+      "topic_id": "04",
+      "ru": "обсуждать",
+      "en": "to discuss",
+      "fr": "discuter"
+    },
+    {
+      "id": "fr-core-0159",
+      "topic_id": "04",
+      "ru": "предлагать",
+      "en": "to suggest; to propose",
+      "fr": "proposer"
+    },
+    {
+      "id": "fr-core-0160",
+      "topic_id": "04",
+      "ru": "советовать",
+      "en": "to advise",
+      "fr": "conseiller"
+    },
+    {
+      "id": "fr-core-0161",
+      "topic_id": "04",
+      "ru": "принимать; соглашаться",
+      "en": "to accept",
+      "fr": "accepter"
+    },
+    {
+      "id": "fr-core-0162",
+      "topic_id": "04",
+      "ru": "отказываться",
+      "en": "to refuse",
+      "fr": "refuser"
+    },
+    {
+      "id": "fr-core-0163",
+      "topic_id": "04",
+      "ru": "решать; принимать решение",
+      "en": "to decide",
+      "fr": "décider"
+    },
+    {
+      "id": "fr-core-0164",
+      "topic_id": "04",
+      "ru": "надеяться",
+      "en": "to hope",
+      "fr": "espérer"
+    },
+    {
+      "id": "fr-core-0165",
+      "topic_id": "04",
+      "ru": "желать",
+      "en": "to wish",
+      "fr": "souhaiter"
+    },
+    {
+      "id": "fr-core-0166",
+      "topic_id": "04",
+      "ru": "обещать",
+      "en": "to promise",
+      "fr": "promettre"
+    },
+    {
+      "id": "fr-core-0167",
+      "topic_id": "04",
+      "ru": "быть согласным",
+      "en": "to agree",
+      "fr": "être d’accord"
+    },
+    {
+      "id": "fr-core-0168",
+      "topic_id": "04",
+      "ru": "извиняться",
+      "en": "to apologize",
+      "fr": "s’excuser"
+    },
+    {
+      "id": "fr-core-0169",
+      "topic_id": "04",
+      "ru": "благодарить",
+      "en": "to thank",
+      "fr": "remercier"
+    },
+    {
+      "id": "fr-core-0170",
+      "topic_id": "04",
+      "ru": "приглашать",
+      "en": "to invite",
+      "fr": "inviter"
+    },
+    {
+      "id": "fr-core-0171",
+      "topic_id": "04",
+      "ru": "представлять; знакомить",
+      "en": "to introduce; to present",
+      "fr": "présenter"
+    },
+    {
+      "id": "fr-core-0172",
+      "topic_id": "04",
+      "ru": "сравнивать",
+      "en": "to compare",
+      "fr": "comparer"
+    },
+    {
+      "id": "fr-core-0173",
+      "topic_id": "04",
+      "ru": "замечать",
+      "en": "to notice",
+      "fr": "remarquer"
+    },
+    {
+      "id": "fr-core-0174",
+      "topic_id": "04",
+      "ru": "проверять",
+      "en": "to check",
+      "fr": "vérifier"
+    },
+    {
+      "id": "fr-core-0175",
+      "topic_id": "04",
+      "ru": "обдумывать",
+      "en": "to think over",
+      "fr": "réfléchir"
+    },
+    {
+      "id": "fr-core-0176",
+      "topic_id": "04",
+      "ru": "представлять себе",
+      "en": "to imagine",
+      "fr": "imaginer"
+    },
+    {
+      "id": "fr-core-0177",
+      "topic_id": "04",
+      "ru": "считать; подсчитывать",
+      "en": "to count",
+      "fr": "compter"
+    },
+    {
+      "id": "fr-core-0178",
+      "topic_id": "04",
+      "ru": "добавлять",
+      "en": "to add",
+      "fr": "ajouter"
+    },
+    {
+      "id": "fr-core-0179",
+      "topic_id": "04",
+      "ru": "удалять; убирать",
+      "en": "to remove",
+      "fr": "enlever"
+    },
+    {
+      "id": "fr-core-0180",
+      "topic_id": "04",
+      "ru": "заполнять",
+      "en": "to fill",
+      "fr": "remplir"
+    },
+    {
+      "id": "fr-core-0181",
+      "topic_id": "04",
+      "ru": "чинить",
+      "en": "to repair",
+      "fr": "réparer"
+    },
+    {
+      "id": "fr-core-0182",
+      "topic_id": "04",
+      "ru": "пробовать; примерять",
+      "en": "to try; to try on",
+      "fr": "essayer"
+    },
+    {
+      "id": "fr-core-0183",
+      "topic_id": "04",
+      "ru": "добиваться успеха",
+      "en": "to succeed",
+      "fr": "réussir"
+    },
+    {
+      "id": "fr-core-0184",
+      "topic_id": "04",
+      "ru": "проваливать; упускать",
+      "en": "to fail; to miss",
+      "fr": "rater"
+    },
+    {
+      "id": "fr-core-0185",
+      "topic_id": "04",
+      "ru": "продолжать",
+      "en": "to continue",
+      "fr": "continuer"
+    },
+    {
+      "id": "fr-core-0186",
+      "topic_id": "04",
+      "ru": "улучшать",
+      "en": "to improve",
+      "fr": "améliorer"
+    },
+    {
+      "id": "fr-core-0187",
+      "topic_id": "04",
+      "ru": "участвовать",
+      "en": "to participate",
+      "fr": "participer"
+    },
+    {
+      "id": "fr-core-0188",
+      "topic_id": "04",
+      "ru": "организовывать",
+      "en": "to organize",
+      "fr": "organiser"
+    },
+    {
+      "id": "fr-core-0189",
+      "topic_id": "04",
+      "ru": "отменять",
+      "en": "to cancel",
+      "fr": "annuler"
+    },
+    {
+      "id": "fr-core-0190",
+      "topic_id": "04",
+      "ru": "подтверждать",
+      "en": "to confirm",
+      "fr": "confirmer"
+    },
+    {
+      "id": "fr-core-0191",
+      "topic_id": "04",
+      "ru": "подписывать",
+      "en": "to sign",
+      "fr": "signer"
+    },
+    {
+      "id": "fr-core-0192",
+      "topic_id": "04",
+      "ru": "одалживать кому-то",
+      "en": "to lend",
+      "fr": "prêter"
+    },
+    {
+      "id": "fr-core-0193",
+      "topic_id": "04",
+      "ru": "брать взаймы",
+      "en": "to borrow",
+      "fr": "emprunter"
+    },
+    {
+      "id": "fr-core-0194",
+      "topic_id": "04",
+      "ru": "возвращать вещь",
+      "en": "to give back",
+      "fr": "rendre"
+    },
+    {
+      "id": "fr-core-0195",
+      "topic_id": "04",
+      "ru": "возмещать деньги",
+      "en": "to reimburse; to refund",
+      "fr": "rembourser"
+    },
+    {
+      "id": "fr-core-0196",
+      "topic_id": "04",
+      "ru": "недоставать; пропускать",
+      "en": "to be lacking; to miss",
+      "fr": "manquer"
+    },
+    {
+      "id": "fr-core-0197",
+      "topic_id": "04",
+      "ru": "избегать",
+      "en": "to avoid",
+      "fr": "éviter"
+    },
+    {
+      "id": "fr-core-0198",
+      "topic_id": "04",
+      "ru": "решать проблему",
+      "en": "to solve",
+      "fr": "résoudre"
+    },
+    {
+      "id": "fr-core-0199",
+      "topic_id": "04",
+      "ru": "чувствовать себя",
+      "en": "to feel",
+      "fr": "se sentir"
+    },
+    {
+      "id": "fr-core-0200",
+      "topic_id": "04",
+      "ru": "выражать",
+      "en": "to express",
+      "fr": "exprimer"
+    },
+    {
+      "id": "fr-core-0201",
+      "topic_id": "05",
+      "ru": "человек",
+      "en": "person",
+      "fr": "la personne"
+    },
+    {
+      "id": "fr-core-0202",
+      "topic_id": "05",
+      "ru": "люди",
+      "en": "people",
+      "fr": "les gens"
+    },
+    {
+      "id": "fr-core-0203",
+      "topic_id": "05",
+      "ru": "мужчина",
+      "en": "man",
+      "fr": "l’homme"
+    },
+    {
+      "id": "fr-core-0204",
+      "topic_id": "05",
+      "ru": "женщина; жена",
+      "en": "woman; wife",
+      "fr": "la femme"
+    },
+    {
+      "id": "fr-core-0205",
+      "topic_id": "05",
+      "ru": "ребёнок",
+      "en": "child",
+      "fr": "l’enfant"
+    },
+    {
+      "id": "fr-core-0206",
+      "topic_id": "05",
+      "ru": "малыш",
+      "en": "baby",
+      "fr": "le bébé"
+    },
+    {
+      "id": "fr-core-0207",
+      "topic_id": "05",
+      "ru": "мальчик",
+      "en": "boy",
+      "fr": "le garçon"
+    },
+    {
+      "id": "fr-core-0208",
+      "topic_id": "05",
+      "ru": "девочка; дочь",
+      "en": "girl; daughter",
+      "fr": "la fille"
+    },
+    {
+      "id": "fr-core-0209",
+      "topic_id": "05",
+      "ru": "подросток",
+      "en": "teenager",
+      "fr": "l’adolescent / l’adolescente"
+    },
+    {
+      "id": "fr-core-0210",
+      "topic_id": "05",
+      "ru": "взрослый человек",
+      "en": "adult",
+      "fr": "l’adulte"
+    },
+    {
+      "id": "fr-core-0211",
+      "topic_id": "05",
+      "ru": "семья",
+      "en": "family",
+      "fr": "la famille"
+    },
+    {
+      "id": "fr-core-0212",
+      "topic_id": "05",
+      "ru": "родители",
+      "en": "parents",
+      "fr": "les parents"
+    },
+    {
+      "id": "fr-core-0213",
+      "topic_id": "05",
+      "ru": "мать",
+      "en": "mother",
+      "fr": "la mère"
+    },
+    {
+      "id": "fr-core-0214",
+      "topic_id": "05",
+      "ru": "отец",
+      "en": "father",
+      "fr": "le père"
+    },
+    {
+      "id": "fr-core-0215",
+      "topic_id": "05",
+      "ru": "сын",
+      "en": "son",
+      "fr": "le fils"
+    },
+    {
+      "id": "fr-core-0216",
+      "topic_id": "05",
+      "ru": "сестра",
+      "en": "sister",
+      "fr": "la sœur"
+    },
+    {
+      "id": "fr-core-0217",
+      "topic_id": "05",
+      "ru": "брат",
+      "en": "brother",
+      "fr": "le frère"
+    },
+    {
+      "id": "fr-core-0218",
+      "topic_id": "05",
+      "ru": "бабушка",
+      "en": "grandmother",
+      "fr": "la grand-mère"
+    },
+    {
+      "id": "fr-core-0219",
+      "topic_id": "05",
+      "ru": "дедушка",
+      "en": "grandfather",
+      "fr": "le grand-père"
+    },
+    {
+      "id": "fr-core-0220",
+      "topic_id": "05",
+      "ru": "внук",
+      "en": "grandson",
+      "fr": "le petit-fils"
+    },
+    {
+      "id": "fr-core-0221",
+      "topic_id": "05",
+      "ru": "внучка",
+      "en": "granddaughter",
+      "fr": "la petite-fille"
+    },
+    {
+      "id": "fr-core-0222",
+      "topic_id": "05",
+      "ru": "муж",
+      "en": "husband",
+      "fr": "le mari"
+    },
+    {
+      "id": "fr-core-0223",
+      "topic_id": "05",
+      "ru": "пара",
+      "en": "couple",
+      "fr": "le couple"
+    },
+    {
+      "id": "fr-core-0224",
+      "topic_id": "05",
+      "ru": "друг; подруга",
+      "en": "friend",
+      "fr": "l’ami / l’amie"
+    },
+    {
+      "id": "fr-core-0225",
+      "topic_id": "05",
+      "ru": "сосед; соседка",
+      "en": "neighbor",
+      "fr": "le voisin / la voisine"
+    },
+    {
+      "id": "fr-core-0226",
+      "topic_id": "05",
+      "ru": "коллега",
+      "en": "colleague",
+      "fr": "le collègue / la collègue"
+    },
+    {
+      "id": "fr-core-0227",
+      "topic_id": "05",
+      "ru": "партнёр",
+      "en": "partner",
+      "fr": "le partenaire / la partenaire"
+    },
+    {
+      "id": "fr-core-0228",
+      "topic_id": "05",
+      "ru": "гость; гостья",
+      "en": "guest",
+      "fr": "l’invité / l’invitée"
+    },
+    {
+      "id": "fr-core-0229",
+      "topic_id": "05",
+      "ru": "имя",
+      "en": "first name",
+      "fr": "le prénom"
+    },
+    {
+      "id": "fr-core-0230",
+      "topic_id": "05",
+      "ru": "фамилия; название",
+      "en": "surname; name",
+      "fr": "le nom"
+    },
+    {
+      "id": "fr-core-0231",
+      "topic_id": "05",
+      "ru": "возраст",
+      "en": "age",
+      "fr": "l’âge"
+    },
+    {
+      "id": "fr-core-0232",
+      "topic_id": "05",
+      "ru": "дата рождения",
+      "en": "date of birth",
+      "fr": "la date de naissance"
+    },
+    {
+      "id": "fr-core-0233",
+      "topic_id": "05",
+      "ru": "национальность; гражданство",
+      "en": "nationality",
+      "fr": "la nationalité"
+    },
+    {
+      "id": "fr-core-0234",
+      "topic_id": "05",
+      "ru": "адрес",
+      "en": "address",
+      "fr": "l’adresse"
+    },
+    {
+      "id": "fr-core-0235",
+      "topic_id": "05",
+      "ru": "профессия",
+      "en": "profession",
+      "fr": "la profession"
+    },
+    {
+      "id": "fr-core-0236",
+      "topic_id": "05",
+      "ru": "господин",
+      "en": "Mr.; sir",
+      "fr": "monsieur"
+    },
+    {
+      "id": "fr-core-0237",
+      "topic_id": "05",
+      "ru": "госпожа",
+      "en": "Mrs.; Ms.; madam",
+      "fr": "madame"
+    },
+    {
+      "id": "fr-core-0238",
+      "topic_id": "05",
+      "ru": "свадьба; брак",
+      "en": "wedding; marriage",
+      "fr": "le mariage"
+    },
+    {
+      "id": "fr-core-0239",
+      "topic_id": "05",
+      "ru": "развод",
+      "en": "divorce",
+      "fr": "le divorce"
+    },
+    {
+      "id": "fr-core-0240",
+      "topic_id": "05",
+      "ru": "дружба",
+      "en": "friendship",
+      "fr": "l’amitié"
+    },
+    {
+      "id": "fr-core-0241",
+      "topic_id": "05",
+      "ru": "любовь",
+      "en": "love",
+      "fr": "l’amour"
+    },
+    {
+      "id": "fr-core-0242",
+      "topic_id": "05",
+      "ru": "отношения; связь",
+      "en": "relationship",
+      "fr": "la relation"
+    },
+    {
+      "id": "fr-core-0243",
+      "topic_id": "05",
+      "ru": "встреча; знакомство",
+      "en": "meeting; encounter",
+      "fr": "la rencontre"
+    },
+    {
+      "id": "fr-core-0244",
+      "topic_id": "05",
+      "ru": "приглашение",
+      "en": "invitation",
+      "fr": "l’invitation"
+    },
+    {
+      "id": "fr-core-0245",
+      "topic_id": "05",
+      "ru": "подарок",
+      "en": "gift",
+      "fr": "le cadeau"
+    },
+    {
+      "id": "fr-core-0246",
+      "topic_id": "05",
+      "ru": "праздник; вечеринка",
+      "en": "celebration; party",
+      "fr": "la fête"
+    },
+    {
+      "id": "fr-core-0247",
+      "topic_id": "05",
+      "ru": "день рождения; годовщина",
+      "en": "birthday; anniversary",
+      "fr": "l’anniversaire"
+    },
+    {
+      "id": "fr-core-0248",
+      "topic_id": "05",
+      "ru": "двоюродный брат; двоюродная сестра",
+      "en": "cousin",
+      "fr": "le cousin / la cousine"
+    },
+    {
+      "id": "fr-core-0249",
+      "topic_id": "05",
+      "ru": "дядя",
+      "en": "uncle",
+      "fr": "l’oncle"
+    },
+    {
+      "id": "fr-core-0250",
+      "topic_id": "05",
+      "ru": "тётя",
+      "en": "aunt",
+      "fr": "la tante"
+    },
+    {
+      "id": "fr-core-0251",
+      "topic_id": "06",
+      "ru": "дом",
+      "en": "house",
+      "fr": "la maison"
+    },
+    {
+      "id": "fr-core-0252",
+      "topic_id": "06",
+      "ru": "квартира",
+      "en": "apartment",
+      "fr": "l’appartement"
+    },
+    {
+      "id": "fr-core-0253",
+      "topic_id": "06",
+      "ru": "комната",
+      "en": "room",
+      "fr": "la pièce"
+    },
+    {
+      "id": "fr-core-0254",
+      "topic_id": "06",
+      "ru": "спальня; гостиничный номер",
+      "en": "bedroom; hotel room",
+      "fr": "la chambre"
+    },
+    {
+      "id": "fr-core-0255",
+      "topic_id": "06",
+      "ru": "гостиная",
+      "en": "living room",
+      "fr": "le salon"
+    },
+    {
+      "id": "fr-core-0256",
+      "topic_id": "06",
+      "ru": "кухня",
+      "en": "kitchen",
+      "fr": "la cuisine"
+    },
+    {
+      "id": "fr-core-0257",
+      "topic_id": "06",
+      "ru": "ванная комната",
+      "en": "bathroom",
+      "fr": "la salle de bains"
+    },
+    {
+      "id": "fr-core-0258",
+      "topic_id": "06",
+      "ru": "туалет",
+      "en": "toilet; restroom",
+      "fr": "les toilettes"
+    },
+    {
+      "id": "fr-core-0259",
+      "topic_id": "06",
+      "ru": "вход; прихожая",
+      "en": "entrance; hallway",
+      "fr": "l’entrée"
+    },
+    {
+      "id": "fr-core-0260",
+      "topic_id": "06",
+      "ru": "коридор",
+      "en": "corridor",
+      "fr": "le couloir"
+    },
+    {
+      "id": "fr-core-0261",
+      "topic_id": "06",
+      "ru": "лестница",
+      "en": "stairs",
+      "fr": "l’escalier"
+    },
+    {
+      "id": "fr-core-0262",
+      "topic_id": "06",
+      "ru": "этаж",
+      "en": "floor; story",
+      "fr": "l’étage"
+    },
+    {
+      "id": "fr-core-0263",
+      "topic_id": "06",
+      "ru": "лифт",
+      "en": "elevator",
+      "fr": "l’ascenseur"
+    },
+    {
+      "id": "fr-core-0264",
+      "topic_id": "06",
+      "ru": "дверь",
+      "en": "door",
+      "fr": "la porte"
+    },
+    {
+      "id": "fr-core-0265",
+      "topic_id": "06",
+      "ru": "окно",
+      "en": "window",
+      "fr": "la fenêtre"
+    },
+    {
+      "id": "fr-core-0266",
+      "topic_id": "06",
+      "ru": "стена",
+      "en": "wall",
+      "fr": "le mur"
+    },
+    {
+      "id": "fr-core-0267",
+      "topic_id": "06",
+      "ru": "пол; земля под ногами",
+      "en": "floor; ground",
+      "fr": "le sol"
+    },
+    {
+      "id": "fr-core-0268",
+      "topic_id": "06",
+      "ru": "потолок",
+      "en": "ceiling",
+      "fr": "le plafond"
+    },
+    {
+      "id": "fr-core-0269",
+      "topic_id": "06",
+      "ru": "крыша",
+      "en": "roof",
+      "fr": "le toit"
+    },
+    {
+      "id": "fr-core-0270",
+      "topic_id": "06",
+      "ru": "балкон",
+      "en": "balcony",
+      "fr": "le balcon"
+    },
+    {
+      "id": "fr-core-0271",
+      "topic_id": "06",
+      "ru": "сад",
+      "en": "garden",
+      "fr": "le jardin"
+    },
+    {
+      "id": "fr-core-0272",
+      "topic_id": "06",
+      "ru": "гараж",
+      "en": "garage",
+      "fr": "le garage"
+    },
+    {
+      "id": "fr-core-0273",
+      "topic_id": "06",
+      "ru": "ключ",
+      "en": "key",
+      "fr": "la clé"
+    },
+    {
+      "id": "fr-core-0274",
+      "topic_id": "06",
+      "ru": "замок дверной",
+      "en": "door lock",
+      "fr": "la serrure"
+    },
+    {
+      "id": "fr-core-0275",
+      "topic_id": "06",
+      "ru": "кровать",
+      "en": "bed",
+      "fr": "le lit"
+    },
+    {
+      "id": "fr-core-0276",
+      "topic_id": "06",
+      "ru": "матрас",
+      "en": "mattress",
+      "fr": "le matelas"
+    },
+    {
+      "id": "fr-core-0277",
+      "topic_id": "06",
+      "ru": "простыня",
+      "en": "sheet",
+      "fr": "le drap"
+    },
+    {
+      "id": "fr-core-0278",
+      "topic_id": "06",
+      "ru": "подушка",
+      "en": "pillow",
+      "fr": "l’oreiller"
+    },
+    {
+      "id": "fr-core-0279",
+      "topic_id": "06",
+      "ru": "одеяло",
+      "en": "blanket",
+      "fr": "la couverture"
+    },
+    {
+      "id": "fr-core-0280",
+      "topic_id": "06",
+      "ru": "шкаф для одежды",
+      "en": "wardrobe",
+      "fr": "l’armoire"
+    },
+    {
+      "id": "fr-core-0281",
+      "topic_id": "06",
+      "ru": "встроенный шкаф",
+      "en": "cupboard",
+      "fr": "le placard"
+    },
+    {
+      "id": "fr-core-0282",
+      "topic_id": "06",
+      "ru": "стол",
+      "en": "table",
+      "fr": "la table"
+    },
+    {
+      "id": "fr-core-0283",
+      "topic_id": "06",
+      "ru": "стул",
+      "en": "chair",
+      "fr": "la chaise"
+    },
+    {
+      "id": "fr-core-0284",
+      "topic_id": "06",
+      "ru": "диван",
+      "en": "sofa",
+      "fr": "le canapé"
+    },
+    {
+      "id": "fr-core-0285",
+      "topic_id": "06",
+      "ru": "кресло",
+      "en": "armchair",
+      "fr": "le fauteuil"
+    },
+    {
+      "id": "fr-core-0286",
+      "topic_id": "06",
+      "ru": "письменный стол; офис",
+      "en": "desk; office",
+      "fr": "le bureau"
+    },
+    {
+      "id": "fr-core-0287",
+      "topic_id": "06",
+      "ru": "полка; стеллаж",
+      "en": "shelf; shelving unit",
+      "fr": "l’étagère"
+    },
+    {
+      "id": "fr-core-0288",
+      "topic_id": "06",
+      "ru": "лампа",
+      "en": "lamp",
+      "fr": "la lampe"
+    },
+    {
+      "id": "fr-core-0289",
+      "topic_id": "06",
+      "ru": "свет",
+      "en": "light",
+      "fr": "la lumière"
+    },
+    {
+      "id": "fr-core-0290",
+      "topic_id": "06",
+      "ru": "зеркало",
+      "en": "mirror",
+      "fr": "le miroir"
+    },
+    {
+      "id": "fr-core-0291",
+      "topic_id": "06",
+      "ru": "душ",
+      "en": "shower",
+      "fr": "la douche"
+    },
+    {
+      "id": "fr-core-0292",
+      "topic_id": "06",
+      "ru": "ванна",
+      "en": "bathtub",
+      "fr": "la baignoire"
+    },
+    {
+      "id": "fr-core-0293",
+      "topic_id": "06",
+      "ru": "умывальник",
+      "en": "washbasin",
+      "fr": "le lavabo"
+    },
+    {
+      "id": "fr-core-0294",
+      "topic_id": "06",
+      "ru": "полотенце; салфетка",
+      "en": "towel; napkin",
+      "fr": "la serviette"
+    },
+    {
+      "id": "fr-core-0295",
+      "topic_id": "06",
+      "ru": "мыло",
+      "en": "soap",
+      "fr": "le savon"
+    },
+    {
+      "id": "fr-core-0296",
+      "topic_id": "06",
+      "ru": "холодильник",
+      "en": "refrigerator",
+      "fr": "le réfrigérateur"
+    },
+    {
+      "id": "fr-core-0297",
+      "topic_id": "06",
+      "ru": "духовка",
+      "en": "oven",
+      "fr": "le four"
+    },
+    {
+      "id": "fr-core-0298",
+      "topic_id": "06",
+      "ru": "стиральная машина",
+      "en": "washing machine",
+      "fr": "le lave-linge"
+    },
+    {
+      "id": "fr-core-0299",
+      "topic_id": "06",
+      "ru": "отопление",
+      "en": "heating",
+      "fr": "le chauffage"
+    },
+    {
+      "id": "fr-core-0300",
+      "topic_id": "06",
+      "ru": "электрическая розетка",
+      "en": "power socket",
+      "fr": "la prise"
+    },
+    {
+      "id": "fr-core-0301",
+      "topic_id": "07",
+      "ru": "вода",
+      "en": "water",
+      "fr": "l’eau"
+    },
+    {
+      "id": "fr-core-0302",
+      "topic_id": "07",
+      "ru": "хлеб",
+      "en": "bread",
+      "fr": "le pain"
+    },
+    {
+      "id": "fr-core-0303",
+      "topic_id": "07",
+      "ru": "молоко",
+      "en": "milk",
+      "fr": "le lait"
+    },
+    {
+      "id": "fr-core-0304",
+      "topic_id": "07",
+      "ru": "сыр",
+      "en": "cheese",
+      "fr": "le fromage"
+    },
+    {
+      "id": "fr-core-0305",
+      "topic_id": "07",
+      "ru": "сливочное масло",
+      "en": "butter",
+      "fr": "le beurre"
+    },
+    {
+      "id": "fr-core-0306",
+      "topic_id": "07",
+      "ru": "яйцо",
+      "en": "egg",
+      "fr": "l’œuf"
+    },
+    {
+      "id": "fr-core-0307",
+      "topic_id": "07",
+      "ru": "йогурт",
+      "en": "yogurt",
+      "fr": "le yaourt"
+    },
+    {
+      "id": "fr-core-0308",
+      "topic_id": "07",
+      "ru": "сливки; крем",
+      "en": "cream",
+      "fr": "la crème"
+    },
+    {
+      "id": "fr-core-0309",
+      "topic_id": "07",
+      "ru": "мясо",
+      "en": "meat",
+      "fr": "la viande"
+    },
+    {
+      "id": "fr-core-0310",
+      "topic_id": "07",
+      "ru": "говядина",
+      "en": "beef",
+      "fr": "le bœuf"
+    },
+    {
+      "id": "fr-core-0311",
+      "topic_id": "07",
+      "ru": "свинина",
+      "en": "pork",
+      "fr": "le porc"
+    },
+    {
+      "id": "fr-core-0312",
+      "topic_id": "07",
+      "ru": "курица; курятина",
+      "en": "chicken",
+      "fr": "le poulet"
+    },
+    {
+      "id": "fr-core-0313",
+      "topic_id": "07",
+      "ru": "рыба",
+      "en": "fish",
+      "fr": "le poisson"
+    },
+    {
+      "id": "fr-core-0314",
+      "topic_id": "07",
+      "ru": "фрукт",
+      "en": "fruit",
+      "fr": "le fruit"
+    },
+    {
+      "id": "fr-core-0315",
+      "topic_id": "07",
+      "ru": "овощ",
+      "en": "vegetable",
+      "fr": "le légume"
+    },
+    {
+      "id": "fr-core-0316",
+      "topic_id": "07",
+      "ru": "яблоко",
+      "en": "apple",
+      "fr": "la pomme"
+    },
+    {
+      "id": "fr-core-0317",
+      "topic_id": "07",
+      "ru": "груша",
+      "en": "pear",
+      "fr": "la poire"
+    },
+    {
+      "id": "fr-core-0318",
+      "topic_id": "07",
+      "ru": "банан",
+      "en": "banana",
+      "fr": "la banane"
+    },
+    {
+      "id": "fr-core-0319",
+      "topic_id": "07",
+      "ru": "апельсин",
+      "en": "orange",
+      "fr": "l’orange"
+    },
+    {
+      "id": "fr-core-0320",
+      "topic_id": "07",
+      "ru": "лимон",
+      "en": "lemon",
+      "fr": "le citron"
+    },
+    {
+      "id": "fr-core-0321",
+      "topic_id": "07",
+      "ru": "клубника",
+      "en": "strawberry",
+      "fr": "la fraise"
+    },
+    {
+      "id": "fr-core-0322",
+      "topic_id": "07",
+      "ru": "виноград",
+      "en": "grapes",
+      "fr": "le raisin"
+    },
+    {
+      "id": "fr-core-0323",
+      "topic_id": "07",
+      "ru": "персик",
+      "en": "peach",
+      "fr": "la pêche"
+    },
+    {
+      "id": "fr-core-0324",
+      "topic_id": "07",
+      "ru": "абрикос",
+      "en": "apricot",
+      "fr": "l’abricot"
+    },
+    {
+      "id": "fr-core-0325",
+      "topic_id": "07",
+      "ru": "помидор",
+      "en": "tomato",
+      "fr": "la tomate"
+    },
+    {
+      "id": "fr-core-0326",
+      "topic_id": "07",
+      "ru": "картофель",
+      "en": "potato",
+      "fr": "la pomme de terre"
+    },
+    {
+      "id": "fr-core-0327",
+      "topic_id": "07",
+      "ru": "морковь",
+      "en": "carrot",
+      "fr": "la carotte"
+    },
+    {
+      "id": "fr-core-0328",
+      "topic_id": "07",
+      "ru": "салат; листья салата",
+      "en": "salad; lettuce",
+      "fr": "la salade"
+    },
+    {
+      "id": "fr-core-0329",
+      "topic_id": "07",
+      "ru": "лук репчатый",
+      "en": "onion",
+      "fr": "l’oignon"
+    },
+    {
+      "id": "fr-core-0330",
+      "topic_id": "07",
+      "ru": "чеснок",
+      "en": "garlic",
+      "fr": "l’ail"
+    },
+    {
+      "id": "fr-core-0331",
+      "topic_id": "07",
+      "ru": "гриб",
+      "en": "mushroom",
+      "fr": "le champignon"
+    },
+    {
+      "id": "fr-core-0332",
+      "topic_id": "07",
+      "ru": "фасоль",
+      "en": "bean",
+      "fr": "le haricot"
+    },
+    {
+      "id": "fr-core-0333",
+      "topic_id": "07",
+      "ru": "зелёный горошек",
+      "en": "pea",
+      "fr": "le petit pois"
+    },
+    {
+      "id": "fr-core-0334",
+      "topic_id": "07",
+      "ru": "огурец",
+      "en": "cucumber",
+      "fr": "le concombre"
+    },
+    {
+      "id": "fr-core-0335",
+      "topic_id": "07",
+      "ru": "кабачок",
+      "en": "zucchini",
+      "fr": "la courgette"
+    },
+    {
+      "id": "fr-core-0336",
+      "topic_id": "07",
+      "ru": "баклажан",
+      "en": "eggplant",
+      "fr": "l’aubergine"
+    },
+    {
+      "id": "fr-core-0337",
+      "topic_id": "07",
+      "ru": "рис",
+      "en": "rice",
+      "fr": "le riz"
+    },
+    {
+      "id": "fr-core-0338",
+      "topic_id": "07",
+      "ru": "макароны",
+      "en": "pasta",
+      "fr": "les pâtes"
+    },
+    {
+      "id": "fr-core-0339",
+      "topic_id": "07",
+      "ru": "мука",
+      "en": "flour",
+      "fr": "la farine"
+    },
+    {
+      "id": "fr-core-0340",
+      "topic_id": "07",
+      "ru": "сахар",
+      "en": "sugar",
+      "fr": "le sucre"
+    },
+    {
+      "id": "fr-core-0341",
+      "topic_id": "07",
+      "ru": "соль",
+      "en": "salt",
+      "fr": "le sel"
+    },
+    {
+      "id": "fr-core-0342",
+      "topic_id": "07",
+      "ru": "чёрный перец",
+      "en": "black pepper",
+      "fr": "le poivre"
+    },
+    {
+      "id": "fr-core-0343",
+      "topic_id": "07",
+      "ru": "растительное масло",
+      "en": "oil",
+      "fr": "l’huile"
+    },
+    {
+      "id": "fr-core-0344",
+      "topic_id": "07",
+      "ru": "уксус",
+      "en": "vinegar",
+      "fr": "le vinaigre"
+    },
+    {
+      "id": "fr-core-0345",
+      "topic_id": "07",
+      "ru": "мёд",
+      "en": "honey",
+      "fr": "le miel"
+    },
+    {
+      "id": "fr-core-0346",
+      "topic_id": "07",
+      "ru": "варенье; джем",
+      "en": "jam",
+      "fr": "la confiture"
+    },
+    {
+      "id": "fr-core-0347",
+      "topic_id": "07",
+      "ru": "шоколад",
+      "en": "chocolate",
+      "fr": "le chocolat"
+    },
+    {
+      "id": "fr-core-0348",
+      "topic_id": "07",
+      "ru": "грецкий орех",
+      "en": "walnut",
+      "fr": "la noix"
+    },
+    {
+      "id": "fr-core-0349",
+      "topic_id": "07",
+      "ru": "миндаль",
+      "en": "almond",
+      "fr": "l’amande"
+    },
+    {
+      "id": "fr-core-0350",
+      "topic_id": "07",
+      "ru": "злаки; сухие завтраки",
+      "en": "cereals; breakfast cereal",
+      "fr": "les céréales"
+    },
+    {
+      "id": "fr-core-0351",
+      "topic_id": "08",
+      "ru": "кофе; кафе",
+      "en": "coffee; café",
+      "fr": "le café"
+    },
+    {
+      "id": "fr-core-0352",
+      "topic_id": "08",
+      "ru": "чай",
+      "en": "tea",
+      "fr": "le thé"
+    },
+    {
+      "id": "fr-core-0353",
+      "topic_id": "08",
+      "ru": "сок",
+      "en": "juice",
+      "fr": "le jus"
+    },
+    {
+      "id": "fr-core-0354",
+      "topic_id": "08",
+      "ru": "вино",
+      "en": "wine",
+      "fr": "le vin"
+    },
+    {
+      "id": "fr-core-0355",
+      "topic_id": "08",
+      "ru": "пиво",
+      "en": "beer",
+      "fr": "la bière"
+    },
+    {
+      "id": "fr-core-0356",
+      "topic_id": "08",
+      "ru": "напиток",
+      "en": "drink",
+      "fr": "la boisson"
+    },
+    {
+      "id": "fr-core-0357",
+      "topic_id": "08",
+      "ru": "бутылка",
+      "en": "bottle",
+      "fr": "la bouteille"
+    },
+    {
+      "id": "fr-core-0358",
+      "topic_id": "08",
+      "ru": "стакан; бокал",
+      "en": "glass",
+      "fr": "le verre"
+    },
+    {
+      "id": "fr-core-0359",
+      "topic_id": "08",
+      "ru": "чашка",
+      "en": "cup",
+      "fr": "la tasse"
+    },
+    {
+      "id": "fr-core-0360",
+      "topic_id": "08",
+      "ru": "кувшин",
+      "en": "jug; carafe",
+      "fr": "la carafe"
+    },
+    {
+      "id": "fr-core-0361",
+      "topic_id": "08",
+      "ru": "тарелка",
+      "en": "plate",
+      "fr": "l’assiette"
+    },
+    {
+      "id": "fr-core-0362",
+      "topic_id": "08",
+      "ru": "миска",
+      "en": "bowl",
+      "fr": "le bol"
+    },
+    {
+      "id": "fr-core-0363",
+      "topic_id": "08",
+      "ru": "вилка",
+      "en": "fork",
+      "fr": "la fourchette"
+    },
+    {
+      "id": "fr-core-0364",
+      "topic_id": "08",
+      "ru": "нож",
+      "en": "knife",
+      "fr": "le couteau"
+    },
+    {
+      "id": "fr-core-0365",
+      "topic_id": "08",
+      "ru": "ложка",
+      "en": "spoon",
+      "fr": "la cuillère"
+    },
+    {
+      "id": "fr-core-0366",
+      "topic_id": "08",
+      "ru": "ресторан",
+      "en": "restaurant",
+      "fr": "le restaurant"
+    },
+    {
+      "id": "fr-core-0367",
+      "topic_id": "08",
+      "ru": "меню; карта",
+      "en": "menu; map; card",
+      "fr": "la carte"
+    },
+    {
+      "id": "fr-core-0368",
+      "topic_id": "08",
+      "ru": "комплексное меню",
+      "en": "set menu",
+      "fr": "le menu"
+    },
+    {
+      "id": "fr-core-0369",
+      "topic_id": "08",
+      "ru": "блюдо",
+      "en": "dish",
+      "fr": "le plat"
+    },
+    {
+      "id": "fr-core-0370",
+      "topic_id": "08",
+      "ru": "десерт",
+      "en": "dessert",
+      "fr": "le dessert"
+    },
+    {
+      "id": "fr-core-0371",
+      "topic_id": "08",
+      "ru": "суп",
+      "en": "soup",
+      "fr": "la soupe"
+    },
+    {
+      "id": "fr-core-0372",
+      "topic_id": "08",
+      "ru": "соус",
+      "en": "sauce",
+      "fr": "la sauce"
+    },
+    {
+      "id": "fr-core-0373",
+      "topic_id": "08",
+      "ru": "сэндвич",
+      "en": "sandwich",
+      "fr": "le sandwich"
+    },
+    {
+      "id": "fr-core-0374",
+      "topic_id": "08",
+      "ru": "пицца",
+      "en": "pizza",
+      "fr": "la pizza"
+    },
+    {
+      "id": "fr-core-0375",
+      "topic_id": "08",
+      "ru": "торт; пирожное",
+      "en": "cake",
+      "fr": "le gâteau"
+    },
+    {
+      "id": "fr-core-0376",
+      "topic_id": "08",
+      "ru": "пирог открытый",
+      "en": "tart",
+      "fr": "la tarte"
+    },
+    {
+      "id": "fr-core-0377",
+      "topic_id": "08",
+      "ru": "мороженое; лёд",
+      "en": "ice cream; ice",
+      "fr": "la glace"
+    },
+    {
+      "id": "fr-core-0378",
+      "topic_id": "08",
+      "ru": "круассан",
+      "en": "croissant",
+      "fr": "le croissant"
+    },
+    {
+      "id": "fr-core-0379",
+      "topic_id": "08",
+      "ru": "багет",
+      "en": "baguette",
+      "fr": "la baguette"
+    },
+    {
+      "id": "fr-core-0380",
+      "topic_id": "08",
+      "ru": "завтрак",
+      "en": "breakfast",
+      "fr": "le petit-déjeuner"
+    },
+    {
+      "id": "fr-core-0381",
+      "topic_id": "08",
+      "ru": "обед",
+      "en": "lunch",
+      "fr": "le déjeuner"
+    },
+    {
+      "id": "fr-core-0382",
+      "topic_id": "08",
+      "ru": "ужин",
+      "en": "dinner",
+      "fr": "le dîner"
+    },
+    {
+      "id": "fr-core-0383",
+      "topic_id": "08",
+      "ru": "приём пищи",
+      "en": "meal",
+      "fr": "le repas"
+    },
+    {
+      "id": "fr-core-0384",
+      "topic_id": "08",
+      "ru": "голод",
+      "en": "hunger",
+      "fr": "la faim"
+    },
+    {
+      "id": "fr-core-0385",
+      "topic_id": "08",
+      "ru": "жажда",
+      "en": "thirst",
+      "fr": "la soif"
+    },
+    {
+      "id": "fr-core-0386",
+      "topic_id": "08",
+      "ru": "счёт в ресторане",
+      "en": "restaurant bill",
+      "fr": "l’addition"
+    },
+    {
+      "id": "fr-core-0387",
+      "topic_id": "08",
+      "ru": "чаевые",
+      "en": "tip; gratuity",
+      "fr": "le pourboire"
+    },
+    {
+      "id": "fr-core-0388",
+      "topic_id": "08",
+      "ru": "официант; официантка",
+      "en": "waiter; waitress",
+      "fr": "le serveur / la serveuse"
+    },
+    {
+      "id": "fr-core-0389",
+      "topic_id": "08",
+      "ru": "заказ",
+      "en": "order",
+      "fr": "la commande"
+    },
+    {
+      "id": "fr-core-0390",
+      "topic_id": "08",
+      "ru": "порция",
+      "en": "portion",
+      "fr": "la portion"
+    },
+    {
+      "id": "fr-core-0391",
+      "topic_id": "08",
+      "ru": "кусок",
+      "en": "piece",
+      "fr": "le morceau"
+    },
+    {
+      "id": "fr-core-0392",
+      "topic_id": "08",
+      "ru": "ломтик",
+      "en": "slice",
+      "fr": "la tranche"
+    },
+    {
+      "id": "fr-core-0393",
+      "topic_id": "08",
+      "ru": "вкус",
+      "en": "taste",
+      "fr": "le goût"
+    },
+    {
+      "id": "fr-core-0394",
+      "topic_id": "08",
+      "ru": "ингредиент",
+      "en": "ingredient",
+      "fr": "l’ingrédient"
+    },
+    {
+      "id": "fr-core-0395",
+      "topic_id": "08",
+      "ru": "устрица",
+      "en": "oyster",
+      "fr": "l’huître"
+    },
+    {
+      "id": "fr-core-0396",
+      "topic_id": "08",
+      "ru": "мидия",
+      "en": "mussel",
+      "fr": "la moule"
+    },
+    {
+      "id": "fr-core-0397",
+      "topic_id": "08",
+      "ru": "креветка",
+      "en": "shrimp",
+      "fr": "la crevette"
+    },
+    {
+      "id": "fr-core-0398",
+      "topic_id": "08",
+      "ru": "морской гребешок",
+      "en": "scallop",
+      "fr": "la coquille Saint-Jacques"
+    },
+    {
+      "id": "fr-core-0399",
+      "topic_id": "08",
+      "ru": "морепродукты",
+      "en": "seafood",
+      "fr": "les fruits de mer"
+    },
+    {
+      "id": "fr-core-0400",
+      "topic_id": "08",
+      "ru": "пекарня",
+      "en": "bakery",
+      "fr": "la boulangerie"
+    },
+    {
+      "id": "fr-core-0401",
+      "topic_id": "09",
+      "ru": "путешествие",
+      "en": "trip; journey",
+      "fr": "le voyage"
+    },
+    {
+      "id": "fr-core-0402",
+      "topic_id": "09",
+      "ru": "отпуск; каникулы",
+      "en": "vacation; holidays",
+      "fr": "les vacances"
+    },
+    {
+      "id": "fr-core-0403",
+      "topic_id": "09",
+      "ru": "отправление; отъезд",
+      "en": "departure",
+      "fr": "le départ"
+    },
+    {
+      "id": "fr-core-0404",
+      "topic_id": "09",
+      "ru": "прибытие",
+      "en": "arrival",
+      "fr": "l’arrivée"
+    },
+    {
+      "id": "fr-core-0405",
+      "topic_id": "09",
+      "ru": "пункт назначения",
+      "en": "destination",
+      "fr": "la destination"
+    },
+    {
+      "id": "fr-core-0406",
+      "topic_id": "09",
+      "ru": "путь; поездка по маршруту",
+      "en": "journey; route taken",
+      "fr": "le trajet"
+    },
+    {
+      "id": "fr-core-0407",
+      "topic_id": "09",
+      "ru": "маршрут; план поездки",
+      "en": "itinerary",
+      "fr": "l’itinéraire"
+    },
+    {
+      "id": "fr-core-0408",
+      "topic_id": "09",
+      "ru": "билет",
+      "en": "ticket",
+      "fr": "le billet"
+    },
+    {
+      "id": "fr-core-0409",
+      "topic_id": "09",
+      "ru": "билет в одну сторону",
+      "en": "one-way ticket",
+      "fr": "l’aller simple"
+    },
+    {
+      "id": "fr-core-0410",
+      "topic_id": "09",
+      "ru": "билет туда и обратно",
+      "en": "round-trip ticket",
+      "fr": "l’aller-retour"
+    },
+    {
+      "id": "fr-core-0411",
+      "topic_id": "09",
+      "ru": "бронирование",
+      "en": "reservation; booking",
+      "fr": "la réservation"
+    },
+    {
+      "id": "fr-core-0412",
+      "topic_id": "09",
+      "ru": "паспорт",
+      "en": "passport",
+      "fr": "le passeport"
+    },
+    {
+      "id": "fr-core-0413",
+      "topic_id": "09",
+      "ru": "виза",
+      "en": "visa",
+      "fr": "le visa"
+    },
+    {
+      "id": "fr-core-0414",
+      "topic_id": "09",
+      "ru": "багаж",
+      "en": "luggage",
+      "fr": "les bagages"
+    },
+    {
+      "id": "fr-core-0415",
+      "topic_id": "09",
+      "ru": "чемодан",
+      "en": "suitcase",
+      "fr": "la valise"
+    },
+    {
+      "id": "fr-core-0416",
+      "topic_id": "09",
+      "ru": "сумка",
+      "en": "bag",
+      "fr": "le sac"
+    },
+    {
+      "id": "fr-core-0417",
+      "topic_id": "09",
+      "ru": "рюкзак",
+      "en": "backpack",
+      "fr": "le sac à dos"
+    },
+    {
+      "id": "fr-core-0418",
+      "topic_id": "09",
+      "ru": "аэропорт",
+      "en": "airport",
+      "fr": "l’aéroport"
+    },
+    {
+      "id": "fr-core-0419",
+      "topic_id": "09",
+      "ru": "самолёт",
+      "en": "airplane",
+      "fr": "l’avion"
+    },
+    {
+      "id": "fr-core-0420",
+      "topic_id": "09",
+      "ru": "рейс; полёт",
+      "en": "flight",
+      "fr": "le vol"
+    },
+    {
+      "id": "fr-core-0421",
+      "topic_id": "09",
+      "ru": "посадка на транспорт",
+      "en": "boarding",
+      "fr": "l’embarquement"
+    },
+    {
+      "id": "fr-core-0422",
+      "topic_id": "09",
+      "ru": "таможня",
+      "en": "customs",
+      "fr": "la douane"
+    },
+    {
+      "id": "fr-core-0423",
+      "topic_id": "09",
+      "ru": "вокзал",
+      "en": "train station",
+      "fr": "la gare"
+    },
+    {
+      "id": "fr-core-0424",
+      "topic_id": "09",
+      "ru": "поезд",
+      "en": "train",
+      "fr": "le train"
+    },
+    {
+      "id": "fr-core-0425",
+      "topic_id": "09",
+      "ru": "платформа; набережная",
+      "en": "platform; quayside",
+      "fr": "le quai"
+    },
+    {
+      "id": "fr-core-0426",
+      "topic_id": "09",
+      "ru": "железнодорожный путь; полоса движения",
+      "en": "railway track; traffic lane",
+      "fr": "la voie"
+    },
+    {
+      "id": "fr-core-0427",
+      "topic_id": "09",
+      "ru": "автобус городской",
+      "en": "city bus",
+      "fr": "le bus"
+    },
+    {
+      "id": "fr-core-0428",
+      "topic_id": "09",
+      "ru": "автобус междугородний",
+      "en": "coach; intercity bus",
+      "fr": "l’autocar"
+    },
+    {
+      "id": "fr-core-0429",
+      "topic_id": "09",
+      "ru": "метро",
+      "en": "subway; metro",
+      "fr": "le métro"
+    },
+    {
+      "id": "fr-core-0430",
+      "topic_id": "09",
+      "ru": "трамвай",
+      "en": "tram",
+      "fr": "le tramway"
+    },
+    {
+      "id": "fr-core-0431",
+      "topic_id": "09",
+      "ru": "такси",
+      "en": "taxi",
+      "fr": "le taxi"
+    },
+    {
+      "id": "fr-core-0432",
+      "topic_id": "09",
+      "ru": "автомобиль",
+      "en": "car",
+      "fr": "la voiture"
+    },
+    {
+      "id": "fr-core-0433",
+      "topic_id": "09",
+      "ru": "велосипед",
+      "en": "bicycle",
+      "fr": "le vélo"
+    },
+    {
+      "id": "fr-core-0434",
+      "topic_id": "09",
+      "ru": "мотоцикл",
+      "en": "motorcycle",
+      "fr": "la moto"
+    },
+    {
+      "id": "fr-core-0435",
+      "topic_id": "09",
+      "ru": "лодка; судно",
+      "en": "boat",
+      "fr": "le bateau"
+    },
+    {
+      "id": "fr-core-0436",
+      "topic_id": "09",
+      "ru": "паром",
+      "en": "ferry",
+      "fr": "le ferry"
+    },
+    {
+      "id": "fr-core-0437",
+      "topic_id": "09",
+      "ru": "водитель",
+      "en": "driver",
+      "fr": "le conducteur / la conductrice"
+    },
+    {
+      "id": "fr-core-0438",
+      "topic_id": "09",
+      "ru": "пассажир",
+      "en": "passenger",
+      "fr": "le passager / la passagère"
+    },
+    {
+      "id": "fr-core-0439",
+      "topic_id": "09",
+      "ru": "дорога",
+      "en": "road",
+      "fr": "la route"
+    },
+    {
+      "id": "fr-core-0440",
+      "topic_id": "09",
+      "ru": "автомагистраль",
+      "en": "highway; motorway",
+      "fr": "l’autoroute"
+    },
+    {
+      "id": "fr-core-0441",
+      "topic_id": "09",
+      "ru": "перекрёсток",
+      "en": "intersection",
+      "fr": "le carrefour"
+    },
+    {
+      "id": "fr-core-0442",
+      "topic_id": "09",
+      "ru": "огонь; сигнал светофора",
+      "en": "fire; traffic light",
+      "fr": "le feu"
+    },
+    {
+      "id": "fr-core-0443",
+      "topic_id": "09",
+      "ru": "мост",
+      "en": "bridge",
+      "fr": "le pont"
+    },
+    {
+      "id": "fr-core-0444",
+      "topic_id": "09",
+      "ru": "туннель",
+      "en": "tunnel",
+      "fr": "le tunnel"
+    },
+    {
+      "id": "fr-core-0445",
+      "topic_id": "09",
+      "ru": "парковка",
+      "en": "parking lot",
+      "fr": "le parking"
+    },
+    {
+      "id": "fr-core-0446",
+      "topic_id": "09",
+      "ru": "автозаправка",
+      "en": "gas station",
+      "fr": "la station-service"
+    },
+    {
+      "id": "fr-core-0447",
+      "topic_id": "09",
+      "ru": "бензин",
+      "en": "gasoline; petrol",
+      "fr": "l’essence"
+    },
+    {
+      "id": "fr-core-0448",
+      "topic_id": "09",
+      "ru": "водительские права",
+      "en": "driving license",
+      "fr": "le permis de conduire"
+    },
+    {
+      "id": "fr-core-0449",
+      "topic_id": "09",
+      "ru": "опоздание; задержка",
+      "en": "delay; lateness",
+      "fr": "le retard"
+    },
+    {
+      "id": "fr-core-0450",
+      "topic_id": "09",
+      "ru": "отмена",
+      "en": "cancellation",
+      "fr": "l’annulation"
+    },
+    {
+      "id": "fr-core-0451",
+      "topic_id": "10",
+      "ru": "город",
+      "en": "city; town",
+      "fr": "la ville"
+    },
+    {
+      "id": "fr-core-0452",
+      "topic_id": "10",
+      "ru": "деревня",
+      "en": "village",
+      "fr": "le village"
+    },
+    {
+      "id": "fr-core-0453",
+      "topic_id": "10",
+      "ru": "район",
+      "en": "neighborhood; district",
+      "fr": "le quartier"
+    },
+    {
+      "id": "fr-core-0454",
+      "topic_id": "10",
+      "ru": "улица",
+      "en": "street",
+      "fr": "la rue"
+    },
+    {
+      "id": "fr-core-0455",
+      "topic_id": "10",
+      "ru": "проспект",
+      "en": "avenue",
+      "fr": "l’avenue"
+    },
+    {
+      "id": "fr-core-0456",
+      "topic_id": "10",
+      "ru": "бульвар",
+      "en": "boulevard",
+      "fr": "le boulevard"
+    },
+    {
+      "id": "fr-core-0457",
+      "topic_id": "10",
+      "ru": "тротуар",
+      "en": "sidewalk",
+      "fr": "le trottoir"
+    },
+    {
+      "id": "fr-core-0458",
+      "topic_id": "10",
+      "ru": "площадь; место",
+      "en": "square; place; seat",
+      "fr": "la place"
+    },
+    {
+      "id": "fr-core-0459",
+      "topic_id": "10",
+      "ru": "центр города",
+      "en": "city center",
+      "fr": "le centre-ville"
+    },
+    {
+      "id": "fr-core-0460",
+      "topic_id": "10",
+      "ru": "пригород",
+      "en": "suburbs",
+      "fr": "la banlieue"
+    },
+    {
+      "id": "fr-core-0461",
+      "topic_id": "10",
+      "ru": "указатель; табличка",
+      "en": "sign; signboard",
+      "fr": "le panneau"
+    },
+    {
+      "id": "fr-core-0462",
+      "topic_id": "10",
+      "ru": "план; схема",
+      "en": "plan; map",
+      "fr": "le plan"
+    },
+    {
+      "id": "fr-core-0463",
+      "topic_id": "10",
+      "ru": "здание",
+      "en": "building",
+      "fr": "le bâtiment"
+    },
+    {
+      "id": "fr-core-0464",
+      "topic_id": "10",
+      "ru": "многоэтажный дом",
+      "en": "apartment building",
+      "fr": "l’immeuble"
+    },
+    {
+      "id": "fr-core-0465",
+      "topic_id": "10",
+      "ru": "магазин",
+      "en": "shop; store",
+      "fr": "le magasin"
+    },
+    {
+      "id": "fr-core-0466",
+      "topic_id": "10",
+      "ru": "рынок",
+      "en": "market",
+      "fr": "le marché"
+    },
+    {
+      "id": "fr-core-0467",
+      "topic_id": "10",
+      "ru": "супермаркет",
+      "en": "supermarket",
+      "fr": "le supermarché"
+    },
+    {
+      "id": "fr-core-0468",
+      "topic_id": "10",
+      "ru": "небольшой магазин; бутик",
+      "en": "small shop; boutique",
+      "fr": "la boutique"
+    },
+    {
+      "id": "fr-core-0469",
+      "topic_id": "10",
+      "ru": "торговый центр",
+      "en": "shopping mall",
+      "fr": "le centre commercial"
+    },
+    {
+      "id": "fr-core-0470",
+      "topic_id": "10",
+      "ru": "аптека",
+      "en": "pharmacy",
+      "fr": "la pharmacie"
+    },
+    {
+      "id": "fr-core-0471",
+      "topic_id": "10",
+      "ru": "больница",
+      "en": "hospital",
+      "fr": "l’hôpital"
+    },
+    {
+      "id": "fr-core-0472",
+      "topic_id": "10",
+      "ru": "банк",
+      "en": "bank",
+      "fr": "la banque"
+    },
+    {
+      "id": "fr-core-0473",
+      "topic_id": "10",
+      "ru": "почта; почтовое отделение",
+      "en": "post office; postal service",
+      "fr": "la poste"
+    },
+    {
+      "id": "fr-core-0474",
+      "topic_id": "10",
+      "ru": "мэрия",
+      "en": "town hall",
+      "fr": "la mairie"
+    },
+    {
+      "id": "fr-core-0475",
+      "topic_id": "10",
+      "ru": "полицейский участок",
+      "en": "police station",
+      "fr": "le commissariat"
+    },
+    {
+      "id": "fr-core-0476",
+      "topic_id": "10",
+      "ru": "библиотека",
+      "en": "library",
+      "fr": "la bibliothèque"
+    },
+    {
+      "id": "fr-core-0477",
+      "topic_id": "10",
+      "ru": "музей",
+      "en": "museum",
+      "fr": "le musée"
+    },
+    {
+      "id": "fr-core-0478",
+      "topic_id": "10",
+      "ru": "театр",
+      "en": "theater",
+      "fr": "le théâtre"
+    },
+    {
+      "id": "fr-core-0479",
+      "topic_id": "10",
+      "ru": "кинотеатр; кино",
+      "en": "cinema",
+      "fr": "le cinéma"
+    },
+    {
+      "id": "fr-core-0480",
+      "topic_id": "10",
+      "ru": "парк",
+      "en": "park",
+      "fr": "le parc"
+    },
+    {
+      "id": "fr-core-0481",
+      "topic_id": "10",
+      "ru": "бассейн",
+      "en": "swimming pool",
+      "fr": "la piscine"
+    },
+    {
+      "id": "fr-core-0482",
+      "topic_id": "10",
+      "ru": "стадион",
+      "en": "stadium",
+      "fr": "le stade"
+    },
+    {
+      "id": "fr-core-0483",
+      "topic_id": "10",
+      "ru": "церковь",
+      "en": "church",
+      "fr": "l’église"
+    },
+    {
+      "id": "fr-core-0484",
+      "topic_id": "10",
+      "ru": "замок; дворец",
+      "en": "castle",
+      "fr": "le château"
+    },
+    {
+      "id": "fr-core-0485",
+      "topic_id": "10",
+      "ru": "памятник",
+      "en": "monument",
+      "fr": "le monument"
+    },
+    {
+      "id": "fr-core-0486",
+      "topic_id": "10",
+      "ru": "пляж",
+      "en": "beach",
+      "fr": "la plage"
+    },
+    {
+      "id": "fr-core-0487",
+      "topic_id": "10",
+      "ru": "порт",
+      "en": "port; harbor",
+      "fr": "le port"
+    },
+    {
+      "id": "fr-core-0488",
+      "topic_id": "10",
+      "ru": "отель",
+      "en": "hotel",
+      "fr": "l’hôtel"
+    },
+    {
+      "id": "fr-core-0489",
+      "topic_id": "10",
+      "ru": "стойка регистрации",
+      "en": "reception desk",
+      "fr": "la réception"
+    },
+    {
+      "id": "fr-core-0490",
+      "topic_id": "10",
+      "ru": "приём; встреча гостей",
+      "en": "welcome; reception",
+      "fr": "l’accueil"
+    },
+    {
+      "id": "fr-core-0491",
+      "topic_id": "10",
+      "ru": "персонал",
+      "en": "staff",
+      "fr": "le personnel"
+    },
+    {
+      "id": "fr-core-0492",
+      "topic_id": "10",
+      "ru": "пребывание",
+      "en": "stay",
+      "fr": "le séjour"
+    },
+    {
+      "id": "fr-core-0493",
+      "topic_id": "10",
+      "ru": "ночь",
+      "en": "night",
+      "fr": "la nuit"
+    },
+    {
+      "id": "fr-core-0494",
+      "topic_id": "10",
+      "ru": "наличие свободных мест",
+      "en": "availability",
+      "fr": "la disponibilité"
+    },
+    {
+      "id": "fr-core-0495",
+      "topic_id": "10",
+      "ru": "кондиционирование воздуха",
+      "en": "air conditioning",
+      "fr": "la climatisation"
+    },
+    {
+      "id": "fr-core-0496",
+      "topic_id": "10",
+      "ru": "подключение; соединение",
+      "en": "connection",
+      "fr": "la connexion"
+    },
+    {
+      "id": "fr-core-0497",
+      "topic_id": "10",
+      "ru": "уборка дома",
+      "en": "housework; housekeeping",
+      "fr": "le ménage"
+    },
+    {
+      "id": "fr-core-0498",
+      "topic_id": "10",
+      "ru": "выход",
+      "en": "exit",
+      "fr": "la sortie"
+    },
+    {
+      "id": "fr-core-0499",
+      "topic_id": "10",
+      "ru": "остановка",
+      "en": "stop",
+      "fr": "l’arrêt"
+    },
+    {
+      "id": "fr-core-0500",
+      "topic_id": "10",
+      "ru": "доплата",
+      "en": "extra charge",
+      "fr": "le supplément"
+    },
+    {
+      "id": "fr-core-0501",
+      "topic_id": "11",
+      "ru": "покупка",
+      "en": "purchase",
+      "fr": "l’achat"
+    },
+    {
+      "id": "fr-core-0502",
+      "topic_id": "11",
+      "ru": "продажа",
+      "en": "sale",
+      "fr": "la vente"
+    },
+    {
+      "id": "fr-core-0503",
+      "topic_id": "11",
+      "ru": "цена",
+      "en": "price",
+      "fr": "le prix"
+    },
+    {
+      "id": "fr-core-0504",
+      "topic_id": "11",
+      "ru": "деньги",
+      "en": "money",
+      "fr": "l’argent"
+    },
+    {
+      "id": "fr-core-0505",
+      "topic_id": "11",
+      "ru": "наличные",
+      "en": "cash",
+      "fr": "les espèces"
+    },
+    {
+      "id": "fr-core-0506",
+      "topic_id": "11",
+      "ru": "мелочь; сдача",
+      "en": "change; coins",
+      "fr": "la monnaie"
+    },
+    {
+      "id": "fr-core-0507",
+      "topic_id": "11",
+      "ru": "банковская карта",
+      "en": "bank card",
+      "fr": "la carte bancaire"
+    },
+    {
+      "id": "fr-core-0508",
+      "topic_id": "11",
+      "ru": "банковский счёт",
+      "en": "bank account",
+      "fr": "le compte"
+    },
+    {
+      "id": "fr-core-0509",
+      "topic_id": "11",
+      "ru": "счёт на оплату",
+      "en": "invoice",
+      "fr": "la facture"
+    },
+    {
+      "id": "fr-core-0510",
+      "topic_id": "11",
+      "ru": "квитанция",
+      "en": "receipt",
+      "fr": "le reçu"
+    },
+    {
+      "id": "fr-core-0511",
+      "topic_id": "11",
+      "ru": "касса",
+      "en": "checkout; cash register",
+      "fr": "la caisse"
+    },
+    {
+      "id": "fr-core-0512",
+      "topic_id": "11",
+      "ru": "кошелёк",
+      "en": "wallet",
+      "fr": "le portefeuille"
+    },
+    {
+      "id": "fr-core-0513",
+      "topic_id": "11",
+      "ru": "скидка",
+      "en": "discount",
+      "fr": "la remise"
+    },
+    {
+      "id": "fr-core-0514",
+      "topic_id": "11",
+      "ru": "акция; продвижение по службе",
+      "en": "special offer; promotion",
+      "fr": "la promotion"
+    },
+    {
+      "id": "fr-core-0515",
+      "topic_id": "11",
+      "ru": "распродажа",
+      "en": "sales; sale period",
+      "fr": "les soldes"
+    },
+    {
+      "id": "fr-core-0516",
+      "topic_id": "11",
+      "ru": "бюджет",
+      "en": "budget",
+      "fr": "le budget"
+    },
+    {
+      "id": "fr-core-0517",
+      "topic_id": "11",
+      "ru": "расход",
+      "en": "expense",
+      "fr": "la dépense"
+    },
+    {
+      "id": "fr-core-0518",
+      "topic_id": "11",
+      "ru": "возврат денег",
+      "en": "refund",
+      "fr": "le remboursement"
+    },
+    {
+      "id": "fr-core-0519",
+      "topic_id": "11",
+      "ru": "гарантия",
+      "en": "warranty; guarantee",
+      "fr": "la garantie"
+    },
+    {
+      "id": "fr-core-0520",
+      "topic_id": "11",
+      "ru": "товар; продукт",
+      "en": "product",
+      "fr": "le produit"
+    },
+    {
+      "id": "fr-core-0521",
+      "topic_id": "11",
+      "ru": "бренд; марка",
+      "en": "brand",
+      "fr": "la marque"
+    },
+    {
+      "id": "fr-core-0522",
+      "topic_id": "11",
+      "ru": "качество",
+      "en": "quality",
+      "fr": "la qualité"
+    },
+    {
+      "id": "fr-core-0523",
+      "topic_id": "11",
+      "ru": "количество",
+      "en": "quantity",
+      "fr": "la quantité"
+    },
+    {
+      "id": "fr-core-0524",
+      "topic_id": "11",
+      "ru": "размер одежды; рост",
+      "en": "clothing size; height",
+      "fr": "la taille"
+    },
+    {
+      "id": "fr-core-0525",
+      "topic_id": "11",
+      "ru": "размер обуви",
+      "en": "shoe size",
+      "fr": "la pointure"
+    },
+    {
+      "id": "fr-core-0526",
+      "topic_id": "11",
+      "ru": "вес",
+      "en": "weight",
+      "fr": "le poids"
+    },
+    {
+      "id": "fr-core-0527",
+      "topic_id": "11",
+      "ru": "килограмм",
+      "en": "kilogram",
+      "fr": "le kilo"
+    },
+    {
+      "id": "fr-core-0528",
+      "topic_id": "11",
+      "ru": "литр",
+      "en": "liter",
+      "fr": "le litre"
+    },
+    {
+      "id": "fr-core-0529",
+      "topic_id": "11",
+      "ru": "пачка; пакет",
+      "en": "packet; package",
+      "fr": "le paquet"
+    },
+    {
+      "id": "fr-core-0530",
+      "topic_id": "11",
+      "ru": "коробка",
+      "en": "box",
+      "fr": "la boîte"
+    },
+    {
+      "id": "fr-core-0531",
+      "topic_id": "11",
+      "ru": "пакетик",
+      "en": "small bag; sachet",
+      "fr": "le sachet"
+    },
+    {
+      "id": "fr-core-0532",
+      "topic_id": "11",
+      "ru": "упаковка",
+      "en": "packaging",
+      "fr": "l’emballage"
+    },
+    {
+      "id": "fr-core-0533",
+      "topic_id": "11",
+      "ru": "предмет одежды",
+      "en": "garment",
+      "fr": "le vêtement"
+    },
+    {
+      "id": "fr-core-0534",
+      "topic_id": "11",
+      "ru": "брюки",
+      "en": "trousers; pants",
+      "fr": "le pantalon"
+    },
+    {
+      "id": "fr-core-0535",
+      "topic_id": "11",
+      "ru": "джинсы",
+      "en": "jeans",
+      "fr": "le jean"
+    },
+    {
+      "id": "fr-core-0536",
+      "topic_id": "11",
+      "ru": "платье",
+      "en": "dress",
+      "fr": "la robe"
+    },
+    {
+      "id": "fr-core-0537",
+      "topic_id": "11",
+      "ru": "юбка",
+      "en": "skirt",
+      "fr": "la jupe"
+    },
+    {
+      "id": "fr-core-0538",
+      "topic_id": "11",
+      "ru": "рубашка",
+      "en": "shirt",
+      "fr": "la chemise"
+    },
+    {
+      "id": "fr-core-0539",
+      "topic_id": "11",
+      "ru": "футболка",
+      "en": "T-shirt",
+      "fr": "le tee-shirt"
+    },
+    {
+      "id": "fr-core-0540",
+      "topic_id": "11",
+      "ru": "свитер",
+      "en": "sweater",
+      "fr": "le pull"
+    },
+    {
+      "id": "fr-core-0541",
+      "topic_id": "11",
+      "ru": "куртка; пиджак",
+      "en": "jacket",
+      "fr": "la veste"
+    },
+    {
+      "id": "fr-core-0542",
+      "topic_id": "11",
+      "ru": "пальто",
+      "en": "coat",
+      "fr": "le manteau"
+    },
+    {
+      "id": "fr-core-0543",
+      "topic_id": "11",
+      "ru": "обувь; туфля",
+      "en": "shoe",
+      "fr": "la chaussure"
+    },
+    {
+      "id": "fr-core-0544",
+      "topic_id": "11",
+      "ru": "носок",
+      "en": "sock",
+      "fr": "la chaussette"
+    },
+    {
+      "id": "fr-core-0545",
+      "topic_id": "11",
+      "ru": "головной убор; шляпа",
+      "en": "hat",
+      "fr": "le chapeau"
+    },
+    {
+      "id": "fr-core-0546",
+      "topic_id": "11",
+      "ru": "шарф",
+      "en": "scarf",
+      "fr": "l’écharpe"
+    },
+    {
+      "id": "fr-core-0547",
+      "topic_id": "11",
+      "ru": "перчатка",
+      "en": "glove",
+      "fr": "le gant"
+    },
+    {
+      "id": "fr-core-0548",
+      "topic_id": "11",
+      "ru": "ремень",
+      "en": "belt",
+      "fr": "la ceinture"
+    },
+    {
+      "id": "fr-core-0549",
+      "topic_id": "11",
+      "ru": "очки",
+      "en": "glasses",
+      "fr": "les lunettes"
+    },
+    {
+      "id": "fr-core-0550",
+      "topic_id": "11",
+      "ru": "зонт",
+      "en": "umbrella",
+      "fr": "le parapluie"
+    },
+    {
+      "id": "fr-core-0551",
+      "topic_id": "12",
+      "ru": "тело",
+      "en": "body",
+      "fr": "le corps"
+    },
+    {
+      "id": "fr-core-0552",
+      "topic_id": "12",
+      "ru": "голова",
+      "en": "head",
+      "fr": "la tête"
+    },
+    {
+      "id": "fr-core-0553",
+      "topic_id": "12",
+      "ru": "лицо",
+      "en": "face",
+      "fr": "le visage"
+    },
+    {
+      "id": "fr-core-0554",
+      "topic_id": "12",
+      "ru": "глаз; глаза",
+      "en": "eye; eyes",
+      "fr": "l’œil / les yeux"
+    },
+    {
+      "id": "fr-core-0555",
+      "topic_id": "12",
+      "ru": "нос",
+      "en": "nose",
+      "fr": "le nez"
+    },
+    {
+      "id": "fr-core-0556",
+      "topic_id": "12",
+      "ru": "рот",
+      "en": "mouth",
+      "fr": "la bouche"
+    },
+    {
+      "id": "fr-core-0557",
+      "topic_id": "12",
+      "ru": "зуб",
+      "en": "tooth",
+      "fr": "la dent"
+    },
+    {
+      "id": "fr-core-0558",
+      "topic_id": "12",
+      "ru": "язык",
+      "en": "tongue; language",
+      "fr": "la langue"
+    },
+    {
+      "id": "fr-core-0559",
+      "topic_id": "12",
+      "ru": "ухо",
+      "en": "ear",
+      "fr": "l’oreille"
+    },
+    {
+      "id": "fr-core-0560",
+      "topic_id": "12",
+      "ru": "волосы",
+      "en": "hair",
+      "fr": "les cheveux"
+    },
+    {
+      "id": "fr-core-0561",
+      "topic_id": "12",
+      "ru": "шея",
+      "en": "neck",
+      "fr": "le cou"
+    },
+    {
+      "id": "fr-core-0562",
+      "topic_id": "12",
+      "ru": "плечо",
+      "en": "shoulder",
+      "fr": "l’épaule"
+    },
+    {
+      "id": "fr-core-0563",
+      "topic_id": "12",
+      "ru": "рука от плеча",
+      "en": "arm",
+      "fr": "le bras"
+    },
+    {
+      "id": "fr-core-0564",
+      "topic_id": "12",
+      "ru": "кисть руки",
+      "en": "hand",
+      "fr": "la main"
+    },
+    {
+      "id": "fr-core-0565",
+      "topic_id": "12",
+      "ru": "палец руки",
+      "en": "finger",
+      "fr": "le doigt"
+    },
+    {
+      "id": "fr-core-0566",
+      "topic_id": "12",
+      "ru": "ноготь",
+      "en": "nail",
+      "fr": "l’ongle"
+    },
+    {
+      "id": "fr-core-0567",
+      "topic_id": "12",
+      "ru": "спина",
+      "en": "back",
+      "fr": "le dos"
+    },
+    {
+      "id": "fr-core-0568",
+      "topic_id": "12",
+      "ru": "живот",
+      "en": "belly; abdomen",
+      "fr": "le ventre"
+    },
+    {
+      "id": "fr-core-0569",
+      "topic_id": "12",
+      "ru": "нога",
+      "en": "leg",
+      "fr": "la jambe"
+    },
+    {
+      "id": "fr-core-0570",
+      "topic_id": "12",
+      "ru": "ступня",
+      "en": "foot",
+      "fr": "le pied"
+    },
+    {
+      "id": "fr-core-0571",
+      "topic_id": "12",
+      "ru": "колено",
+      "en": "knee",
+      "fr": "le genou"
+    },
+    {
+      "id": "fr-core-0572",
+      "topic_id": "12",
+      "ru": "сердце",
+      "en": "heart",
+      "fr": "le cœur"
+    },
+    {
+      "id": "fr-core-0573",
+      "topic_id": "12",
+      "ru": "кожа",
+      "en": "skin",
+      "fr": "la peau"
+    },
+    {
+      "id": "fr-core-0574",
+      "topic_id": "12",
+      "ru": "кровь",
+      "en": "blood",
+      "fr": "le sang"
+    },
+    {
+      "id": "fr-core-0575",
+      "topic_id": "12",
+      "ru": "дыхание",
+      "en": "breathing",
+      "fr": "la respiration"
+    },
+    {
+      "id": "fr-core-0576",
+      "topic_id": "12",
+      "ru": "здоровье",
+      "en": "health",
+      "fr": "la santé"
+    },
+    {
+      "id": "fr-core-0577",
+      "topic_id": "12",
+      "ru": "болезнь",
+      "en": "illness",
+      "fr": "la maladie"
+    },
+    {
+      "id": "fr-core-0578",
+      "topic_id": "12",
+      "ru": "боль",
+      "en": "pain",
+      "fr": "la douleur"
+    },
+    {
+      "id": "fr-core-0579",
+      "topic_id": "12",
+      "ru": "повышенная температура",
+      "en": "fever",
+      "fr": "la fièvre"
+    },
+    {
+      "id": "fr-core-0580",
+      "topic_id": "12",
+      "ru": "простуда",
+      "en": "cold; common cold",
+      "fr": "le rhume"
+    },
+    {
+      "id": "fr-core-0581",
+      "topic_id": "12",
+      "ru": "кашель",
+      "en": "cough",
+      "fr": "la toux"
+    },
+    {
+      "id": "fr-core-0582",
+      "topic_id": "12",
+      "ru": "аллергия",
+      "en": "allergy",
+      "fr": "l’allergie"
+    },
+    {
+      "id": "fr-core-0583",
+      "topic_id": "12",
+      "ru": "рана; травма",
+      "en": "wound; injury",
+      "fr": "la blessure"
+    },
+    {
+      "id": "fr-core-0584",
+      "topic_id": "12",
+      "ru": "несчастный случай; авария",
+      "en": "accident",
+      "fr": "l’accident"
+    },
+    {
+      "id": "fr-core-0585",
+      "topic_id": "12",
+      "ru": "экстренная ситуация",
+      "en": "emergency",
+      "fr": "l’urgence"
+    },
+    {
+      "id": "fr-core-0586",
+      "topic_id": "12",
+      "ru": "врач",
+      "en": "doctor",
+      "fr": "le médecin / la médecin"
+    },
+    {
+      "id": "fr-core-0587",
+      "topic_id": "12",
+      "ru": "медбрат; медсестра",
+      "en": "nurse",
+      "fr": "l’infirmier / l’infirmière"
+    },
+    {
+      "id": "fr-core-0588",
+      "topic_id": "12",
+      "ru": "стоматолог",
+      "en": "dentist",
+      "fr": "le dentiste / la dentiste"
+    },
+    {
+      "id": "fr-core-0589",
+      "topic_id": "12",
+      "ru": "пациент; пациентка",
+      "en": "patient",
+      "fr": "le patient / la patiente"
+    },
+    {
+      "id": "fr-core-0590",
+      "topic_id": "12",
+      "ru": "назначенная встреча; приём",
+      "en": "appointment",
+      "fr": "le rendez-vous"
+    },
+    {
+      "id": "fr-core-0591",
+      "topic_id": "12",
+      "ru": "рецепт врача",
+      "en": "prescription",
+      "fr": "l’ordonnance"
+    },
+    {
+      "id": "fr-core-0592",
+      "topic_id": "12",
+      "ru": "лекарство",
+      "en": "medicine; medication",
+      "fr": "le médicament"
+    },
+    {
+      "id": "fr-core-0593",
+      "topic_id": "12",
+      "ru": "таблетка",
+      "en": "tablet; pill",
+      "fr": "le comprimé"
+    },
+    {
+      "id": "fr-core-0594",
+      "topic_id": "12",
+      "ru": "пластырь; повязка",
+      "en": "adhesive bandage; dressing",
+      "fr": "le pansement"
+    },
+    {
+      "id": "fr-core-0595",
+      "topic_id": "12",
+      "ru": "страхование; страховка",
+      "en": "insurance",
+      "fr": "l’assurance"
+    },
+    {
+      "id": "fr-core-0596",
+      "topic_id": "12",
+      "ru": "экстренная помощь",
+      "en": "emergency help; rescue",
+      "fr": "les secours"
+    },
+    {
+      "id": "fr-core-0597",
+      "topic_id": "12",
+      "ru": "усталость",
+      "en": "fatigue; tiredness",
+      "fr": "la fatigue"
+    },
+    {
+      "id": "fr-core-0598",
+      "topic_id": "12",
+      "ru": "сон",
+      "en": "sleep",
+      "fr": "le sommeil"
+    },
+    {
+      "id": "fr-core-0599",
+      "topic_id": "12",
+      "ru": "стресс",
+      "en": "stress",
+      "fr": "le stress"
+    },
+    {
+      "id": "fr-core-0600",
+      "topic_id": "12",
+      "ru": "инвалидность",
+      "en": "disability",
+      "fr": "le handicap"
+    },
+    {
+      "id": "fr-core-0601",
+      "topic_id": "13",
+      "ru": "работа; труд",
+      "en": "work",
+      "fr": "le travail"
+    },
+    {
+      "id": "fr-core-0602",
+      "topic_id": "13",
+      "ru": "работа; занятость",
+      "en": "job; employment",
+      "fr": "l’emploi"
+    },
+    {
+      "id": "fr-core-0603",
+      "topic_id": "13",
+      "ru": "ремесло; профессия",
+      "en": "trade; occupation",
+      "fr": "le métier"
+    },
+    {
+      "id": "fr-core-0604",
+      "topic_id": "13",
+      "ru": "предприятие; компания",
+      "en": "company; business",
+      "fr": "l’entreprise"
+    },
+    {
+      "id": "fr-core-0605",
+      "topic_id": "13",
+      "ru": "завод",
+      "en": "factory",
+      "fr": "l’usine"
+    },
+    {
+      "id": "fr-core-0606",
+      "topic_id": "13",
+      "ru": "команда",
+      "en": "team",
+      "fr": "l’équipe"
+    },
+    {
+      "id": "fr-core-0607",
+      "topic_id": "13",
+      "ru": "руководитель; начальник",
+      "en": "boss; leader",
+      "fr": "le chef / la cheffe"
+    },
+    {
+      "id": "fr-core-0608",
+      "topic_id": "13",
+      "ru": "директор",
+      "en": "director; manager",
+      "fr": "le directeur / la directrice"
+    },
+    {
+      "id": "fr-core-0609",
+      "topic_id": "13",
+      "ru": "сотрудник; сотрудница",
+      "en": "employee",
+      "fr": "l’employé / l’employée"
+    },
+    {
+      "id": "fr-core-0610",
+      "topic_id": "13",
+      "ru": "клиент; клиентка",
+      "en": "customer; client",
+      "fr": "le client / la cliente"
+    },
+    {
+      "id": "fr-core-0611",
+      "topic_id": "13",
+      "ru": "собрание; совещание",
+      "en": "meeting",
+      "fr": "la réunion"
+    },
+    {
+      "id": "fr-core-0612",
+      "topic_id": "13",
+      "ru": "проект",
+      "en": "project",
+      "fr": "le projet"
+    },
+    {
+      "id": "fr-core-0613",
+      "topic_id": "13",
+      "ru": "задача",
+      "en": "task",
+      "fr": "la tâche"
+    },
+    {
+      "id": "fr-core-0614",
+      "topic_id": "13",
+      "ru": "ответственность",
+      "en": "responsibility",
+      "fr": "la responsabilité"
+    },
+    {
+      "id": "fr-core-0615",
+      "topic_id": "13",
+      "ru": "договор",
+      "en": "contract",
+      "fr": "le contrat"
+    },
+    {
+      "id": "fr-core-0616",
+      "topic_id": "13",
+      "ru": "зарплата",
+      "en": "salary",
+      "fr": "le salaire"
+    },
+    {
+      "id": "fr-core-0617",
+      "topic_id": "13",
+      "ru": "заявка на должность",
+      "en": "job application",
+      "fr": "la candidature"
+    },
+    {
+      "id": "fr-core-0618",
+      "topic_id": "13",
+      "ru": "собеседование",
+      "en": "job interview",
+      "fr": "l’entretien"
+    },
+    {
+      "id": "fr-core-0619",
+      "topic_id": "13",
+      "ru": "диплом",
+      "en": "diploma; qualification",
+      "fr": "le diplôme"
+    },
+    {
+      "id": "fr-core-0620",
+      "topic_id": "13",
+      "ru": "опыт",
+      "en": "experience",
+      "fr": "l’expérience"
+    },
+    {
+      "id": "fr-core-0621",
+      "topic_id": "13",
+      "ru": "навык; компетенция",
+      "en": "skill; competence",
+      "fr": "la compétence"
+    },
+    {
+      "id": "fr-core-0622",
+      "topic_id": "13",
+      "ru": "профессиональное обучение",
+      "en": "training",
+      "fr": "la formation"
+    },
+    {
+      "id": "fr-core-0623",
+      "topic_id": "13",
+      "ru": "стажировка",
+      "en": "internship",
+      "fr": "le stage"
+    },
+    {
+      "id": "fr-core-0624",
+      "topic_id": "13",
+      "ru": "безработица",
+      "en": "unemployment",
+      "fr": "le chômage"
+    },
+    {
+      "id": "fr-core-0625",
+      "topic_id": "13",
+      "ru": "пенсия; выход на пенсию",
+      "en": "retirement",
+      "fr": "la retraite"
+    },
+    {
+      "id": "fr-core-0626",
+      "topic_id": "13",
+      "ru": "школа",
+      "en": "school",
+      "fr": "l’école"
+    },
+    {
+      "id": "fr-core-0627",
+      "topic_id": "13",
+      "ru": "средняя школа первой ступени",
+      "en": "lower secondary school",
+      "fr": "le collège"
+    },
+    {
+      "id": "fr-core-0628",
+      "topic_id": "13",
+      "ru": "старшая школа; лицей",
+      "en": "upper secondary school",
+      "fr": "le lycée"
+    },
+    {
+      "id": "fr-core-0629",
+      "topic_id": "13",
+      "ru": "университет",
+      "en": "university",
+      "fr": "l’université"
+    },
+    {
+      "id": "fr-core-0630",
+      "topic_id": "13",
+      "ru": "класс; учебная группа",
+      "en": "class",
+      "fr": "la classe"
+    },
+    {
+      "id": "fr-core-0631",
+      "topic_id": "13",
+      "ru": "курс; занятие",
+      "en": "course; class",
+      "fr": "le cours"
+    },
+    {
+      "id": "fr-core-0632",
+      "topic_id": "13",
+      "ru": "урок",
+      "en": "lesson",
+      "fr": "la leçon"
+    },
+    {
+      "id": "fr-core-0633",
+      "topic_id": "13",
+      "ru": "инструкция к заданию",
+      "en": "instruction",
+      "fr": "la consigne"
+    },
+    {
+      "id": "fr-core-0634",
+      "topic_id": "13",
+      "ru": "упражнение",
+      "en": "exercise",
+      "fr": "l’exercice"
+    },
+    {
+      "id": "fr-core-0635",
+      "topic_id": "13",
+      "ru": "экзамен",
+      "en": "exam",
+      "fr": "l’examen"
+    },
+    {
+      "id": "fr-core-0636",
+      "topic_id": "13",
+      "ru": "оценка; заметка",
+      "en": "grade; note",
+      "fr": "la note"
+    },
+    {
+      "id": "fr-core-0637",
+      "topic_id": "13",
+      "ru": "результат",
+      "en": "result",
+      "fr": "le résultat"
+    },
+    {
+      "id": "fr-core-0638",
+      "topic_id": "13",
+      "ru": "студент; студентка",
+      "en": "student",
+      "fr": "l’étudiant / l’étudiante"
+    },
+    {
+      "id": "fr-core-0639",
+      "topic_id": "13",
+      "ru": "преподаватель",
+      "en": "teacher; professor",
+      "fr": "le professeur / la professeure"
+    },
+    {
+      "id": "fr-core-0640",
+      "topic_id": "13",
+      "ru": "ученик; ученица",
+      "en": "pupil",
+      "fr": "l’élève"
+    },
+    {
+      "id": "fr-core-0641",
+      "topic_id": "13",
+      "ru": "книга",
+      "en": "book",
+      "fr": "le livre"
+    },
+    {
+      "id": "fr-core-0642",
+      "topic_id": "13",
+      "ru": "тетрадь",
+      "en": "notebook",
+      "fr": "le cahier"
+    },
+    {
+      "id": "fr-core-0643",
+      "topic_id": "13",
+      "ru": "ручка для письма",
+      "en": "pen",
+      "fr": "le stylo"
+    },
+    {
+      "id": "fr-core-0644",
+      "topic_id": "13",
+      "ru": "карандаш",
+      "en": "pencil",
+      "fr": "le crayon"
+    },
+    {
+      "id": "fr-core-0645",
+      "topic_id": "13",
+      "ru": "лист бумаги; лист растения",
+      "en": "sheet of paper; leaf",
+      "fr": "la feuille"
+    },
+    {
+      "id": "fr-core-0646",
+      "topic_id": "13",
+      "ru": "бумага",
+      "en": "paper",
+      "fr": "le papier"
+    },
+    {
+      "id": "fr-core-0647",
+      "topic_id": "13",
+      "ru": "словарь",
+      "en": "dictionary",
+      "fr": "le dictionnaire"
+    },
+    {
+      "id": "fr-core-0648",
+      "topic_id": "13",
+      "ru": "ошибка",
+      "en": "mistake",
+      "fr": "l’erreur"
+    },
+    {
+      "id": "fr-core-0649",
+      "topic_id": "13",
+      "ru": "прогресс",
+      "en": "progress",
+      "fr": "le progrès"
+    },
+    {
+      "id": "fr-core-0650",
+      "topic_id": "13",
+      "ru": "цель",
+      "en": "goal; objective",
+      "fr": "l’objectif"
+    },
+    {
+      "id": "fr-core-0651",
+      "topic_id": "14",
+      "ru": "телефон",
+      "en": "telephone; phone",
+      "fr": "le téléphone"
+    },
+    {
+      "id": "fr-core-0652",
+      "topic_id": "14",
+      "ru": "номер",
+      "en": "number",
+      "fr": "le numéro"
+    },
+    {
+      "id": "fr-core-0653",
+      "topic_id": "14",
+      "ru": "компьютер",
+      "en": "computer",
+      "fr": "l’ordinateur"
+    },
+    {
+      "id": "fr-core-0654",
+      "topic_id": "14",
+      "ru": "экран",
+      "en": "screen",
+      "fr": "l’écran"
+    },
+    {
+      "id": "fr-core-0655",
+      "topic_id": "14",
+      "ru": "вопрос",
+      "en": "question",
+      "fr": "la question"
+    },
+    {
+      "id": "fr-core-0656",
+      "topic_id": "14",
+      "ru": "ответ",
+      "en": "answer",
+      "fr": "la réponse"
+    },
+    {
+      "id": "fr-core-0657",
+      "topic_id": "14",
+      "ru": "приложение",
+      "en": "app; application",
+      "fr": "l’application"
+    },
+    {
+      "id": "fr-core-0658",
+      "topic_id": "14",
+      "ru": "сайт",
+      "en": "website",
+      "fr": "le site"
+    },
+    {
+      "id": "fr-core-0659",
+      "topic_id": "14",
+      "ru": "интернет",
+      "en": "Internet",
+      "fr": "Internet"
+    },
+    {
+      "id": "fr-core-0660",
+      "topic_id": "14",
+      "ru": "пароль",
+      "en": "password",
+      "fr": "le mot de passe"
+    },
+    {
+      "id": "fr-core-0661",
+      "topic_id": "14",
+      "ru": "электронное письмо",
+      "en": "email",
+      "fr": "le courriel"
+    },
+    {
+      "id": "fr-core-0662",
+      "topic_id": "14",
+      "ru": "сообщение",
+      "en": "message",
+      "fr": "le message"
+    },
+    {
+      "id": "fr-core-0663",
+      "topic_id": "14",
+      "ru": "файл",
+      "en": "file",
+      "fr": "le fichier"
+    },
+    {
+      "id": "fr-core-0664",
+      "topic_id": "14",
+      "ru": "документ",
+      "en": "document",
+      "fr": "le document"
+    },
+    {
+      "id": "fr-core-0665",
+      "topic_id": "14",
+      "ru": "событие",
+      "en": "event",
+      "fr": "l’événement"
+    },
+    {
+      "id": "fr-core-0666",
+      "topic_id": "14",
+      "ru": "ссылка; связь",
+      "en": "link",
+      "fr": "le lien"
+    },
+    {
+      "id": "fr-core-0667",
+      "topic_id": "14",
+      "ru": "сеть",
+      "en": "network",
+      "fr": "le réseau"
+    },
+    {
+      "id": "fr-core-0668",
+      "topic_id": "14",
+      "ru": "фотография",
+      "en": "photo",
+      "fr": "la photo"
+    },
+    {
+      "id": "fr-core-0669",
+      "topic_id": "14",
+      "ru": "информация",
+      "en": "information",
+      "fr": "l’information"
+    },
+    {
+      "id": "fr-core-0670",
+      "topic_id": "14",
+      "ru": "видео",
+      "en": "video",
+      "fr": "la vidéo"
+    },
+    {
+      "id": "fr-core-0671",
+      "topic_id": "14",
+      "ru": "новости; текущие события",
+      "en": "news; current affairs",
+      "fr": "l’actualité"
+    },
+    {
+      "id": "fr-core-0672",
+      "topic_id": "14",
+      "ru": "газета",
+      "en": "newspaper",
+      "fr": "le journal"
+    },
+    {
+      "id": "fr-core-0673",
+      "topic_id": "14",
+      "ru": "журнал",
+      "en": "magazine",
+      "fr": "le magazine"
+    },
+    {
+      "id": "fr-core-0674",
+      "topic_id": "14",
+      "ru": "статья",
+      "en": "article",
+      "fr": "l’article"
+    },
+    {
+      "id": "fr-core-0675",
+      "topic_id": "14",
+      "ru": "письмо",
+      "en": "letter",
+      "fr": "la lettre"
+    },
+    {
+      "id": "fr-core-0676",
+      "topic_id": "14",
+      "ru": "страница",
+      "en": "page",
+      "fr": "la page"
+    },
+    {
+      "id": "fr-core-0677",
+      "topic_id": "14",
+      "ru": "слово",
+      "en": "word",
+      "fr": "le mot"
+    },
+    {
+      "id": "fr-core-0678",
+      "topic_id": "14",
+      "ru": "предложение; фраза",
+      "en": "sentence",
+      "fr": "la phrase"
+    },
+    {
+      "id": "fr-core-0679",
+      "topic_id": "14",
+      "ru": "история; рассказ",
+      "en": "history; story",
+      "fr": "l’histoire"
+    },
+    {
+      "id": "fr-core-0680",
+      "topic_id": "14",
+      "ru": "фильм",
+      "en": "film; movie",
+      "fr": "le film"
+    },
+    {
+      "id": "fr-core-0681",
+      "topic_id": "14",
+      "ru": "сериал",
+      "en": "series; TV series",
+      "fr": "la série"
+    },
+    {
+      "id": "fr-core-0682",
+      "topic_id": "14",
+      "ru": "музыка",
+      "en": "music",
+      "fr": "la musique"
+    },
+    {
+      "id": "fr-core-0683",
+      "topic_id": "14",
+      "ru": "песня",
+      "en": "song",
+      "fr": "la chanson"
+    },
+    {
+      "id": "fr-core-0684",
+      "topic_id": "14",
+      "ru": "концерт",
+      "en": "concert",
+      "fr": "le concert"
+    },
+    {
+      "id": "fr-core-0685",
+      "topic_id": "14",
+      "ru": "спектакль; представление",
+      "en": "show; performance",
+      "fr": "le spectacle"
+    },
+    {
+      "id": "fr-core-0686",
+      "topic_id": "14",
+      "ru": "выставка",
+      "en": "exhibition",
+      "fr": "l’exposition"
+    },
+    {
+      "id": "fr-core-0687",
+      "topic_id": "14",
+      "ru": "искусство",
+      "en": "art",
+      "fr": "l’art"
+    },
+    {
+      "id": "fr-core-0688",
+      "topic_id": "14",
+      "ru": "культура",
+      "en": "culture",
+      "fr": "la culture"
+    },
+    {
+      "id": "fr-core-0689",
+      "topic_id": "14",
+      "ru": "рисунок",
+      "en": "drawing",
+      "fr": "le dessin"
+    },
+    {
+      "id": "fr-core-0690",
+      "topic_id": "14",
+      "ru": "живопись; краска",
+      "en": "painting; paint",
+      "fr": "la peinture"
+    },
+    {
+      "id": "fr-core-0691",
+      "topic_id": "14",
+      "ru": "танец",
+      "en": "dance",
+      "fr": "la danse"
+    },
+    {
+      "id": "fr-core-0692",
+      "topic_id": "14",
+      "ru": "игра",
+      "en": "game",
+      "fr": "le jeu"
+    },
+    {
+      "id": "fr-core-0693",
+      "topic_id": "14",
+      "ru": "спорт",
+      "en": "sport",
+      "fr": "le sport"
+    },
+    {
+      "id": "fr-core-0694",
+      "topic_id": "14",
+      "ru": "хобби; досуг",
+      "en": "leisure activity; hobby",
+      "fr": "le loisir"
+    },
+    {
+      "id": "fr-core-0695",
+      "topic_id": "14",
+      "ru": "прогулка",
+      "en": "walk; stroll",
+      "fr": "la promenade"
+    },
+    {
+      "id": "fr-core-0696",
+      "topic_id": "14",
+      "ru": "пеший поход",
+      "en": "hike",
+      "fr": "la randonnée"
+    },
+    {
+      "id": "fr-core-0697",
+      "topic_id": "14",
+      "ru": "плавание",
+      "en": "swimming",
+      "fr": "la natation"
+    },
+    {
+      "id": "fr-core-0698",
+      "topic_id": "14",
+      "ru": "футбол",
+      "en": "football; soccer",
+      "fr": "le football"
+    },
+    {
+      "id": "fr-core-0699",
+      "topic_id": "14",
+      "ru": "велоспорт",
+      "en": "cycling",
+      "fr": "le cyclisme"
+    },
+    {
+      "id": "fr-core-0700",
+      "topic_id": "14",
+      "ru": "чтение",
+      "en": "reading",
+      "fr": "la lecture"
+    },
+    {
+      "id": "fr-core-0701",
+      "topic_id": "15",
+      "ru": "природа",
+      "en": "nature",
+      "fr": "la nature"
+    },
+    {
+      "id": "fr-core-0702",
+      "topic_id": "15",
+      "ru": "мир",
+      "en": "world",
+      "fr": "le monde"
+    },
+    {
+      "id": "fr-core-0703",
+      "topic_id": "15",
+      "ru": "страна",
+      "en": "country",
+      "fr": "le pays"
+    },
+    {
+      "id": "fr-core-0704",
+      "topic_id": "15",
+      "ru": "регион",
+      "en": "region",
+      "fr": "la région"
+    },
+    {
+      "id": "fr-core-0705",
+      "topic_id": "15",
+      "ru": "пейзаж",
+      "en": "landscape",
+      "fr": "le paysage"
+    },
+    {
+      "id": "fr-core-0706",
+      "topic_id": "15",
+      "ru": "гора",
+      "en": "mountain",
+      "fr": "la montagne"
+    },
+    {
+      "id": "fr-core-0707",
+      "topic_id": "15",
+      "ru": "лес",
+      "en": "forest",
+      "fr": "la forêt"
+    },
+    {
+      "id": "fr-core-0708",
+      "topic_id": "15",
+      "ru": "дерево",
+      "en": "tree",
+      "fr": "l’arbre"
+    },
+    {
+      "id": "fr-core-0709",
+      "topic_id": "15",
+      "ru": "цветок",
+      "en": "flower",
+      "fr": "la fleur"
+    },
+    {
+      "id": "fr-core-0710",
+      "topic_id": "15",
+      "ru": "животное",
+      "en": "animal",
+      "fr": "l’animal"
+    },
+    {
+      "id": "fr-core-0711",
+      "topic_id": "15",
+      "ru": "собака",
+      "en": "dog",
+      "fr": "le chien / la chienne"
+    },
+    {
+      "id": "fr-core-0712",
+      "topic_id": "15",
+      "ru": "кот; кошка",
+      "en": "cat",
+      "fr": "le chat / la chatte"
+    },
+    {
+      "id": "fr-core-0713",
+      "topic_id": "15",
+      "ru": "птица",
+      "en": "bird",
+      "fr": "l’oiseau"
+    },
+    {
+      "id": "fr-core-0714",
+      "topic_id": "15",
+      "ru": "море",
+      "en": "sea",
+      "fr": "la mer"
+    },
+    {
+      "id": "fr-core-0715",
+      "topic_id": "15",
+      "ru": "океан",
+      "en": "ocean",
+      "fr": "l’océan"
+    },
+    {
+      "id": "fr-core-0716",
+      "topic_id": "15",
+      "ru": "озеро",
+      "en": "lake",
+      "fr": "le lac"
+    },
+    {
+      "id": "fr-core-0717",
+      "topic_id": "15",
+      "ru": "река",
+      "en": "river",
+      "fr": "la rivière"
+    },
+    {
+      "id": "fr-core-0718",
+      "topic_id": "15",
+      "ru": "остров",
+      "en": "island",
+      "fr": "l’île"
+    },
+    {
+      "id": "fr-core-0719",
+      "topic_id": "15",
+      "ru": "сельская местность",
+      "en": "countryside",
+      "fr": "la campagne"
+    },
+    {
+      "id": "fr-core-0720",
+      "topic_id": "15",
+      "ru": "небо",
+      "en": "sky",
+      "fr": "le ciel"
+    },
+    {
+      "id": "fr-core-0721",
+      "topic_id": "15",
+      "ru": "солнце",
+      "en": "sun",
+      "fr": "le soleil"
+    },
+    {
+      "id": "fr-core-0722",
+      "topic_id": "15",
+      "ru": "луна",
+      "en": "moon",
+      "fr": "la lune"
+    },
+    {
+      "id": "fr-core-0723",
+      "topic_id": "15",
+      "ru": "звезда",
+      "en": "star",
+      "fr": "l’étoile"
+    },
+    {
+      "id": "fr-core-0724",
+      "topic_id": "15",
+      "ru": "облако",
+      "en": "cloud",
+      "fr": "le nuage"
+    },
+    {
+      "id": "fr-core-0725",
+      "topic_id": "15",
+      "ru": "дождь",
+      "en": "rain",
+      "fr": "la pluie"
+    },
+    {
+      "id": "fr-core-0726",
+      "topic_id": "15",
+      "ru": "снег",
+      "en": "snow",
+      "fr": "la neige"
+    },
+    {
+      "id": "fr-core-0727",
+      "topic_id": "15",
+      "ru": "ветер",
+      "en": "wind",
+      "fr": "le vent"
+    },
+    {
+      "id": "fr-core-0728",
+      "topic_id": "15",
+      "ru": "гроза",
+      "en": "thunderstorm",
+      "fr": "l’orage"
+    },
+    {
+      "id": "fr-core-0729",
+      "topic_id": "15",
+      "ru": "температура",
+      "en": "temperature",
+      "fr": "la température"
+    },
+    {
+      "id": "fr-core-0730",
+      "topic_id": "15",
+      "ru": "климат",
+      "en": "climate",
+      "fr": "le climat"
+    },
+    {
+      "id": "fr-core-0731",
+      "topic_id": "15",
+      "ru": "окружающая среда",
+      "en": "environment",
+      "fr": "l’environnement"
+    },
+    {
+      "id": "fr-core-0732",
+      "topic_id": "15",
+      "ru": "загрязнение",
+      "en": "pollution",
+      "fr": "la pollution"
+    },
+    {
+      "id": "fr-core-0733",
+      "topic_id": "15",
+      "ru": "время года",
+      "en": "season",
+      "fr": "la saison"
+    },
+    {
+      "id": "fr-core-0734",
+      "topic_id": "15",
+      "ru": "весна",
+      "en": "spring",
+      "fr": "le printemps"
+    },
+    {
+      "id": "fr-core-0735",
+      "topic_id": "15",
+      "ru": "лето",
+      "en": "summer",
+      "fr": "l’été"
+    },
+    {
+      "id": "fr-core-0736",
+      "topic_id": "15",
+      "ru": "осень",
+      "en": "autumn; fall",
+      "fr": "l’automne"
+    },
+    {
+      "id": "fr-core-0737",
+      "topic_id": "15",
+      "ru": "зима",
+      "en": "winter",
+      "fr": "l’hiver"
+    },
+    {
+      "id": "fr-core-0738",
+      "topic_id": "15",
+      "ru": "время; погода",
+      "en": "time; weather",
+      "fr": "le temps"
+    },
+    {
+      "id": "fr-core-0739",
+      "topic_id": "15",
+      "ru": "момент",
+      "en": "moment",
+      "fr": "le moment"
+    },
+    {
+      "id": "fr-core-0740",
+      "topic_id": "15",
+      "ru": "день; сутки",
+      "en": "day",
+      "fr": "le jour"
+    },
+    {
+      "id": "fr-core-0741",
+      "topic_id": "15",
+      "ru": "день как период",
+      "en": "daytime; whole day",
+      "fr": "la journée"
+    },
+    {
+      "id": "fr-core-0742",
+      "topic_id": "15",
+      "ru": "неделя",
+      "en": "week",
+      "fr": "la semaine"
+    },
+    {
+      "id": "fr-core-0743",
+      "topic_id": "15",
+      "ru": "месяц",
+      "en": "month",
+      "fr": "le mois"
+    },
+    {
+      "id": "fr-core-0744",
+      "topic_id": "15",
+      "ru": "год",
+      "en": "year",
+      "fr": "l’année"
+    },
+    {
+      "id": "fr-core-0745",
+      "topic_id": "15",
+      "ru": "утро",
+      "en": "morning",
+      "fr": "le matin"
+    },
+    {
+      "id": "fr-core-0746",
+      "topic_id": "15",
+      "ru": "полдень",
+      "en": "noon",
+      "fr": "midi"
+    },
+    {
+      "id": "fr-core-0747",
+      "topic_id": "15",
+      "ru": "послеобеденное время",
+      "en": "afternoon",
+      "fr": "l’après-midi"
+    },
+    {
+      "id": "fr-core-0748",
+      "topic_id": "15",
+      "ru": "вечер",
+      "en": "evening",
+      "fr": "le soir"
+    },
+    {
+      "id": "fr-core-0749",
+      "topic_id": "15",
+      "ru": "час",
+      "en": "hour",
+      "fr": "l’heure"
+    },
+    {
+      "id": "fr-core-0750",
+      "topic_id": "15",
+      "ru": "минута",
+      "en": "minute",
+      "fr": "la minute"
+    },
+    {
+      "id": "fr-core-0751",
+      "topic_id": "16",
+      "ru": "ноль",
+      "en": "zero",
+      "fr": "zéro"
+    },
+    {
+      "id": "fr-core-0752",
+      "topic_id": "16",
+      "ru": "один",
+      "en": "one",
+      "fr": "un"
+    },
+    {
+      "id": "fr-core-0753",
+      "topic_id": "16",
+      "ru": "два",
+      "en": "two",
+      "fr": "deux"
+    },
+    {
+      "id": "fr-core-0754",
+      "topic_id": "16",
+      "ru": "три",
+      "en": "three",
+      "fr": "trois"
+    },
+    {
+      "id": "fr-core-0755",
+      "topic_id": "16",
+      "ru": "четыре",
+      "en": "four",
+      "fr": "quatre"
+    },
+    {
+      "id": "fr-core-0756",
+      "topic_id": "16",
+      "ru": "пять",
+      "en": "five",
+      "fr": "cinq"
+    },
+    {
+      "id": "fr-core-0757",
+      "topic_id": "16",
+      "ru": "шесть",
+      "en": "six",
+      "fr": "six"
+    },
+    {
+      "id": "fr-core-0758",
+      "topic_id": "16",
+      "ru": "семь",
+      "en": "seven",
+      "fr": "sept"
+    },
+    {
+      "id": "fr-core-0759",
+      "topic_id": "16",
+      "ru": "восемь",
+      "en": "eight",
+      "fr": "huit"
+    },
+    {
+      "id": "fr-core-0760",
+      "topic_id": "16",
+      "ru": "девять",
+      "en": "nine",
+      "fr": "neuf"
+    },
+    {
+      "id": "fr-core-0761",
+      "topic_id": "16",
+      "ru": "десять",
+      "en": "ten",
+      "fr": "dix"
+    },
+    {
+      "id": "fr-core-0762",
+      "topic_id": "16",
+      "ru": "одиннадцать",
+      "en": "eleven",
+      "fr": "onze"
+    },
+    {
+      "id": "fr-core-0763",
+      "topic_id": "16",
+      "ru": "двенадцать",
+      "en": "twelve",
+      "fr": "douze"
+    },
+    {
+      "id": "fr-core-0764",
+      "topic_id": "16",
+      "ru": "тринадцать",
+      "en": "thirteen",
+      "fr": "treize"
+    },
+    {
+      "id": "fr-core-0765",
+      "topic_id": "16",
+      "ru": "четырнадцать",
+      "en": "fourteen",
+      "fr": "quatorze"
+    },
+    {
+      "id": "fr-core-0766",
+      "topic_id": "16",
+      "ru": "пятнадцать",
+      "en": "fifteen",
+      "fr": "quinze"
+    },
+    {
+      "id": "fr-core-0767",
+      "topic_id": "16",
+      "ru": "шестнадцать",
+      "en": "sixteen",
+      "fr": "seize"
+    },
+    {
+      "id": "fr-core-0768",
+      "topic_id": "16",
+      "ru": "семнадцать",
+      "en": "seventeen",
+      "fr": "dix-sept"
+    },
+    {
+      "id": "fr-core-0769",
+      "topic_id": "16",
+      "ru": "восемнадцать",
+      "en": "eighteen",
+      "fr": "dix-huit"
+    },
+    {
+      "id": "fr-core-0770",
+      "topic_id": "16",
+      "ru": "девятнадцать",
+      "en": "nineteen",
+      "fr": "dix-neuf"
+    },
+    {
+      "id": "fr-core-0771",
+      "topic_id": "16",
+      "ru": "двадцать",
+      "en": "twenty",
+      "fr": "vingt"
+    },
+    {
+      "id": "fr-core-0772",
+      "topic_id": "16",
+      "ru": "тридцать",
+      "en": "thirty",
+      "fr": "trente"
+    },
+    {
+      "id": "fr-core-0773",
+      "topic_id": "16",
+      "ru": "сорок",
+      "en": "forty",
+      "fr": "quarante"
+    },
+    {
+      "id": "fr-core-0774",
+      "topic_id": "16",
+      "ru": "пятьдесят",
+      "en": "fifty",
+      "fr": "cinquante"
+    },
+    {
+      "id": "fr-core-0775",
+      "topic_id": "16",
+      "ru": "шестьдесят",
+      "en": "sixty",
+      "fr": "soixante"
+    },
+    {
+      "id": "fr-core-0776",
+      "topic_id": "16",
+      "ru": "семьдесят",
+      "en": "seventy",
+      "fr": "soixante-dix"
+    },
+    {
+      "id": "fr-core-0777",
+      "topic_id": "16",
+      "ru": "восемьдесят",
+      "en": "eighty",
+      "fr": "quatre-vingts"
+    },
+    {
+      "id": "fr-core-0778",
+      "topic_id": "16",
+      "ru": "девяносто",
+      "en": "ninety",
+      "fr": "quatre-vingt-dix"
+    },
+    {
+      "id": "fr-core-0779",
+      "topic_id": "16",
+      "ru": "сто",
+      "en": "one hundred",
+      "fr": "cent"
+    },
+    {
+      "id": "fr-core-0780",
+      "topic_id": "16",
+      "ru": "тысяча",
+      "en": "one thousand",
+      "fr": "mille"
+    },
+    {
+      "id": "fr-core-0781",
+      "topic_id": "16",
+      "ru": "понедельник",
+      "en": "Monday",
+      "fr": "lundi"
+    },
+    {
+      "id": "fr-core-0782",
+      "topic_id": "16",
+      "ru": "вторник",
+      "en": "Tuesday",
+      "fr": "mardi"
+    },
+    {
+      "id": "fr-core-0783",
+      "topic_id": "16",
+      "ru": "среда",
+      "en": "Wednesday",
+      "fr": "mercredi"
+    },
+    {
+      "id": "fr-core-0784",
+      "topic_id": "16",
+      "ru": "четверг",
+      "en": "Thursday",
+      "fr": "jeudi"
+    },
+    {
+      "id": "fr-core-0785",
+      "topic_id": "16",
+      "ru": "пятница",
+      "en": "Friday",
+      "fr": "vendredi"
+    },
+    {
+      "id": "fr-core-0786",
+      "topic_id": "16",
+      "ru": "суббота",
+      "en": "Saturday",
+      "fr": "samedi"
+    },
+    {
+      "id": "fr-core-0787",
+      "topic_id": "16",
+      "ru": "воскресенье",
+      "en": "Sunday",
+      "fr": "dimanche"
+    },
+    {
+      "id": "fr-core-0788",
+      "topic_id": "16",
+      "ru": "январь",
+      "en": "January",
+      "fr": "janvier"
+    },
+    {
+      "id": "fr-core-0789",
+      "topic_id": "16",
+      "ru": "февраль",
+      "en": "February",
+      "fr": "février"
+    },
+    {
+      "id": "fr-core-0790",
+      "topic_id": "16",
+      "ru": "март",
+      "en": "March",
+      "fr": "mars"
+    },
+    {
+      "id": "fr-core-0791",
+      "topic_id": "16",
+      "ru": "апрель",
+      "en": "April",
+      "fr": "avril"
+    },
+    {
+      "id": "fr-core-0792",
+      "topic_id": "16",
+      "ru": "май",
+      "en": "May",
+      "fr": "mai"
+    },
+    {
+      "id": "fr-core-0793",
+      "topic_id": "16",
+      "ru": "июнь",
+      "en": "June",
+      "fr": "juin"
+    },
+    {
+      "id": "fr-core-0794",
+      "topic_id": "16",
+      "ru": "июль",
+      "en": "July",
+      "fr": "juillet"
+    },
+    {
+      "id": "fr-core-0795",
+      "topic_id": "16",
+      "ru": "август",
+      "en": "August",
+      "fr": "août"
+    },
+    {
+      "id": "fr-core-0796",
+      "topic_id": "16",
+      "ru": "сентябрь",
+      "en": "September",
+      "fr": "septembre"
+    },
+    {
+      "id": "fr-core-0797",
+      "topic_id": "16",
+      "ru": "октябрь",
+      "en": "October",
+      "fr": "octobre"
+    },
+    {
+      "id": "fr-core-0798",
+      "topic_id": "16",
+      "ru": "ноябрь",
+      "en": "November",
+      "fr": "novembre"
+    },
+    {
+      "id": "fr-core-0799",
+      "topic_id": "16",
+      "ru": "декабрь",
+      "en": "December",
+      "fr": "décembre"
+    },
+    {
+      "id": "fr-core-0800",
+      "topic_id": "16",
+      "ru": "миллион",
+      "en": "million",
+      "fr": "un million"
+    },
+    {
+      "id": "fr-core-0801",
+      "topic_id": "17",
+      "ru": "в; к; на (направление или место)",
+      "en": "to; at; in",
+      "fr": "à"
+    },
+    {
+      "id": "fr-core-0802",
+      "topic_id": "17",
+      "ru": "из; от; принадлежность",
+      "en": "from; of",
+      "fr": "de"
+    },
+    {
+      "id": "fr-core-0803",
+      "topic_id": "17",
+      "ru": "в; на; из материала",
+      "en": "in; by; made of",
+      "fr": "en"
+    },
+    {
+      "id": "fr-core-0804",
+      "topic_id": "17",
+      "ru": "внутри; через некоторое время",
+      "en": "in; inside; in a while",
+      "fr": "dans"
+    },
+    {
+      "id": "fr-core-0805",
+      "topic_id": "17",
+      "ru": "на поверхности",
+      "en": "on",
+      "fr": "sur"
+    },
+    {
+      "id": "fr-core-0806",
+      "topic_id": "17",
+      "ru": "под",
+      "en": "under",
+      "fr": "sous"
+    },
+    {
+      "id": "fr-core-0807",
+      "topic_id": "17",
+      "ru": "с; вместе с",
+      "en": "with",
+      "fr": "avec"
+    },
+    {
+      "id": "fr-core-0808",
+      "topic_id": "17",
+      "ru": "без",
+      "en": "without",
+      "fr": "sans"
+    },
+    {
+      "id": "fr-core-0809",
+      "topic_id": "17",
+      "ru": "для; чтобы",
+      "en": "for; in order to",
+      "fr": "pour"
+    },
+    {
+      "id": "fr-core-0810",
+      "topic_id": "17",
+      "ru": "через; посредством",
+      "en": "through; by",
+      "fr": "par"
+    },
+    {
+      "id": "fr-core-0811",
+      "topic_id": "17",
+      "ru": "у кого-то; к кому-то",
+      "en": "at someone’s place; to someone’s place",
+      "fr": "chez"
+    },
+    {
+      "id": "fr-core-0812",
+      "topic_id": "17",
+      "ru": "между",
+      "en": "between",
+      "fr": "entre"
+    },
+    {
+      "id": "fr-core-0813",
+      "topic_id": "17",
+      "ru": "перед; впереди",
+      "en": "in front of",
+      "fr": "devant"
+    },
+    {
+      "id": "fr-core-0814",
+      "topic_id": "17",
+      "ru": "за; позади",
+      "en": "behind",
+      "fr": "derrière"
+    },
+    {
+      "id": "fr-core-0815",
+      "topic_id": "17",
+      "ru": "до; раньше",
+      "en": "before",
+      "fr": "avant"
+    },
+    {
+      "id": "fr-core-0816",
+      "topic_id": "17",
+      "ru": "после",
+      "en": "after",
+      "fr": "après"
+    },
+    {
+      "id": "fr-core-0817",
+      "topic_id": "17",
+      "ru": "во время",
+      "en": "during",
+      "fr": "pendant"
+    },
+    {
+      "id": "fr-core-0818",
+      "topic_id": "17",
+      "ru": "с какого-то времени",
+      "en": "since; for",
+      "fr": "depuis"
+    },
+    {
+      "id": "fr-core-0819",
+      "topic_id": "17",
+      "ru": "до указанного предела",
+      "en": "until; up to",
+      "fr": "jusqu’à"
+    },
+    {
+      "id": "fr-core-0820",
+      "topic_id": "17",
+      "ru": "против",
+      "en": "against",
+      "fr": "contre"
+    },
+    {
+      "id": "fr-core-0821",
+      "topic_id": "17",
+      "ru": "по направлению к; около по времени",
+      "en": "toward; around a time",
+      "fr": "vers"
+    },
+    {
+      "id": "fr-core-0822",
+      "topic_id": "17",
+      "ru": "близко к",
+      "en": "near",
+      "fr": "près de"
+    },
+    {
+      "id": "fr-core-0823",
+      "topic_id": "17",
+      "ru": "далеко от",
+      "en": "far from",
+      "fr": "loin de"
+    },
+    {
+      "id": "fr-core-0824",
+      "topic_id": "17",
+      "ru": "рядом с",
+      "en": "next to",
+      "fr": "à côté de"
+    },
+    {
+      "id": "fr-core-0825",
+      "topic_id": "17",
+      "ru": "здесь",
+      "en": "here",
+      "fr": "ici"
+    },
+    {
+      "id": "fr-core-0826",
+      "topic_id": "17",
+      "ru": "там",
+      "en": "there",
+      "fr": "là"
+    },
+    {
+      "id": "fr-core-0827",
+      "topic_id": "17",
+      "ru": "везде",
+      "en": "everywhere",
+      "fr": "partout"
+    },
+    {
+      "id": "fr-core-0828",
+      "topic_id": "17",
+      "ru": "налево; слева",
+      "en": "to the left; on the left",
+      "fr": "à gauche"
+    },
+    {
+      "id": "fr-core-0829",
+      "topic_id": "17",
+      "ru": "направо; справа",
+      "en": "to the right; on the right",
+      "fr": "à droite"
+    },
+    {
+      "id": "fr-core-0830",
+      "topic_id": "17",
+      "ru": "прямо вперёд",
+      "en": "straight ahead",
+      "fr": "tout droit"
+    },
+    {
+      "id": "fr-core-0831",
+      "topic_id": "17",
+      "ru": "сегодня",
+      "en": "today",
+      "fr": "aujourd’hui"
+    },
+    {
+      "id": "fr-core-0832",
+      "topic_id": "17",
+      "ru": "завтра",
+      "en": "tomorrow",
+      "fr": "demain"
+    },
+    {
+      "id": "fr-core-0833",
+      "topic_id": "17",
+      "ru": "вчера",
+      "en": "yesterday",
+      "fr": "hier"
+    },
+    {
+      "id": "fr-core-0834",
+      "topic_id": "17",
+      "ru": "сейчас",
+      "en": "now",
+      "fr": "maintenant"
+    },
+    {
+      "id": "fr-core-0835",
+      "topic_id": "17",
+      "ru": "скоро",
+      "en": "soon",
+      "fr": "bientôt"
+    },
+    {
+      "id": "fr-core-0836",
+      "topic_id": "17",
+      "ru": "рано",
+      "en": "early",
+      "fr": "tôt"
+    },
+    {
+      "id": "fr-core-0837",
+      "topic_id": "17",
+      "ru": "поздно",
+      "en": "late",
+      "fr": "tard"
+    },
+    {
+      "id": "fr-core-0838",
+      "topic_id": "17",
+      "ru": "всегда",
+      "en": "always",
+      "fr": "toujours"
+    },
+    {
+      "id": "fr-core-0839",
+      "topic_id": "17",
+      "ru": "часто",
+      "en": "often",
+      "fr": "souvent"
+    },
+    {
+      "id": "fr-core-0840",
+      "topic_id": "17",
+      "ru": "иногда",
+      "en": "sometimes",
+      "fr": "parfois"
+    },
+    {
+      "id": "fr-core-0841",
+      "topic_id": "17",
+      "ru": "никогда",
+      "en": "never",
+      "fr": "jamais"
+    },
+    {
+      "id": "fr-core-0842",
+      "topic_id": "17",
+      "ru": "ещё; снова",
+      "en": "still; again",
+      "fr": "encore"
+    },
+    {
+      "id": "fr-core-0843",
+      "topic_id": "17",
+      "ru": "уже",
+      "en": "already",
+      "fr": "déjà"
+    },
+    {
+      "id": "fr-core-0844",
+      "topic_id": "17",
+      "ru": "затем; после этого",
+      "en": "next; then",
+      "fr": "ensuite"
+    },
+    {
+      "id": "fr-core-0845",
+      "topic_id": "17",
+      "ru": "наконец",
+      "en": "finally",
+      "fr": "enfin"
+    },
+    {
+      "id": "fr-core-0846",
+      "topic_id": "17",
+      "ru": "потом",
+      "en": "then; next",
+      "fr": "puis"
+    },
+    {
+      "id": "fr-core-0847",
+      "topic_id": "17",
+      "ru": "вместе",
+      "en": "together",
+      "fr": "ensemble"
+    },
+    {
+      "id": "fr-core-0848",
+      "topic_id": "17",
+      "ru": "снаружи",
+      "en": "outside",
+      "fr": "dehors"
+    },
+    {
+      "id": "fr-core-0849",
+      "topic_id": "17",
+      "ru": "внутри (самостоятельно)",
+      "en": "inside (standalone)",
+      "fr": "dedans"
+    },
+    {
+      "id": "fr-core-0850",
+      "topic_id": "17",
+      "ru": "в другом месте",
+      "en": "elsewhere",
+      "fr": "ailleurs"
+    },
+    {
+      "id": "fr-core-0851",
+      "topic_id": "18",
+      "ru": "хороший",
+      "en": "good",
+      "fr": "bon / bonne"
+    },
+    {
+      "id": "fr-core-0852",
+      "topic_id": "18",
+      "ru": "плохой",
+      "en": "bad",
+      "fr": "mauvais / mauvaise"
+    },
+    {
+      "id": "fr-core-0853",
+      "topic_id": "18",
+      "ru": "красивый",
+      "en": "beautiful",
+      "fr": "beau / belle"
+    },
+    {
+      "id": "fr-core-0854",
+      "topic_id": "18",
+      "ru": "большой; высокий",
+      "en": "big; tall",
+      "fr": "grand / grande"
+    },
+    {
+      "id": "fr-core-0855",
+      "topic_id": "18",
+      "ru": "маленький",
+      "en": "small",
+      "fr": "petit / petite"
+    },
+    {
+      "id": "fr-core-0856",
+      "topic_id": "18",
+      "ru": "длинный",
+      "en": "long",
+      "fr": "long / longue"
+    },
+    {
+      "id": "fr-core-0857",
+      "topic_id": "18",
+      "ru": "короткий",
+      "en": "short",
+      "fr": "court / courte"
+    },
+    {
+      "id": "fr-core-0858",
+      "topic_id": "18",
+      "ru": "высокий; расположенный высоко",
+      "en": "high",
+      "fr": "haut / haute"
+    },
+    {
+      "id": "fr-core-0859",
+      "topic_id": "18",
+      "ru": "низкий",
+      "en": "low",
+      "fr": "bas / basse"
+    },
+    {
+      "id": "fr-core-0860",
+      "topic_id": "18",
+      "ru": "широкий",
+      "en": "wide",
+      "fr": "large"
+    },
+    {
+      "id": "fr-core-0861",
+      "topic_id": "18",
+      "ru": "узкий",
+      "en": "narrow",
+      "fr": "étroit / étroite"
+    },
+    {
+      "id": "fr-core-0862",
+      "topic_id": "18",
+      "ru": "крупный; толстый",
+      "en": "big; fat",
+      "fr": "gros / grosse"
+    },
+    {
+      "id": "fr-core-0863",
+      "topic_id": "18",
+      "ru": "тонкий; стройный",
+      "en": "thin; slim",
+      "fr": "mince"
+    },
+    {
+      "id": "fr-core-0864",
+      "topic_id": "18",
+      "ru": "молодой",
+      "en": "young",
+      "fr": "jeune"
+    },
+    {
+      "id": "fr-core-0865",
+      "topic_id": "18",
+      "ru": "старый; пожилой",
+      "en": "old",
+      "fr": "vieux / vieille"
+    },
+    {
+      "id": "fr-core-0866",
+      "topic_id": "18",
+      "ru": "новый",
+      "en": "new",
+      "fr": "nouveau / nouvelle"
+    },
+    {
+      "id": "fr-core-0867",
+      "topic_id": "18",
+      "ru": "древний; бывший",
+      "en": "ancient; former",
+      "fr": "ancien / ancienne"
+    },
+    {
+      "id": "fr-core-0868",
+      "topic_id": "18",
+      "ru": "горячий; тёплый",
+      "en": "hot; warm",
+      "fr": "chaud / chaude"
+    },
+    {
+      "id": "fr-core-0869",
+      "topic_id": "18",
+      "ru": "холодный",
+      "en": "cold",
+      "fr": "froid / froide"
+    },
+    {
+      "id": "fr-core-0870",
+      "topic_id": "18",
+      "ru": "чистый; собственный",
+      "en": "clean; own",
+      "fr": "propre"
+    },
+    {
+      "id": "fr-core-0871",
+      "topic_id": "18",
+      "ru": "грязный",
+      "en": "dirty",
+      "fr": "sale"
+    },
+    {
+      "id": "fr-core-0872",
+      "topic_id": "18",
+      "ru": "сухой",
+      "en": "dry",
+      "fr": "sec / sèche"
+    },
+    {
+      "id": "fr-core-0873",
+      "topic_id": "18",
+      "ru": "влажный",
+      "en": "damp; humid",
+      "fr": "humide"
+    },
+    {
+      "id": "fr-core-0874",
+      "topic_id": "18",
+      "ru": "полный; наполненный",
+      "en": "full",
+      "fr": "plein / pleine"
+    },
+    {
+      "id": "fr-core-0875",
+      "topic_id": "18",
+      "ru": "пустой",
+      "en": "empty",
+      "fr": "vide"
+    },
+    {
+      "id": "fr-core-0876",
+      "topic_id": "18",
+      "ru": "тяжёлый",
+      "en": "heavy",
+      "fr": "lourd / lourde"
+    },
+    {
+      "id": "fr-core-0877",
+      "topic_id": "18",
+      "ru": "лёгкий по весу",
+      "en": "light in weight",
+      "fr": "léger / légère"
+    },
+    {
+      "id": "fr-core-0878",
+      "topic_id": "18",
+      "ru": "твёрдый; жёсткий",
+      "en": "hard",
+      "fr": "dur / dure"
+    },
+    {
+      "id": "fr-core-0879",
+      "topic_id": "18",
+      "ru": "мягкий",
+      "en": "soft",
+      "fr": "mou / molle"
+    },
+    {
+      "id": "fr-core-0880",
+      "topic_id": "18",
+      "ru": "дорогой по цене",
+      "en": "expensive",
+      "fr": "cher / chère"
+    },
+    {
+      "id": "fr-core-0881",
+      "topic_id": "18",
+      "ru": "бесплатный",
+      "en": "free of charge",
+      "fr": "gratuit / gratuite"
+    },
+    {
+      "id": "fr-core-0882",
+      "topic_id": "18",
+      "ru": "открытый",
+      "en": "open",
+      "fr": "ouvert / ouverte"
+    },
+    {
+      "id": "fr-core-0883",
+      "topic_id": "18",
+      "ru": "закрытый",
+      "en": "closed",
+      "fr": "fermé / fermée"
+    },
+    {
+      "id": "fr-core-0884",
+      "topic_id": "18",
+      "ru": "доступный; свободный",
+      "en": "available",
+      "fr": "disponible"
+    },
+    {
+      "id": "fr-core-0885",
+      "topic_id": "18",
+      "ru": "полный; без свободных мест",
+      "en": "complete; fully booked",
+      "fr": "complet / complète"
+    },
+    {
+      "id": "fr-core-0886",
+      "topic_id": "18",
+      "ru": "близкий",
+      "en": "near; close",
+      "fr": "proche"
+    },
+    {
+      "id": "fr-core-0887",
+      "topic_id": "18",
+      "ru": "удалённый; далёкий",
+      "en": "distant; far away",
+      "fr": "éloigné / éloignée"
+    },
+    {
+      "id": "fr-core-0888",
+      "topic_id": "18",
+      "ru": "быстрый",
+      "en": "fast",
+      "fr": "rapide"
+    },
+    {
+      "id": "fr-core-0889",
+      "topic_id": "18",
+      "ru": "медленный",
+      "en": "slow",
+      "fr": "lent / lente"
+    },
+    {
+      "id": "fr-core-0890",
+      "topic_id": "18",
+      "ru": "сильный",
+      "en": "strong",
+      "fr": "fort / forte"
+    },
+    {
+      "id": "fr-core-0891",
+      "topic_id": "18",
+      "ru": "слабый",
+      "en": "weak",
+      "fr": "faible"
+    },
+    {
+      "id": "fr-core-0892",
+      "topic_id": "18",
+      "ru": "белый",
+      "en": "white",
+      "fr": "blanc / blanche"
+    },
+    {
+      "id": "fr-core-0893",
+      "topic_id": "18",
+      "ru": "чёрный",
+      "en": "black",
+      "fr": "noir / noire"
+    },
+    {
+      "id": "fr-core-0894",
+      "topic_id": "18",
+      "ru": "красный",
+      "en": "red",
+      "fr": "rouge"
+    },
+    {
+      "id": "fr-core-0895",
+      "topic_id": "18",
+      "ru": "синий; голубой",
+      "en": "blue",
+      "fr": "bleu / bleue"
+    },
+    {
+      "id": "fr-core-0896",
+      "topic_id": "18",
+      "ru": "зелёный",
+      "en": "green",
+      "fr": "vert / verte"
+    },
+    {
+      "id": "fr-core-0897",
+      "topic_id": "18",
+      "ru": "жёлтый",
+      "en": "yellow",
+      "fr": "jaune"
+    },
+    {
+      "id": "fr-core-0898",
+      "topic_id": "18",
+      "ru": "серый",
+      "en": "gray",
+      "fr": "gris / grise"
+    },
+    {
+      "id": "fr-core-0899",
+      "topic_id": "18",
+      "ru": "розовый",
+      "en": "pink",
+      "fr": "rose"
+    },
+    {
+      "id": "fr-core-0900",
+      "topic_id": "18",
+      "ru": "очень вкусный",
+      "en": "delicious",
+      "fr": "délicieux / délicieuse"
+    },
+    {
+      "id": "fr-core-0901",
+      "topic_id": "19",
+      "ru": "довольный",
+      "en": "pleased; satisfied",
+      "fr": "content / contente"
+    },
+    {
+      "id": "fr-core-0902",
+      "topic_id": "19",
+      "ru": "счастливый",
+      "en": "happy",
+      "fr": "heureux / heureuse"
+    },
+    {
+      "id": "fr-core-0903",
+      "topic_id": "19",
+      "ru": "грустный",
+      "en": "sad",
+      "fr": "triste"
+    },
+    {
+      "id": "fr-core-0904",
+      "topic_id": "19",
+      "ru": "спокойный",
+      "en": "calm",
+      "fr": "calme"
+    },
+    {
+      "id": "fr-core-0905",
+      "topic_id": "19",
+      "ru": "обеспокоенный",
+      "en": "worried",
+      "fr": "inquiet / inquiète"
+    },
+    {
+      "id": "fr-core-0906",
+      "topic_id": "19",
+      "ru": "уставший",
+      "en": "tired",
+      "fr": "fatigué / fatiguée"
+    },
+    {
+      "id": "fr-core-0907",
+      "topic_id": "19",
+      "ru": "больной",
+      "en": "ill; sick",
+      "fr": "malade"
+    },
+    {
+      "id": "fr-core-0908",
+      "topic_id": "19",
+      "ru": "занятый",
+      "en": "busy",
+      "fr": "occupé / occupée"
+    },
+    {
+      "id": "fr-core-0909",
+      "topic_id": "19",
+      "ru": "свободный",
+      "en": "free; not busy",
+      "fr": "libre"
+    },
+    {
+      "id": "fr-core-0910",
+      "topic_id": "19",
+      "ru": "готовый",
+      "en": "ready",
+      "fr": "prêt / prête"
+    },
+    {
+      "id": "fr-core-0911",
+      "topic_id": "19",
+      "ru": "один; одинокий",
+      "en": "alone; lonely",
+      "fr": "seul / seule"
+    },
+    {
+      "id": "fr-core-0912",
+      "topic_id": "19",
+      "ru": "застенчивый",
+      "en": "shy",
+      "fr": "timide"
+    },
+    {
+      "id": "fr-core-0913",
+      "topic_id": "19",
+      "ru": "приятный; дружелюбный",
+      "en": "nice; friendly",
+      "fr": "sympathique"
+    },
+    {
+      "id": "fr-core-0914",
+      "topic_id": "19",
+      "ru": "добрый; милый",
+      "en": "kind; nice",
+      "fr": "gentil / gentille"
+    },
+    {
+      "id": "fr-core-0915",
+      "topic_id": "19",
+      "ru": "вежливый",
+      "en": "polite",
+      "fr": "poli / polie"
+    },
+    {
+      "id": "fr-core-0916",
+      "topic_id": "19",
+      "ru": "серьёзный",
+      "en": "serious",
+      "fr": "sérieux / sérieuse"
+    },
+    {
+      "id": "fr-core-0917",
+      "topic_id": "19",
+      "ru": "смешной; забавный",
+      "en": "funny",
+      "fr": "drôle"
+    },
+    {
+      "id": "fr-core-0918",
+      "topic_id": "19",
+      "ru": "умный",
+      "en": "intelligent",
+      "fr": "intelligent / intelligente"
+    },
+    {
+      "id": "fr-core-0919",
+      "topic_id": "19",
+      "ru": "смелый",
+      "en": "brave",
+      "fr": "courageux / courageuse"
+    },
+    {
+      "id": "fr-core-0920",
+      "topic_id": "19",
+      "ru": "любопытный",
+      "en": "curious",
+      "fr": "curieux / curieuse"
+    },
+    {
+      "id": "fr-core-0921",
+      "topic_id": "19",
+      "ru": "интересный",
+      "en": "interesting",
+      "fr": "intéressant / intéressante"
+    },
+    {
+      "id": "fr-core-0922",
+      "topic_id": "19",
+      "ru": "скучный",
+      "en": "boring",
+      "fr": "ennuyeux / ennuyeuse"
+    },
+    {
+      "id": "fr-core-0923",
+      "topic_id": "19",
+      "ru": "лёгкий; несложный",
+      "en": "easy",
+      "fr": "facile"
+    },
+    {
+      "id": "fr-core-0924",
+      "topic_id": "19",
+      "ru": "трудный",
+      "en": "difficult",
+      "fr": "difficile"
+    },
+    {
+      "id": "fr-core-0925",
+      "topic_id": "19",
+      "ru": "простой",
+      "en": "simple",
+      "fr": "simple"
+    },
+    {
+      "id": "fr-core-0926",
+      "topic_id": "19",
+      "ru": "сложный; запутанный",
+      "en": "complicated",
+      "fr": "compliqué / compliquée"
+    },
+    {
+      "id": "fr-core-0927",
+      "topic_id": "19",
+      "ru": "возможный",
+      "en": "possible",
+      "fr": "possible"
+    },
+    {
+      "id": "fr-core-0928",
+      "topic_id": "19",
+      "ru": "невозможный",
+      "en": "impossible",
+      "fr": "impossible"
+    },
+    {
+      "id": "fr-core-0929",
+      "topic_id": "19",
+      "ru": "важный",
+      "en": "important",
+      "fr": "important / importante"
+    },
+    {
+      "id": "fr-core-0930",
+      "topic_id": "19",
+      "ru": "необходимый",
+      "en": "necessary",
+      "fr": "nécessaire"
+    },
+    {
+      "id": "fr-core-0931",
+      "topic_id": "19",
+      "ru": "полезный",
+      "en": "useful",
+      "fr": "utile"
+    },
+    {
+      "id": "fr-core-0932",
+      "topic_id": "19",
+      "ru": "бесполезный",
+      "en": "useless",
+      "fr": "inutile"
+    },
+    {
+      "id": "fr-core-0933",
+      "topic_id": "19",
+      "ru": "опасный",
+      "en": "dangerous",
+      "fr": "dangereux / dangereuse"
+    },
+    {
+      "id": "fr-core-0934",
+      "topic_id": "19",
+      "ru": "безопасный; уверенный",
+      "en": "safe; sure",
+      "fr": "sûr / sûre"
+    },
+    {
+      "id": "fr-core-0935",
+      "topic_id": "19",
+      "ru": "истинный; настоящий",
+      "en": "true; real",
+      "fr": "vrai / vraie"
+    },
+    {
+      "id": "fr-core-0936",
+      "topic_id": "19",
+      "ru": "ложный; неверный",
+      "en": "false; wrong",
+      "fr": "faux / fausse"
+    },
+    {
+      "id": "fr-core-0937",
+      "topic_id": "19",
+      "ru": "правильный; корректный",
+      "en": "correct",
+      "fr": "correct / correcte"
+    },
+    {
+      "id": "fr-core-0938",
+      "topic_id": "19",
+      "ru": "другой; отличающийся",
+      "en": "different",
+      "fr": "différent / différente"
+    },
+    {
+      "id": "fr-core-0939",
+      "topic_id": "19",
+      "ru": "нормальный; обычный",
+      "en": "normal",
+      "fr": "normal / normale"
+    },
+    {
+      "id": "fr-core-0940",
+      "topic_id": "19",
+      "ru": "привычный; обычный",
+      "en": "usual",
+      "fr": "habituel / habituelle"
+    },
+    {
+      "id": "fr-core-0941",
+      "topic_id": "19",
+      "ru": "личный",
+      "en": "personal",
+      "fr": "personnel / personnelle"
+    },
+    {
+      "id": "fr-core-0942",
+      "topic_id": "19",
+      "ru": "общественный; публичный",
+      "en": "public",
+      "fr": "public / publique"
+    },
+    {
+      "id": "fr-core-0943",
+      "topic_id": "19",
+      "ru": "частный; личный",
+      "en": "private",
+      "fr": "privé / privée"
+    },
+    {
+      "id": "fr-core-0944",
+      "topic_id": "19",
+      "ru": "естественный; природный",
+      "en": "natural",
+      "fr": "naturel / naturelle"
+    },
+    {
+      "id": "fr-core-0945",
+      "topic_id": "19",
+      "ru": "местный",
+      "en": "local",
+      "fr": "local / locale"
+    },
+    {
+      "id": "fr-core-0946",
+      "topic_id": "19",
+      "ru": "международный",
+      "en": "international",
+      "fr": "international / internationale"
+    },
+    {
+      "id": "fr-core-0947",
+      "topic_id": "19",
+      "ru": "нынешний; текущий",
+      "en": "current; present-day",
+      "fr": "actuel / actuelle"
+    },
+    {
+      "id": "fr-core-0948",
+      "topic_id": "19",
+      "ru": "последний; прошлый",
+      "en": "last; previous",
+      "fr": "dernier / dernière"
+    },
+    {
+      "id": "fr-core-0949",
+      "topic_id": "19",
+      "ru": "первый",
+      "en": "first",
+      "fr": "premier / première"
+    },
+    {
+      "id": "fr-core-0950",
+      "topic_id": "19",
+      "ru": "лучший",
+      "en": "better; best",
+      "fr": "meilleur / meilleure"
+    },
+    {
+      "id": "fr-core-0951",
+      "topic_id": "20",
+      "ru": "и",
+      "en": "and",
+      "fr": "et"
+    },
+    {
+      "id": "fr-core-0952",
+      "topic_id": "20",
+      "ru": "или",
+      "en": "or",
+      "fr": "ou"
+    },
+    {
+      "id": "fr-core-0953",
+      "topic_id": "20",
+      "ru": "но",
+      "en": "but",
+      "fr": "mais"
+    },
+    {
+      "id": "fr-core-0954",
+      "topic_id": "20",
+      "ru": "следовательно; поэтому",
+      "en": "therefore; so",
+      "fr": "donc"
+    },
+    {
+      "id": "fr-core-0955",
+      "topic_id": "20",
+      "ru": "потому что",
+      "en": "because",
+      "fr": "parce que"
+    },
+    {
+      "id": "fr-core-0956",
+      "topic_id": "20",
+      "ru": "как; поскольку",
+      "en": "like; as; since",
+      "fr": "comme"
+    },
+    {
+      "id": "fr-core-0957",
+      "topic_id": "20",
+      "ru": "тогда; итак",
+      "en": "then; so",
+      "fr": "alors"
+    },
+    {
+      "id": "fr-core-0958",
+      "topic_id": "20",
+      "ru": "однако",
+      "en": "however",
+      "fr": "cependant"
+    },
+    {
+      "id": "fr-core-0959",
+      "topic_id": "20",
+      "ru": "тем не менее; и всё же",
+      "en": "nevertheless; yet",
+      "fr": "pourtant"
+    },
+    {
+      "id": "fr-core-0960",
+      "topic_id": "20",
+      "ru": "тоже; также",
+      "en": "also; too",
+      "fr": "aussi"
+    },
+    {
+      "id": "fr-core-0961",
+      "topic_id": "20",
+      "ru": "особенно; прежде всего",
+      "en": "especially; above all",
+      "fr": "surtout"
+    },
+    {
+      "id": "fr-core-0962",
+      "topic_id": "20",
+      "ru": "только",
+      "en": "only",
+      "fr": "seulement"
+    },
+    {
+      "id": "fr-core-0963",
+      "topic_id": "20",
+      "ru": "даже если",
+      "en": "even if",
+      "fr": "même si"
+    },
+    {
+      "id": "fr-core-0964",
+      "topic_id": "20",
+      "ru": "несмотря на",
+      "en": "despite",
+      "fr": "malgré"
+    },
+    {
+      "id": "fr-core-0965",
+      "topic_id": "20",
+      "ru": "хорошо",
+      "en": "well",
+      "fr": "bien"
+    },
+    {
+      "id": "fr-core-0966",
+      "topic_id": "20",
+      "ru": "плохо",
+      "en": "badly",
+      "fr": "mal"
+    },
+    {
+      "id": "fr-core-0967",
+      "topic_id": "20",
+      "ru": "очень",
+      "en": "very",
+      "fr": "très"
+    },
+    {
+      "id": "fr-core-0968",
+      "topic_id": "20",
+      "ru": "слишком",
+      "en": "too much; too",
+      "fr": "trop"
+    },
+    {
+      "id": "fr-core-0969",
+      "topic_id": "20",
+      "ru": "достаточно; довольно",
+      "en": "enough; quite",
+      "fr": "assez"
+    },
+    {
+      "id": "fr-core-0970",
+      "topic_id": "20",
+      "ru": "мало",
+      "en": "little; few",
+      "fr": "peu"
+    },
+    {
+      "id": "fr-core-0971",
+      "topic_id": "20",
+      "ru": "много",
+      "en": "a lot; much; many",
+      "fr": "beaucoup"
+    },
+    {
+      "id": "fr-core-0972",
+      "topic_id": "20",
+      "ru": "больше",
+      "en": "more",
+      "fr": "plus"
+    },
+    {
+      "id": "fr-core-0973",
+      "topic_id": "20",
+      "ru": "меньше",
+      "en": "less; fewer",
+      "fr": "moins"
+    },
+    {
+      "id": "fr-core-0974",
+      "topic_id": "20",
+      "ru": "почти",
+      "en": "almost",
+      "fr": "presque"
+    },
+    {
+      "id": "fr-core-0975",
+      "topic_id": "20",
+      "ru": "примерно",
+      "en": "approximately",
+      "fr": "environ"
+    },
+    {
+      "id": "fr-core-0976",
+      "topic_id": "20",
+      "ru": "действительно; правда",
+      "en": "really",
+      "fr": "vraiment"
+    },
+    {
+      "id": "fr-core-0977",
+      "topic_id": "20",
+      "ru": "может быть",
+      "en": "maybe",
+      "fr": "peut-être"
+    },
+    {
+      "id": "fr-core-0978",
+      "topic_id": "20",
+      "ru": "вероятно",
+      "en": "probably",
+      "fr": "probablement"
+    },
+    {
+      "id": "fr-core-0979",
+      "topic_id": "20",
+      "ru": "скорее; скорее уж",
+      "en": "rather",
+      "fr": "plutôt"
+    },
+    {
+      "id": "fr-core-0980",
+      "topic_id": "20",
+      "ru": "например",
+      "en": "for example",
+      "fr": "par exemple"
+    },
+    {
+      "id": "fr-core-0981",
+      "topic_id": "20",
+      "ru": "идея",
+      "en": "idea",
+      "fr": "l’idée"
+    },
+    {
+      "id": "fr-core-0982",
+      "topic_id": "20",
+      "ru": "мнение",
+      "en": "opinion",
+      "fr": "l’avis"
+    },
+    {
+      "id": "fr-core-0983",
+      "topic_id": "20",
+      "ru": "причина; основание",
+      "en": "reason",
+      "fr": "la raison"
+    },
+    {
+      "id": "fr-core-0984",
+      "topic_id": "20",
+      "ru": "проблема",
+      "en": "problem",
+      "fr": "le problème"
+    },
+    {
+      "id": "fr-core-0985",
+      "topic_id": "20",
+      "ru": "решение проблемы",
+      "en": "solution",
+      "fr": "la solution"
+    },
+    {
+      "id": "fr-core-0986",
+      "topic_id": "20",
+      "ru": "выбор",
+      "en": "choice",
+      "fr": "le choix"
+    },
+    {
+      "id": "fr-core-0987",
+      "topic_id": "20",
+      "ru": "принятое решение",
+      "en": "decision",
+      "fr": "la décision"
+    },
+    {
+      "id": "fr-core-0988",
+      "topic_id": "20",
+      "ru": "ситуация",
+      "en": "situation",
+      "fr": "la situation"
+    },
+    {
+      "id": "fr-core-0989",
+      "topic_id": "20",
+      "ru": "условие",
+      "en": "condition",
+      "fr": "la condition"
+    },
+    {
+      "id": "fr-core-0990",
+      "topic_id": "20",
+      "ru": "преимущество",
+      "en": "advantage",
+      "fr": "l’avantage"
+    },
+    {
+      "id": "fr-core-0991",
+      "topic_id": "20",
+      "ru": "недостаток",
+      "en": "disadvantage",
+      "fr": "l’inconvénient"
+    },
+    {
+      "id": "fr-core-0992",
+      "topic_id": "20",
+      "ru": "потребность; нужда",
+      "en": "need",
+      "fr": "le besoin"
+    },
+    {
+      "id": "fr-core-0993",
+      "topic_id": "20",
+      "ru": "желание",
+      "en": "desire; wish",
+      "fr": "l’envie"
+    },
+    {
+      "id": "fr-core-0994",
+      "topic_id": "20",
+      "ru": "страх",
+      "en": "fear",
+      "fr": "la peur"
+    },
+    {
+      "id": "fr-core-0995",
+      "topic_id": "20",
+      "ru": "надежда",
+      "en": "hope",
+      "fr": "l’espoir"
+    },
+    {
+      "id": "fr-core-0996",
+      "topic_id": "20",
+      "ru": "удача; шанс",
+      "en": "luck; chance",
+      "fr": "la chance"
+    },
+    {
+      "id": "fr-core-0997",
+      "topic_id": "20",
+      "ru": "будущее",
+      "en": "future",
+      "fr": "l’avenir"
+    },
+    {
+      "id": "fr-core-0998",
+      "topic_id": "20",
+      "ru": "изменение",
+      "en": "change",
+      "fr": "le changement"
+    },
+    {
+      "id": "fr-core-0999",
+      "topic_id": "20",
+      "ru": "последствие",
+      "en": "consequence",
+      "fr": "la conséquence"
+    },
+    {
+      "id": "fr-core-1000",
+      "topic_id": "20",
+      "ru": "возможность",
+      "en": "possibility",
+      "fr": "la possibilité"
+    }
+  ],
+  "reference_sources": [
+    {
+      "title": "Council of Europe — CEFR global scale",
+      "url": "https://www.coe.int/en/web/common-european-framework-reference-languages/table-1-cefr-3.3-common-reference-levels-global-scale/",
+      "purpose_ru": "Описание навыков B1; не источник готового списка слов."
+    },
+    {
+      "title": "France Éducation international — DELF tout public, niveau B1",
+      "url": "https://www.france-education-international.fr/diplome/delf-tout-public/niveau-b1",
+      "purpose_ru": "Ориентиры коммуникативных задач B1; не разметка уровня отдельных слов."
+    }
+  ]
+}

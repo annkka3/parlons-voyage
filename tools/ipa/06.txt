@@ -1,0 +1,50 @@
+la maison|la mɛzɔ̃
+l’appartement|lapaʁtəmɑ̃
+la pièce|la pjɛs
+la chambre|la ʃɑ̃bʁ
+le salon|lə salɔ̃
+la cuisine|la kɥizin
+la salle de bains|la sal də bɛ̃
+les toilettes|le twalɛt
+l’entrée|lɑ̃tʁe
+le couloir|lə kulwaʁ
+l’escalier|lɛskalje
+l’étage|letaʒ
+l’ascenseur|lasɑ̃sœʁ
+la porte|la pɔʁt
+la fenêtre|la fənɛtʁ
+le mur|lə myʁ
+le sol|lə sɔl
+le plafond|lə plafɔ̃
+le toit|lə twa
+le balcon|lə balkɔ̃
+le jardin|lə ʒaʁdɛ̃
+le garage|lə gaʁaʒ
+la clé|la kle
+la serrure|la seʁyʁ
+le lit|lə li
+le matelas|lə matla
+le drap|lə dʁa
+l’oreiller|lɔʁeje
+la couverture|la kuvɛʁtyʁ
+l’armoire|laʁmwaʁ
+le placard|lə plakaʁ
+la table|la tabl
+la chaise|la ʃɛz
+le canapé|lə kanape
+le fauteuil|lə fotœj
+le bureau|lə byʁo
+l’étagère|letaʒɛʁ
+la lampe|la lɑ̃p
+la lumière|la lymjɛʁ
+le miroir|lə miʁwaʁ
+la douche|la duʃ
+la baignoire|la bɛɲwaʁ
+le lavabo|lə lavabo
+la serviette|la sɛʁvjɛt
+le savon|lə savɔ̃
+le réfrigérateur|lə ʁefʁiʒeʁatœʁ
+le four|lə fuʁ
+le lave-linge|lə lav lɛ̃ʒ
+le chauffage|lə ʃofaʒ
+la prise|la pʁiz

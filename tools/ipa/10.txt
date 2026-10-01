@@ -1,0 +1,50 @@
+la ville|la vil
+le village|lə vilaʒ
+le quartier|lə kaʁtje
+la rue|la ʁy
+l’avenue|lavny
+le boulevard|lə bulvaʁ
+le trottoir|lə tʁɔtwaʁ
+la place|la plas
+le centre-ville|lə sɑ̃tʁ vil
+la banlieue|la bɑ̃ljø
+le panneau|lə pano
+le plan|lə plɑ̃
+le bâtiment|lə batimɑ̃
+l’immeuble|limœbl
+le magasin|lə magazɛ̃
+le marché|lə maʁʃe
+le supermarché|lə sypɛʁmaʁʃe
+la boutique|la butik
+le centre commercial|lə sɑ̃tʁ kɔmɛʁsjal
+la pharmacie|la faʁmasi
+l’hôpital|lopital
+la banque|la bɑ̃k
+la poste|la pɔst
+la mairie|la meʁi
+le commissariat|lə kɔmisaʁja
+la bibliothèque|la biblijɔtɛk
+le musée|lə myze
+le théâtre|lə teɑtʁ
+le cinéma|lə sinema
+le parc|lə paʁk
+la piscine|la pisin
+le stade|lə stad
+l’église|legliz
+le château|lə ʃato
+le monument|lə mɔnymɑ̃
+la plage|la plaʒ
+le port|lə pɔʁ
+l’hôtel|lotɛl
+la réception|la ʁesɛpsjɔ̃
+l’accueil|lakœj
+le personnel|lə pɛʁsɔnɛl
+le séjour|lə seʒuʁ
+la nuit|la nɥi
+la disponibilité|la dispɔnibilite
+la climatisation|la klimatizasjɔ̃
+la connexion|la kɔnɛksjɔ̃
+le ménage|lə menaʒ
+la sortie|la sɔʁti
+l’arrêt|laʁɛ
+le supplément|lə syplemɑ̃

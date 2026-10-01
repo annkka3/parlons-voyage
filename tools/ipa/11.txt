@@ -1,0 +1,50 @@
+l’achat|laʃa
+la vente|la vɑ̃t
+le prix|lə pʁi
+l’argent|laʁʒɑ̃
+les espèces|lez ɛspɛs
+la monnaie|la mɔnɛ
+la carte bancaire|la kaʁt bɑ̃kɛʁ
+le compte|lə kɔ̃t
+la facture|la faktyʁ
+le reçu|lə ʁəsy
+la caisse|la kɛs
+le portefeuille|lə pɔʁtəfœj
+la remise|la ʁəmiz
+la promotion|la pʁɔmosjɔ̃
+les soldes|le sɔld
+le budget|lə bydʒɛ
+la dépense|la depɑ̃s
+le remboursement|lə ʁɑ̃buʁsəmɑ̃
+la garantie|la gaʁɑ̃ti
+le produit|lə pʁɔdɥi
+la marque|la maʁk
+la qualité|la kalite
+la quantité|la kɑ̃tite
+la taille|la taj
+la pointure|la pwɛ̃tyʁ
+le poids|lə pwa
+le kilo|lə kilo
+le litre|lə litʁ
+le paquet|lə pakɛ
+la boîte|la bwat
+le sachet|lə saʃɛ
+l’emballage|lɑ̃balaʒ
+le vêtement|lə vɛtmɑ̃
+le pantalon|lə pɑ̃talɔ̃
+le jean|lə dʒin
+la robe|la ʁɔb
+la jupe|la ʒyp
+la chemise|la ʃəmiz
+le tee-shirt|lə tiʃœʁt
+le pull|lə pyl
+la veste|la vɛst
+le manteau|lə mɑ̃to
+la chaussure|la ʃosyʁ
+la chaussette|la ʃosɛt
+le chapeau|lə ʃapo
+l’écharpe|leʃaʁp
+le gant|lə gɑ̃
+la ceinture|la sɛ̃tyʁ
+les lunettes|le lynɛt
+le parapluie|lə paʁaplɥi

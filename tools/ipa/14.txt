@@ -1,0 +1,50 @@
+le téléphone|lə telefɔn
+le numéro|lə nymeʁo
+l’ordinateur|lɔʁdinatœʁ
+l’écran|lekʁɑ̃
+la question|la kɛstjɔ̃
+la réponse|la ʁepɔ̃s
+l’application|laplikasjɔ̃
+le site|lə sit
+Internet|ɛ̃tɛʁnɛt
+le mot de passe|lə mo də pas
+le courriel|lə kuʁjɛl
+le message|lə mesaʒ
+le fichier|lə fiʃje
+le document|lə dɔkymɑ̃
+l’événement|levɛnmɑ̃
+le lien|lə ljɛ̃
+le réseau|lə ʁezo
+la photo|la fɔto
+l’information|lɛ̃fɔʁmasjɔ̃
+la vidéo|la video
+l’actualité|laktɥalite
+le journal|lə ʒuʁnal
+le magazine|lə magazin
+l’article|laʁtikl
+la lettre|la lɛtʁ
+la page|la paʒ
+le mot|lə mo
+la phrase|la fʁaz
+l’histoire|listwaʁ
+le film|lə film
+la série|la seʁi
+la musique|la myzik
+la chanson|la ʃɑ̃sɔ̃
+le concert|lə kɔ̃sɛʁ
+le spectacle|lə spɛktakl
+l’exposition|lɛkspozisjɔ̃
+l’art|laʁ
+la culture|la kyltyʁ
+le dessin|lə desɛ̃
+la peinture|la pɛ̃tyʁ
+la danse|la dɑ̃s
+le jeu|lə ʒø
+le sport|lə spɔʁ
+le loisir|lə lwaziʁ
+la promenade|la pʁɔmnad
+la randonnée|la ʁɑ̃dɔne
+la natation|la natasjɔ̃
+le football|lə futbol
+le cyclisme|lə siklism
+la lecture|la lɛktyʁ
