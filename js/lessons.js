@@ -62,6 +62,7 @@ function lessonAnswered(g, right) {
   const c = g.qs[g.i];
   g.status = 'done'; g.right = right;
   if (right && g.first) g.ok++;
+  if (right) celebrate();
   if (!right) g.missed.push(c.q);
   logAnswer(right && g.first ? 3 : 0, 0); persist();
   const ans = c.q.t === 'mc' ? c.q.o[c.q.a] : c.q.t === 'fill' ? c.q.a[0] : null;

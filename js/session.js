@@ -16,6 +16,7 @@ function frame(o) {
     el('div', { class: 's-top' }, el('div', { class: 'row' },
       el('button', { type: 'button', class: 'btn icon-btn', 'aria-label': tt('Close', 'Закрыть'), onclick: o.onClose || closeAll }, icon('close')),
       el('div', { class: 'meter', role: 'progressbar' }, el('i', { style: { width: Math.round((o.progress || 0) * 100) + '%' } })),
+      o.extra || null,
       el('span', { class: 'muted small num', style: { minWidth: '44px', textAlign: 'right' } }, o.counter || ''))),
     el('div', { class: 's-body' }, o.body),
     o.foot ? el('div', { class: 'sticky-bottom' }, o.foot) : null);
@@ -142,6 +143,8 @@ function finishQ(grade) {
   if (Q.srs) Q.rec = applyGrade(it.id, grade);
   logAnswer(grade, Q.hints);
   persist();
+  SES.combo = grade === 3 ? (SES.combo || 0) + 1 : 0;   // a streak of clean answers
+  if (grade === 3) celebrate();
   if (grade <= 1) {
     if (!SES.missed.includes(it.id)) SES.missed.push(it.id);
     if (!SES.opts.noRetry && (SES.retries[it.id] || 0) < 2) {
@@ -236,7 +239,7 @@ function verdictFor(Q) {
 /* ---------- views ---------- */
 function detailBlock(it, o) {
   return el('div', { class: 'stack' },
-    el('div', { class: 'plate' + (it.kind === 'nm' ? ' num-plate' : '') }, it.fr),
+    el('div', { class: 'plate enter' + (it.kind === 'nm' ? ' num-plate' : '') }, it.fr),
     el('div', { class: 'row' }, audioBtn(it), audioBtn(it, true), el('div', { class: 'grow stack', style: { gap: '2px' } }, trLines(it))),
     el('div', { class: 'stack', style: { gap: '2px' } }, el('div', { class: 'h2' }, mean(it)), it.kind !== 'nm' ? el('div', { class: 'muted' }, meanAlt(it)) : null),
     it.ne ? el('p', { class: 'note' }, noteOf(it)) : null,
@@ -246,7 +249,7 @@ function sessionView() {
   const total = SES.steps.length;
   if (SES.done) return summaryView();
   const st = SES.steps[SES.i];
-  const common = { progress: SES.i / total, counter: `${SES.i + 1}/${total}` };
+  const common = { progress: SES.i / total, counter: `${SES.i + 1}/${total}`, extra: SES.combo >= 2 ? el('span', { class: 'combo', title: tt('Clean answers in a row', 'Верных ответов подряд') }, art('flame', 18), String(SES.combo)) : null };
   if (st.t === 'intro') return frame(Object.assign({}, common, {
     body: [
       el('div', { class: 'row between' }, el('span', { class: 'chip hint' }, tt('New', 'Новое')), IT[st.id].k === 'h' ? el('span', { class: 'chip' }, tt('You will hear this one', 'Эту фразу нужно понимать на слух')) : el('span', { class: 'chip' }, tt('You will say this one', 'Эту фразу нужно говорить'))),
@@ -268,18 +271,20 @@ function questionView(common) {
       statusChipSmall(it)),
     Q.mode === 'say' && Q.status === 'ask' ? btn(Q.ans === 'type' ? tt('Say aloud instead', 'Говорить вслух') : tt('Type instead', 'Ввести'), 'small ghost', () => { Q.ans = Q.ans === 'type' ? 'speak' : 'type'; renderOverlay(); if (Q.ans === 'type') focusAnswer(); }) : null));
 
+  const mood = done ? (Q.grade >= 2 ? 'cheer' : 'think') : 'happy';
+  const asks = inner => el('div', { class: 'ask' + (done ? (Q.grade >= 2 ? ' cheer' : ' think') : '') }, mascot(mood, 66), el('div', { class: 'speech' }, inner));
   if (Q.mode === 'say') {
     body.push(it.kind === 'nm'
-      ? el('div', { class: 'stack' }, el('div', { class: 'plate num-plate' }, String(it.n)), el('div', { class: 'muted' }, tt('Say this number in French.', 'Скажи это число по-французски.')))
-      : el('div', { class: 'stack', style: { gap: '4px' } }, el('div', { class: 'prompt' }, mean(it)),
-        el('div', { class: 'muted' }, Q.ans === 'type' ? tt('Type it in French.', 'Напиши это по-французски.')
+      ? asks([el('div', { class: 'plate num-plate' }, String(it.n)), el('div', { class: 'muted', style: { marginTop: '8px' } }, tt('Say this number in French.', 'Скажи это число по-французски.'))])
+      : asks([el('div', { class: 'prompt' }, mean(it)),
+        el('div', { class: 'muted', style: { marginTop: '4px' } }, Q.ans === 'type' ? tt('Type it in French.', 'Напиши это по-французски.')
           : micAvailable() ? tt('Say it out loud in French. Tap the microphone to be checked, or “Show answer” to compare yourself.', 'Скажи вслух по-французски. Нажми микрофон, чтобы приложение проверило, или «Показать ответ», чтобы сравнить самой.')
-            : tt('Say it out loud in French, then tap “Show answer” and compare with what you said.', 'Скажи вслух по-французски, затем нажми «Показать ответ» и сравни со своим вариантом.'))));
+            : tt('Say it out loud in French, then tap “Show answer” and compare with what you said.', 'Скажи вслух по-французски, затем нажми «Показать ответ» и сравни со своим вариантом.'))]));
   } else {
+    body.push(asks(el('div', { class: 'prompt', style: { fontSize: '21px' } }, it.kind === 'nm' ? tt('Which number is it?', 'Какое это число?') : tt('What does it mean?', 'Что это значит?'))));
     body.push(el('div', { class: 'listen' },
       el('button', { type: 'button', class: 'btn primary', onclick: () => sayIt(it) }, icon('vol'), tt('Play', 'Слушать')),
       el('button', { type: 'button', class: 'btn', onclick: () => sayIt(it, true) }, icon('vol'), tt('Slow', 'Медленно'))));
-    body.push(el('div', { class: 'muted' }, it.kind === 'nm' ? tt('Which number is it?', 'Какое это число?') : tt('What does it mean?', 'Что это значит?')));
   }
 
   // hints that were opened
@@ -351,11 +356,12 @@ function summaryView() {
   const s = SES.stats, missed = SES.missed.map(id => IT[id]);
   const pct = s.n ? Math.round(s.g3 / s.n * 100) : 0;
   const hardNow = hardItems().length;
+  if (!SES.celebrated) { SES.celebrated = true; if (pct >= 60) setTimeout(() => celebrate(true), 350); }
   return frame({
     progress: 1, counter: '',
     body: [
-      el('div', { class: 'stack', style: { gap: '4px' } }, el('div', { class: 'eyebrow' }, tt('Session complete', 'Тренировка завершена')),
-        el('h1', { class: 'h1' }, pct >= 80 ? tt('Très bien !', 'Très bien !') : tt('Bien joué !', 'Bien joué !'))),
+      el('div', { class: 'summary-head' }, mascot(pct >= 80 ? 'cheer' : 'happy', 92), el('div', { class: 'eyebrow' }, tt('Session complete', 'Тренировка завершена'))),
+      el('div', { class: 'bigstamp' }, bigStamp(pct >= 80 ? 'TRÈS BIEN !' : pct >= 50 ? 'BIEN JOUÉ !' : 'COURAGE !', today(), pct >= 80 ? 'var(--c-red)' : pct >= 50 ? 'var(--c-blue)' : 'var(--c-green)')),
       el('section', { class: 'card stack', style: { gap: 0 } },
         el('div', { class: 'kv' }, el('span', { class: 'muted' }, tt('Answers', 'Ответов')), el('b', { class: 'num' }, s.n)),
         el('div', { class: 'kv' }, el('span', { class: 'muted' }, tt('Right without hints', 'Верно без подсказок')), el('b', { class: 'num' }, `${s.g3} (${pct}%)`)),

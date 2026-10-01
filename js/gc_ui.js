@@ -56,7 +56,7 @@ function gcCourseView() {
     const stable = all.filter(m => gcStatus(m.id) === 'stable_in_app').length, open = UI.gOpen[st] !== undefined ? UI.gOpen[st] : false;
     out.push(el('section', { class: 'card stack', style: { gap: '8px' } },
       el('button', { type: 'button', class: 'row between', style: { background: 'none', border: 0, padding: 0, textAlign: 'left' }, 'aria-expanded': String(open), onclick: () => { UI.gOpen[st] = !open; render(); } },
-        el('span', { class: 'row' }, el('span', { class: 'bullet' + (stable === all.length ? ' done' : '') }, st), el('span', { class: 'stack', style: { gap: '0' } }, el('b', { class: 'h2' }, tt('Block ', 'Блок ') + st), el('span', { class: 'muted small' }, tt(`${stable} of ${all.length} stable in the app`, `${stable} из ${all.length} устойчиво в приложении`)))),
+        el('span', { class: 'row' }, el('span', { class: 'gstage ' + st }, st), el('span', { class: 'stack', style: { gap: '0' } }, el('b', { class: 'h2' }, tt('Block ', 'Блок ') + st), el('span', { class: 'muted small' }, tt(`${stable} of ${all.length} stable in the app`, `${stable} из ${all.length} устойчиво в приложении`)))),
         el('span', { class: 'muted' }, open ? '–' : '+')),
       open ? el('div', { class: 'stack', style: { gap: 0 } },
         st === 'B2' && !gcRouteB2() ? el('p', { class: 'muted small', style: { paddingBottom: '8px' } }, tt('This is the continuation to B2. Open it after the basics feel solid; nothing here is required for the main route.', 'Это продолжение к B2. Открывай после уверенной базы; для основного маршрута эти темы не обязательны.')) : null,
@@ -249,6 +249,7 @@ function gcStartCheckpoint(id) {
 }
 function gcCommit(g, q, res) {
   q.res = res; q.st = 'done';
+  if (res.r === 'ok' && !res.hint) celebrate();
   if (g.cp) {
     const rec = S.gc.cp[g.cp.id]; rec.items[q.e.id] = { r: res.r, hint: res.hint ? 1 : 0 };
   } else if (q.e.type === 'transform' && res.r === 'bad') q.pending = res;
@@ -278,7 +279,8 @@ function gcView(g) {
   const sol = gcSolution(e);
   body.push(el('div', { class: 'row between' }, el('div', { class: 'row wrapr', style: { gap: '6px' } }, el('span', { class: 'chip accent' }, tt(GC_TYPE_LABEL[e.type][0], GC_TYPE_LABEL[e.type][1])), el('span', { class: 'chip' }, m.stage), g.retake ? el('span', { class: 'chip bad' }, tt('repeat', 'повтор')) : null),
     el('span', { class: 'muted small cell', style: { textAlign: 'right' } }, m.title_ru)));
-  body.push(el('div', { class: 'prompt', style: { fontSize: '24px', lineHeight: '1.25' } }, e.prompt_ru));
+  const mood = done && q.res ? (['ok', 'self_ok', 'self_part', 'variant'].includes(q.res.r) ? 'cheer' : 'think') : 'happy';
+  body.push(el('div', { class: 'ask' + (done ? (mood === 'cheer' ? ' cheer' : ' think') : '') }, mascot(mood, 60), el('div', { class: 'speech' }, el('div', { class: 'prompt', style: { fontSize: '21px', lineHeight: '1.25' } }, e.prompt_ru))));
 
   const inputBox = (ph) => {
     const inp = el('input', { id: 'gans', class: 'field', type: 'text', value: q.typed, lang: 'fr', autocomplete: 'off', autocapitalize: 'off', autocorrect: 'off', spellcheck: 'false', placeholder: ph || '', 'aria-label': tt('Your answer in French', 'Твой ответ по-французски'),
@@ -346,7 +348,8 @@ function gcSummary(g) {
   const okInd = closed.filter(q => q.res && q.res.r === 'ok' && !q.res.hint).length;
   const wrong = items.filter(q => q.res && ['bad', 'accent', 'revealed'].includes(q.res.r));
   const prod = items.filter(q => q.e.type === 'production' && q.res);
-  const body = [el('div', { class: 'stack', style: { gap: '4px' } }, el('div', { class: 'eyebrow' }, g.label), el('h1', { class: 'h1' }, g.cp ? tt('Checkpoint finished', 'Контрольная завершена') : tt('Round finished', 'Подход завершён')))];
+  if (!g.cel && closed.length && okInd === closed.length) { g.cel = true; setTimeout(() => celebrate(true), 300); }
+  const body = [el('div', { class: 'summary-head' }, mascot(okInd === closed.length ? 'cheer' : 'happy', 88), el('div', { class: 'eyebrow' }, g.label), el('h1', { class: 'h1' }, g.cp ? tt('Checkpoint finished', 'Контрольная завершена') : tt('Round finished', 'Подход завершён')))];
   body.push(el('section', { class: 'card stack', style: { gap: 0 } },
     el('div', { class: 'kv' }, el('span', { class: 'muted' }, tt('Closed tasks right without a hint', 'Закрытых верно без подсказки')), el('b', { class: 'num' }, `${okInd} / ${closed.length}`)),
     el('div', { class: 'kv' }, el('span', { class: 'muted' }, tt('With a hint', 'С подсказкой')), el('b', { class: 'num' }, closed.filter(q => q.res && q.res.hint).length)),

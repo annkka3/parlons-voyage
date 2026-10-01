@@ -37,15 +37,15 @@ function startWordle() {
 }
 function wordleKey(g, k) {
   if (g.status !== 'play') return;
-  g.msg = '';
+  g.msg = ''; g.fresh = false;
   if (k === '⌫') g.cur = g.cur.slice(0, -1);
   else if (k === '↵') {
     if (g.cur.length < 5) { g.msg = tt('Five letters needed.', 'Нужно пять букв.'); renderOverlay(); return; }
     const res = wordleEval(g.cur, g.target);
-    g.guesses.push({ word: g.cur, res });
+    g.guesses.push({ word: g.cur, res }); g.fresh = true;
     const rank = { absent: 1, present: 2, correct: 3 };
     g.cur.split('').forEach((ch, i) => { if (!g.keys[ch] || rank[res[i]] > rank[g.keys[ch]]) g.keys[ch] = res[i]; });
-    if (g.cur === g.target) { g.status = 'won'; logAnswer(g.hint ? 2 : 3, g.hint ? 1 : 0); persist(); speak(g.w.fr); }
+    if (g.cur === g.target) { setTimeout(() => celebrate(true), 700); g.status = 'won'; logAnswer(g.hint ? 2 : 3, g.hint ? 1 : 0); persist(); speak(g.w.fr); }
     else if (g.guesses.length >= 6) { g.status = 'lost'; logAnswer(0, 0); persist(); speak(g.w.fr); }
     g.cur = '';
   } else if (g.cur.length < 5) g.cur += k;
@@ -58,9 +58,9 @@ function wordleView(g) {
     const tiles = [];
     for (let c = 0; c < 5; c++) {
       let ch = '', cls = 'wd-tile';
-      if (gu) { ch = gu.word[c]; cls += ' ' + gu.res[c]; }
+      if (gu) { ch = gu.word[c]; cls += ' ' + gu.res[c]; if (g.fresh && r === g.guesses.length - 1) cls += ' rev'; }
       else if (cur) { ch = g.cur[c] || (c === 0 && g.hint && !g.cur ? g.target[0] : ''); if (ch) cls += ' typed'; if (!g.cur[c] && ch) cls += ' ghost'; }
-      tiles.push(el('div', { class: cls }, ch));
+      tiles.push(el('div', { class: cls, style: g.fresh && gu && r === g.guesses.length - 1 ? { animationDelay: (c * 0.11) + 's' } : null }, ch));
     }
     rows.push(el('div', { class: 'wd-row' }, tiles));
   }

@@ -63,7 +63,7 @@ function buildView(g) {
   else foot = el('div', { class: 'grid2' },
     el('button', { type: 'button', class: 'btn', onclick: () => { g.hint = true; renderOverlay(); } }, icon('bulb'), tt('Hint', 'Подсказка')),
     el('button', { type: 'button', class: 'btn primary', disabled: g.line.length ? null : true, onclick: () => {
-      if (g.line.map(t => t.w).join(' ') === target.join(' ')) { g.status = 'done'; g.ok += g.msg === '' && !g.hint ? 1 : 0; sayIt(it); logAnswer(3, 0); persist(); }
+      if (g.line.map(t => t.w).join(' ') === target.join(' ')) { g.status = 'done'; g.ok += g.msg === '' && !g.hint ? 1 : 0; celebrate(); sayIt(it); logAnswer(3, 0); persist(); }
       else g.msg = tt('Not quite. Check the order and the small words.', 'Не совсем. Проверь порядок и короткие слова.');
       renderOverlay();
     } }, tt('Check', 'Проверить')));
@@ -72,7 +72,7 @@ function buildView(g) {
 function endCard(title, big, sub, again) {
   return frame({
     progress: 1, counter: '',
-    body: [el('div', { class: 'stack' }, el('div', { class: 'eyebrow' }, title), el('div', { class: 'h1 num' }, big), el('p', { class: 'muted' }, sub))],
+    body: [el('div', { class: 'summary-head' }, mascot('cheer', 92), el('div', { class: 'eyebrow' }, title), el('div', { class: 'h1 num' }, big), el('p', { class: 'muted' }, sub))],
     foot: el('div', { class: 'stack' }, btn(tt('Play again', 'Ещё раз'), 'primary big block', again), btn(tt('Close', 'Закрыть'), 'block', closeAll)),
   });
 }
@@ -90,12 +90,12 @@ function pairsView(g) {
   const tap = idx => {
     const t = g.tiles[idx];
     if (g.lock || g.matched.has(t.it.id) || g.up.includes(idx)) return;
-    g.up.push(idx);
+    g.up.push(idx); g.flip = idx; g.pop = null;
     if (t.type === 'fr') sayIt(t.it);
     if (g.up.length === 2) {
       g.moves++;
       const [a, b] = g.up.map(i => g.tiles[i]);
-      if (a.it.id === b.it.id && a.type !== b.type) { g.matched.add(a.it.id); g.up = []; sayIt(a.it); }
+      if (a.it.id === b.it.id && a.type !== b.type) { g.matched.add(a.it.id); g.up = []; g.pop = a.it.id; celebrate(); sayIt(a.it); }
       else { g.lock = true; setTimeout(() => { g.up = []; g.lock = false; renderOverlay(); }, 1100); }
     }
     renderOverlay();
@@ -106,10 +106,11 @@ function pairsView(g) {
     el('div', { class: 'pairs' }, g.tiles.map((t, idx) => {
       const up = g.up.includes(idx), ok = g.matched.has(t.it.id);
       if (!up && !ok) return el('button', { type: 'button', class: 'pcard down', 'aria-label': tt('Hidden card', 'Закрытая карточка'), onclick: () => tap(idx) }, '?');
-      return el('div', { class: 'pcard ' + (t.type === 'fr' ? 'fr ' : '') + (ok ? 'ok' : 'up') },
+      return el('div', { class: 'pcard ' + (t.type === 'fr' ? 'fr ' : '') + (ok ? 'ok' : 'up') + (idx === g.flip && !ok ? ' flip' : '') + (ok && t.it.id === g.pop ? ' pop' : '') },
         t.type === 'fr' ? t.it.fr : el('span', null, el('span', { class: 'e' }, t.it.sc), mean(t.it)));
     })),
   ];
+  if (all && !g.cel) { g.cel = true; setTimeout(() => celebrate(true), 300); }
   if (all) return endCard(tt('Pairs found', 'Пары найдены'), tt(`${g.moves} moves`, `${g.moves} ходов`), tt('Fewer moves is better. Try again with new phrases.', 'Чем меньше ходов, тем лучше. Попробуй с новыми фразами.'), startPairs);
   return frame({ progress: g.matched.size / g.items.length, counter: `${g.matched.size}/${g.items.length}`, body });
 }
@@ -150,7 +151,7 @@ function numbersView(g) {
   if (g.i >= g.n) return endCard(tt('Numbers', 'Числа'), `${g.ok} / ${g.n}`, tt('Right on the first try', 'Верно с первой попытки'), startNumbers);
   const c = g.cur, done = g.status === 'done';
   const body = [el('div', { class: 'row' }, el('span', { class: 'chip accent' }, g.mode === 'hear' ? tt('Understand', 'Пойми') : tt('Say it', 'Скажи')))];
-  const finish = (good) => { g.status = 'done'; g.good = good; if (good && g.tries === 0) g.ok++; logAnswer(good ? 3 : 0, 0); persist(); renderOverlay(); sayIt(c); };
+  const finish = (good) => { g.status = 'done'; g.good = good; if (good && g.tries === 0) g.ok++; if (good) celebrate(); logAnswer(good ? 3 : 0, 0); persist(); renderOverlay(); sayIt(c); };
   const check = () => {
     const raw = ($('#numans') || {}).value || ''; g.val = raw; if (!raw.trim()) return;
     const v = Number(raw.replace(',', '.').replace(/[^\d.]/g, ''));

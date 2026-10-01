@@ -122,7 +122,7 @@ function crosswordView(g) {
     const check = () => {
       const a = $('#ans'); if (!a || !a.value.trim()) return;
       g.typed = a.value;
-      if (letters(a.value) === act.a) { g.solved.add(g.active); logAnswer(3, 0); persist(); speak(act.w.fr); const nx = placed.findIndex((p, i) => !g.solved.has(i)); g.active = nx < 0 ? g.active : nx; g.typed = ''; g.msg = ''; }
+      if (letters(a.value) === act.a) { g.solved.add(g.active); logAnswer(3, 0); persist(); celebrate(g.solved.size === placed.length); speak(act.w.fr); const nx = placed.findIndex((p, i) => !g.solved.has(i)); g.active = nx < 0 ? g.active : nx; g.typed = ''; g.msg = ''; }
       else g.msg = tt('Not quite. Check the letters or take a hint.', 'Не совсем. Проверь буквы или возьми подсказку.');
       renderOverlay(); focusAnswer();
     };

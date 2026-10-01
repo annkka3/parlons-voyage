@@ -75,18 +75,19 @@ function render() {
   const screens = { today: screenToday, course: screenCourse, play: screenPlay, words: screenWords, me: screenMe };
   app.replaceChildren(
     el('header', { class: 'top' }, el('div', { class: 'wrap' },
-      el('div', { class: 'brand' }, el('span', { class: 'mark' }, 'FR'), el('span', null, 'Parlons Voyage')),
+      el('div', { class: 'brand' }, art('croissant', 32), el('span', null, 'Parlons Voyage')),
       el('div', { class: 'tools' },
         el('span', { class: 'sync', 'data-s': Cloud.user ? Cloud.status : 'local', title: syncLabel() }),
         seg([['en', 'EN'], ['ru', 'RU']], S.cfg.lang, v => { setCfg({ lang: v }); render(); }))),
     ),
-    el('main', { class: 'wrap main' }, screens[UI.tab]()),
+    el('main', { class: 'wrap main' + (UI.enter ? ' enter' : '') }, screens[UI.tab]()),
     el('nav', { class: 'nav', 'aria-label': 'Main' }, el('div', { class: 'wrap' }, nav.map(([id, label]) =>
       el('button', { type: 'button', 'aria-current': UI.tab === id ? 'page' : null, onclick: () => go(id) }, icon(id), label)))),
   );
+  UI.enter = false;
   renderOverlay();
 }
-function go(tab) { UI.tab = tab; UI.day = null; UI.topic = null; render(); window.scrollTo(0, 0); }
+function go(tab) { UI.tab = tab; UI.day = null; UI.topic = null; UI.enter = true; render(); window.scrollTo(0, 0); }
 
 /* ---------- sheet: one card in detail ---------- */
 function openSheet(it) {
@@ -122,44 +123,55 @@ function plan() {
   };
 }
 function plural(n, a, b, c) { const m = n % 100, k = n % 10; return m > 10 && m < 20 ? c : k === 1 ? a : k >= 2 && k <= 4 ? b : c; }
+const add = (parent, ...kids) => kids.flat().filter(Boolean).forEach(k => parent.append(k));
+const HELLO = ['On y va ?', 'Allons-y !', 'C’est parti !'];
 function screenToday() {
   const p = plan(), st = streak(), hard = hardItems().length;
   const total = p.due + p.fp + p.fw;
   const nextNew = newPhrases()[0];
   const parts = [];
-  parts.push(el('div', { class: 'row between' },
+  parts.push(el('div', { class: 'row between hello' },
     el('div', { class: 'stack', style: { gap: '2px' } },
       el('div', { class: 'h1' }, 'Bonjour !'),
       el('div', { class: 'muted' }, new Date().toLocaleDateString(S.cfg.lang === 'ru' ? 'ru-RU' : 'en-GB', { weekday: 'long', day: 'numeric', month: 'long' }))),
-    el('span', { class: 'chip ' + (st ? 'good' : '') }, st ? tt(`${st}-day streak`, `Серия: ${st} дн.`) : tt('No streak yet', 'Серии пока нет'))));
+    el('span', { class: 'streak' + (st ? '' : ' off') }, art('flame'), st ? tt(`${st}-day streak`, `${st} дн. подряд`) : tt('Start a streak', 'Начни серию'))));
 
   if (Cloud.configured && !Cloud.user) {
     parts.push(el('section', { class: 'card flat row between' },
-      el('div', { class: 'grow cell' }, el('div', { style: { fontWeight: 700 } }, tt('Sync between iPhone and Mac', 'Синхронизация iPhone и Mac')),
+      el('div', { class: 'grow cell' }, el('div', { style: { fontWeight: 600 } }, tt('Sync between iPhone and Mac', 'Синхронизация iPhone и Mac')),
         el('div', { class: 'muted small' }, tt('Sign in once on each device to keep one progress.', 'Войди один раз на каждом устройстве, и прогресс будет общим.'))),
       btn(tt('Sign in', 'Войти'), 'small primary', () => { UI.focusAccount = true; go('me'); })));
   }
 
-  const sc = el('section', { class: 'card stack' });
+  // the postcard: today's session
+  const text = el('div', { class: 'hero-text' }), cta = el('div', { class: 'hero-cta stack' });
   if (total > 0) {
-    sc.append(el('div', { class: 'eyebrow' }, tt('Today’s session', 'Сегодняшняя тренировка')),
+    add(text, el('div', { class: 'eyebrow' }, tt('Today’s session', 'Сегодняшняя тренировка')),
       el('div', { class: 'h1 num' }, tt(`${total} ${total === 1 ? 'card' : 'cards'}`, `${total} ${plural(total, 'карточка', 'карточки', 'карточек')}`)),
-      el('div', { class: 'row wrapr' },
-        p.due ? el('span', { class: 'chip accent' }, tt(`${p.due} to review`, `${p.due} повторить`)) : null,
-        p.fp ? el('span', { class: 'chip hint' }, tt(`${p.fp} new phrases`, `${p.fp} новых фраз`) + (nextNew ? ' · ' + tt('Day ', 'День ') + nextNew.d : '')) : null,
-        p.fw ? el('span', { class: 'chip hint' }, tt(`${p.fw} new words`, `${p.fw} новых слов`)) : null),
-      p.dueAll > p.due ? el('p', { class: 'muted small' }, tt(`${p.dueAll - p.due} more are waiting; they come in the next session.`, `Ещё ${p.dueAll - p.due} ждут: они войдут в следующую тренировку.`)) : null,
-      btn(tt('Start session', 'Начать'), 'primary big block', () => startDaily()));
+      el('div', { class: 'row wrapr', style: { gap: '6px' } },
+        p.due ? el('span', { class: 'chip' }, tt(`${p.due} to review`, `${p.due} повторить`)) : null,
+        p.fp ? el('span', { class: 'chip' }, tt(`${p.fp} new phrases`, `${p.fp} новых фраз`) + (nextNew ? ' · ' + tt('Day ', 'День ') + nextNew.d : '')) : null,
+        p.fw ? el('span', { class: 'chip' }, tt(`${p.fw} new words`, `${p.fw} новых слов`)) : null),
+      nextNew && p.fp ? el('p', { class: 'muted small' }, dayName(nextNew.d)) : null,
+      p.dueAll > p.due ? el('p', { class: 'muted small' }, tt(`${p.dueAll - p.due} more are waiting for the next session.`, `Ещё ${p.dueAll - p.due} ждут следующей тренировки.`)) : null);
+    cta.append(btn(tt('Start session', 'Начать'), 'light big block', () => startDaily()));
   } else {
     const nextDue = Object.values(S.cards).filter(r => r.b >= 1).map(r => r.due).sort()[0];
-    sc.append(el('div', { class: 'eyebrow' }, tt('Today’s session', 'Сегодняшняя тренировка')),
+    add(text, el('div', { class: 'eyebrow' }, tt('Today’s session', 'Сегодняшняя тренировка')),
       el('div', { class: 'h1' }, newPhrases().length || newWords().length || nextDue ? tt('All done for today', 'На сегодня всё') : tt('Everything learned', 'Всё пройдено')),
-      nextDue ? el('p', { class: 'muted' }, tt('Next review: ', 'Следующее повторение: ') + whenLabel(nextDue)) : null,
-      el('div', { class: 'grid2' },
-        newPhrases().length ? btn(tt('5 more phrases', 'Ещё 5 фраз'), 'primary', () => startMore('ph')) : null,
-        newWords().length ? btn(tt('10 more words', 'Ещё 10 слов'), 'primary', () => startMore('wd')) : null));
+      nextDue ? el('p', { class: 'muted' }, tt('Next review: ', 'Следующее повторение: ') + whenLabel(nextDue)) : null);
+    if (newPhrases().length || newWords().length) cta.append(el('div', { class: 'grid2' },
+      newPhrases().length ? btn(tt('5 more phrases', 'Ещё 5 фраз'), 'light', () => startMore('ph')) : null,
+      newWords().length ? btn(tt('10 more words', 'Ещё 10 слов'), 'light', () => startMore('wd')) : null));
   }
-  parts.push(sc);
+  const say = total > 0 ? HELLO[Math.floor(Date.now() / 864e5) % HELLO.length] : 'À demain !';
+  parts.push(el('section', { class: 'hero' }, el('div', { class: 'airmail' }),
+    el('div', { class: 'hero-body' }, text,
+      el('div', { class: 'hero-art' }, el('div', { class: 'say', lang: 'fr' }, say), mascot(total > 0 ? 'happy' : 'cheer', 112)), cta)));
+
+  const gDue = Object.values(S.gc.topics).filter(r => r.n > 0 && r.due && r.due <= today()).length;
+  if (gDue) parts.push(el('section', { class: 'card flat row between' }, el('div', { class: 'grow cell' }, el('div', { style: { fontWeight: 600 } }, tt(`Grammar: ${gDue} ${gDue === 1 ? 'topic' : 'topics'} to review`, `Грамматика: тем к повторению ${gDue}`)), el('div', { class: 'muted small' }, tt('A short round of 3, 5 or 10 tasks.', 'Короткий подход на 3, 5 или 10 заданий.'))),
+    btn(tt('Practise', 'Повторить'), 'small primary', () => { UI.ctab = 'grammar'; UI.gsub = 'year'; UI.gv = 'practice'; go('course'); })));
 
   // pools
   const c = { new: 0, learning: 0, review: 0, strong: 0 };
@@ -170,30 +182,27 @@ function screenToday() {
   const dates = Object.keys(byDate).sort().slice(0, 3);
   parts.push(el('section', { class: 'card stack' },
     el('div', { class: 'row between' }, el('h2', { class: 'h2' }, tt('Your pools', 'Твои пулы')), el('span', { class: 'muted small num' }, tt(`${PH.length} phrases · ${WORDS.length} words`, `${PH.length} фраз · ${WORDS.length} слов`))),
-    el('div', { class: 'bar', role: 'img', 'aria-label': 'progress' }, ['strong', 'review', 'learning', 'new'].map(k => el('i', { class: 'seg-' + k, style: { width: (c[k] / ITEMS.length * 100) + '%' } }))),
+    el('div', { class: 'bar pool-bar', role: 'img', 'aria-label': 'progress' }, ['strong', 'review', 'learning', 'new'].map(k => el('i', { class: 'seg-' + k, style: { width: (c[k] / ITEMS.length * 100) + '%' } }))),
     el('div', { class: 'legend' }, ['strong', 'review', 'learning', 'new'].map(k => el('span', null, el('i', { class: 'seg-' + k }), stLabel(k) + ' ' + c[k]))),
     el('div', { class: 'stack', style: { gap: '0' } },
       el('div', { class: 'list-row' },
-        el('div', { class: 'grow' }, el('div', { style: { fontWeight: 700 } }, tt('Review later', 'Повторить позже') + ' · ' + later.length),
+        el('div', { class: 'grow' }, el('div', { style: { fontWeight: 600 } }, tt('Review later', 'Повторить позже') + ' · ' + later.length),
           el('div', { class: 'muted small' }, dates.length ? dates.map(d => `${whenLabel(d)}: ${byDate[d]}`).join(' · ') : tt('Right answers wait here until they are due again', 'Сюда уходят правильные ответы до следующего повторения')))),
       el('div', { class: 'list-row' },
-        el('div', { class: 'grow' }, el('div', { style: { fontWeight: 700 } }, tt('Difficult pool', 'Трудный пул') + ' · ' + hard),
+        el('div', { class: 'grow' }, el('div', { style: { fontWeight: 600 } }, tt('Difficult pool', 'Трудный пул') + ' · ' + hard),
           el('div', { class: 'muted small' }, hard ? tt('Shown more often until you get them right twice in a row', 'Показываются чаще, пока не ответишь верно два раза подряд') : tt('Missed cards land here', 'Сюда попадают ошибки'))),
         hard ? btn(tt('Practice', 'Тренировать'), 'small', startHard) : null))));
 
-  const gDue = Object.values(S.gc.topics).filter(r => r.n > 0 && r.due && r.due <= today()).length;
-  if (gDue) parts.push(el('section', { class: 'card flat row between' }, el('div', { class: 'grow cell' }, el('div', { style: { fontWeight: 700 } }, tt(`Grammar: ${gDue} ${gDue === 1 ? 'topic' : 'topics'} to review`, `Грамматика: тем к повторению ${gDue}`)), el('div', { class: 'muted small' }, tt('A short round of 3, 5 or 10 tasks.', 'Короткий подход на 3, 5 или 10 заданий.'))),
-    btn(tt('Practise', 'Повторить'), 'small primary', () => { UI.ctab = 'grammar'; UI.gsub = 'year'; UI.gv = 'practice'; go('course'); })));
+  const qt = (name, cls, title, fn) => el('button', { type: 'button', class: 'tile sm ' + cls, onclick: fn }, el('span', { class: 't' }, title), art(name, 62));
   parts.push(el('section', { class: 'stack' },
     el('div', { class: 'eyebrow' }, tt('Quick practice', 'Быстрая практика')),
     el('div', { class: 'grid2' },
-      btn(tt('Listening drill', 'Слушаем и понимаем'), '', () => startListen()),
-      btn(tt('Numbers & prices', 'Числа и цены'), '', () => startNumbers()),
-      btn(tt('Dialogues', 'Диалоги'), '', () => startDialogueMenu()),
-      btn(tt('Wordle', 'Wordle'), '', () => startWordle()))));
+      qt('headphones', '', tt('Listening drill', 'Слушаем'), () => startListen()),
+      qt('coin', 'c-sun', tt('Numbers & prices', 'Числа и цены'), () => startNumbers()),
+      qt('bubbles', 'c-lav', tt('Dialogues', 'Диалоги'), () => startDialogueMenu()),
+      qt('tiles', 'c-mint', 'Wordle', () => startWordle()))));
   return parts;
 }
-
 /* ---------- COURSE (phrases + grammar) ---------- */
 function dayInfo(d) {
   const items = PH.filter(p => p.d === d);
@@ -205,22 +214,28 @@ function screenCourse() {
   if (UI.ctab === 'grammar') return screenGrammar();
   if (UI.day) return screenDay(UI.day);
   const nowDay = DAYS.find(x => !x.review && dayInfo(x.d).seen < dayInfo(x.d).items.length);
+  const doneIdx = DAYS.reduce((acc, x, i) => (!x.review && dayInfo(x.d).seen === dayInfo(x.d).items.length ? i : acc), -1);
   return [
     el('div', { class: 'row between' }, el('h1', { class: 'h1' }, tt('Learn', 'Курс')),
       seg([['days', tt('Phrases', 'Фразы')], ['grammar', tt('Grammar', 'Грамматика')]], UI.ctab, v => { UI.ctab = v; UI.lesson = null; render(); })),
-    el('p', { class: 'muted' }, tt('56 phrases for cafés, shops, hotels and getting around. Days 7 and 10 have no new phrases.', '56 фраз для кафе, магазинов, отелей и дороги. В днях 7 и 10 новых фраз нет.')),
-    el('div', { class: 'stack' }, DAYS.map(x => {
-      const inf = dayInfo(x.d);
-      const cls = x.review ? '' : inf.seen === inf.items.length ? 'done' : nowDay && nowDay.d === x.d ? 'now' : '';
-      return el('button', { type: 'button', class: 'day', onclick: () => { UI.day = x.d; render(); window.scrollTo(0, 0); } },
-        el('span', { class: 'bullet ' + cls }, cls === 'done' ? '✓' : String(x.d)),
-        el('span', { class: 'grow cell' }, el('div', { class: 't' }, dayName(x.d)),
-          x.review ? el('div', { class: 'muted small' }, tt('No new phrases · dialogues', 'Без новых фраз · диалоги'))
-            : el('div', { class: 'row', style: { gap: '10px', marginTop: '4px' } },
-              el('span', { class: 'dots' }, inf.items.map(p => el('i', { class: statusOf(p.id) + (S.cards[p.id] && S.cards[p.id].h ? ' hard' : '') }))),
-              el('span', { class: 'muted small num' }, `${inf.learned}/${inf.items.length}`))),
-        el('span', { style: { fontSize: '26px' } }, x.e));
-    })),
+    el('section', { class: 'trip' },
+      el('div', { class: 'grow stack', style: { gap: '4px' } }, el('div', { class: 'h2' }, tt('10 days to a first conversation', '10 дней до первого разговора')),
+        el('p', { class: 'small' }, tt('56 phrases for cafés, shops, hotels and getting around. Days 7 and 10 are for review.', '56 фраз для кафе, магазинов, отелей и дороги. Дни 7 и 10 для повторения.'))),
+      art('suitcase', 70)),
+    el('div', { class: 'journey' }, el('div', { class: 'fill', style: { '--prog': Math.round((doneIdx + 1) / DAYS.length * 100) + '%' } }),
+      DAYS.map(x => {
+        const inf = dayInfo(x.d);
+        const cls = x.review ? '' : inf.seen === inf.items.length ? 'done' : nowDay && nowDay.d === x.d ? 'now' : '';
+        return el('div', { class: 'station' },
+          el('span', { class: 'bullet ' + cls }, cls === 'done' ? '✓' : String(x.d)),
+          el('button', { type: 'button', class: 'day', onclick: () => { UI.day = x.d; render(); window.scrollTo(0, 0); } },
+            el('span', { class: 'ico' }, x.e),
+            el('span', { class: 'grow cell' }, el('div', { class: 't' }, dayName(x.d)),
+              x.review ? el('div', { class: 'muted small' }, tt('No new phrases · dialogues', 'Без новых фраз · диалоги'))
+                : el('div', { class: 'row', style: { gap: '10px', marginTop: '4px' } },
+                  el('span', { class: 'dots' }, inf.items.map(p => el('i', { class: statusOf(p.id) + (S.cards[p.id] && S.cards[p.id].h ? ' hard' : '') }))),
+                  el('span', { class: 'muted small num' }, `${inf.learned}/${inf.items.length}`)))));
+      })),
   ];
 }
 function screenDay(d) {
@@ -251,20 +266,20 @@ function screenDay(d) {
 
 /* ---------- PLAY ---------- */
 function screenPlay() {
-  const tile = (e, title, desc, fn) => el('button', { type: 'button', class: 'tile', onclick: fn },
-    el('span', { class: 'e' }, e), el('span', { class: 't' }, title), el('span', { class: 'muted small' }, desc));
+  const tile = (name, cls, title, desc, fn) => el('button', { type: 'button', class: 'tile ' + cls, onclick: fn },
+    el('span', { class: 't' }, title), el('span', { class: 'muted small' }, desc), art(name, 86));
   return [
-    el('div', { class: 'stack', style: { gap: '4px' } }, el('h1', { class: 'h1' }, tt('Practice games', 'Игры и практика')),
+    el('div', { class: 'stack', style: { gap: '4px' } }, el('h1', { class: 'h1' }, tt('Play', 'Игры')),
       el('p', { class: 'muted' }, tt('Games do not change your review schedule. They add variety and train your ear.', 'Игры не меняют расписание повторений: они добавляют разнообразия и тренируют слух.'))),
     el('div', { class: 'grid2' },
-      tile('👂', tt('Listening drill', 'Слушаем и понимаем'), tt('Hear a phrase, pick its meaning', 'Слышишь фразу — выбираешь смысл'), () => startListen()),
-      tile('🧩', tt('Build the phrase', 'Собери фразу'), tt('Tap the words in order', 'Нажимай слова по порядку'), () => startBuild()),
-      tile('🃏', tt('Pairs', 'Пары'), tt('Match French with its meaning', 'Найди пары: фраза и смысл'), () => startPairs()),
-      tile('💶', tt('Numbers & prices', 'Числа и цены'), tt('Hear the amount, type it', 'Услышь сумму и введи цифрами'), () => startNumbers()),
-      tile('🎭', tt('Dialogues', 'Диалоги'), tt('Role-play with changing details', 'Ролевые диалоги, детали меняются'), () => startDialogueMenu()),
-      tile('🔤', tt('Crossword', 'Кроссворд'), tt('From words you are learning', 'Из слов, которые ты учишь'), () => startCrossword()),
-      tile('🟩', tt('Wordle', 'Wordle'), tt('Guess a French word in 6 tries', 'Угадай слово за 6 попыток'), () => startWordle()),
-      tile('📘', tt('Grammar', 'Грамматика'), tt('Short lessons with exercises', 'Короткие уроки с упражнениями'), () => { UI.ctab = 'grammar'; UI.lesson = null; go('course'); })),
+      tile('headphones', '', tt('Listening drill', 'Слушаем'), tt('Hear a phrase, pick its meaning', 'Слышишь фразу — выбираешь смысл'), () => startListen()),
+      tile('puzzle', 'c-sun', tt('Build the phrase', 'Собери фразу'), tt('Tap the words in order', 'Нажимай слова по порядку'), () => startBuild()),
+      tile('cards', 'c-rose', tt('Pairs', 'Пары'), tt('Match French with its meaning', 'Найди пары: фраза и смысл'), () => startPairs()),
+      tile('coin', 'c-mint', tt('Numbers & prices', 'Числа и цены'), tt('Hear the amount, type it', 'Услышь сумму и введи цифрами'), () => startNumbers()),
+      tile('bubbles', 'c-lav', tt('Dialogues', 'Диалоги'), tt('Role-play with changing details', 'Ролевые диалоги, детали меняются'), () => startDialogueMenu()),
+      tile('grid', '', tt('Crossword', 'Кроссворд'), tt('From words you are learning', 'Из слов, которые ты учишь'), () => startCrossword()),
+      tile('tiles', 'c-mint', 'Wordle', tt('Guess a French word in 6 tries', 'Угадай слово за 6 попыток'), () => startWordle()),
+      tile('book', 'c-red', tt('Grammar', 'Грамматика'), tt('Year course and quick lessons', 'Курс на год и быстрые уроки'), () => { UI.ctab = 'grammar'; UI.lesson = null; go('course'); })),
   ];
 }
 
@@ -315,14 +330,12 @@ function screenWords() {
     fill();
     out.push(el('div', { class: 'eyebrow' }, tt('Topics', 'Темы')));
     const order = S.cfg.order === 'list' ? TOPICS.map(t => t.id) : TOPIC_ORDER_TRAVEL;
-    out.push(el('div', { class: 'stack' }, order.map(id => {
+    out.push(el('div', { class: 'ttiles' }, order.map(id => {
       const t = TOPIC[id], inf = topicInfo(id);
-      return el('button', { type: 'button', class: 'day', onclick: () => { UI.topic = id; render(); window.scrollTo(0, 0); } },
-        el('span', { style: { fontSize: '28px', width: '40px', textAlign: 'center' } }, t.e),
-        el('span', { class: 'grow cell' }, el('div', { class: 't' }, topicName(id)),
-          el('div', { class: 'row', style: { gap: '10px', marginTop: '4px' } },
-            el('div', { class: 'bar', style: { flex: 1, height: '6px' } }, el('i', { class: 'seg-strong', style: { width: (inf.learned / inf.items.length * 100) + '%' } }), el('i', { class: 'seg-learning', style: { width: ((inf.seen - inf.learned) / inf.items.length * 100) + '%' } })),
-            el('span', { class: 'muted small num' }, `${inf.learned}/${inf.items.length}`))));
+      return el('button', { type: 'button', class: 'ttile', onclick: () => { UI.topic = id; render(); window.scrollTo(0, 0); } },
+        el('span', { class: 'em' }, t.e), el('span', { class: 'nm' }, topicName(id)),
+        el('div', { class: 'bar' }, el('i', { class: 'seg-strong', style: { width: (inf.learned / inf.items.length * 100) + '%' } }), el('i', { class: 'seg-learning', style: { width: ((inf.seen - inf.learned) / inf.items.length * 100) + '%' } })),
+        el('span', { class: 'muted small num' }, `${inf.learned}/${inf.items.length}`));
     })));
   } else {
     const due = NUM.filter(w => isDue(S.cards[w.id])).length, fresh = NUM.filter(w => !S.cards[w.id]).length;
@@ -407,8 +420,35 @@ function accountCard() {
     }));
   return box;
 }
+function longestStreak() {
+  const ds = Object.keys(S.days).filter(d => S.days[d].a > 0).sort();
+  let best = 0, run = 0, prev = null;
+  ds.forEach(d => { run = prev && daysBetween(prev, d) === 1 ? run + 1 : 1; prev = d; if (run > best) best = run; });
+  return best;
+}
+// Stamps are derived from progress, nothing extra is stored.
+function passportStamps() {
+  const L = [];
+  DAYS.filter(d => !d.review).forEach(x => { const inf = dayInfo(x.d); L.push({ kind: 'day', big: String(x.d), cap: 'JOUR', label: tt('Day ' + x.d, 'День ' + x.d), earned: inf.items.length > 0 && inf.seen === inf.items.length }); });
+  const seen = WORDS.filter(w => S.cards[w.id]).length;
+  [25, 100, 250, 500, 1000].forEach(n => L.push({ kind: 'words', big: String(n), cap: 'MOTS', label: tt(n + ' words', n + ' слов'), earned: seen >= n }));
+  const ls = longestStreak();
+  [3, 7, 14, 30].forEach(n => L.push({ kind: 'streak', big: String(n), cap: 'JOURS', label: tt(n + ' days in a row', n + ' дней подряд'), earned: ls >= n }));
+  const stable = Object.values(S.gc.topics).filter(r => r.stable).length;
+  [1, 10, 36].forEach(n => L.push({ kind: 'grammar', big: String(n), cap: 'GRAMM.', label: tt(n + (n === 1 ? ' stable topic' : ' stable topics'), 'Устойчивых тем: ' + n), earned: stable >= n }));
+  const ql = Object.keys(S.gram).length;
+  [6, 12].forEach(n => L.push({ kind: 'lesson', big: String(n), cap: 'LEÇONS', label: tt(n + ' quick lessons', n + ' быстрых уроков'), earned: ql >= n }));
+  return L;
+}
+function passportCard() {
+  const L = passportStamps(), got = L.filter(x => x.earned).length;
+  return el('section', { class: 'passport' },
+    el('div', { class: 'cover' }, el('div', null, el('b', null, 'Passeport'), el('div', { class: 'count num' }, `${got} / ${L.length}`), el('div', { class: 'small', style: { opacity: .8 } }, tt('Stamps for what you have learned', 'Штампы за то, что ты выучила'))), art('suitcase', 54)),
+    el('div', { class: 'stamps' }, L.map((x, i) => el('div', { class: 'stamp-cell' }, stampNode(x, x.earned, i), el('span', null, x.label)))));
+}
 function screenMe() {
   const out = [el('h1', { class: 'h1' }, tt('Progress & settings', 'Прогресс и настройки'))];
+  out.push(passportCard());
   const dates = []; for (let i = 13; i >= 0; i--) dates.push(addDays(today(), -i));
   const tot = Object.values(S.days).reduce((a, d) => ({ a: a.a + d.a, k: a.k + d.k }), { a: 0, k: 0 });
   const mastered = ITEMS.filter(x => statusOf(x.id) === 'strong').length;

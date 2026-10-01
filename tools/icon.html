@@ -1,0 +1,9 @@
+<!doctype html><meta charset="utf-8">
+<link rel="stylesheet" href="../css/style.css">
+<style>html,body{margin:0;height:100%;overflow:hidden}body{background:#1B49B0!important;display:grid;place-items:center}body::before{display:none}
+.frame{position:absolute;inset:7%;border-radius:15%;border:.9vmin solid rgba(255,255,255,.92)}
+.m{position:relative;width:78vmin;display:grid;place-items:center;margin-top:-9vmin}.mask .frame{display:none}.mask .m{width:62vmin;margin-top:-7vmin}</style>
+<div id="r"></div><script src="../js/art.js"></script>
+<script>const mask=location.hash==='#mask';document.getElementById('r').className=mask?'mask':'';
+const f=document.createElement('div');f.className='frame';const m=document.createElement('div');m.className='m';m.append(mascot('happy',1000));m.firstChild.style.width='100%';m.firstChild.style.height='auto';
+document.body.append(f,m);</script>
