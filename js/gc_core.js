@@ -78,7 +78,10 @@ function gcCheck(e, typed) {
   return 'bad';
 }
 function gcFill(e) {
-  return e.stimulus_fr.replace('___', e.accepted_answers[0]).replace(/\s*\([^)]*\)\s*$/, '').replace(/([’'])\s+/g, '$1');
+  const [before] = e.stimulus_fr.split('___'), a = e.accepted_answers[0];
+  // a gap at the start of a sentence takes a capital letter: "Le billet ? Je le lui donne…"
+  const ans = /(^|[.?!]\s+)$/.test(before) ? a.charAt(0).toUpperCase() + a.slice(1) : a;
+  return e.stimulus_fr.replace('___', ans).replace(/\s*\([^)]*\)\s*$/, '').replace(/([’'])\s+/g, '$1');
 }
 // Russian is never sent to the French voice
 const gcSpeakable = t => !!t && !/[А-Яа-яЁё]/.test(t);

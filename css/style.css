@@ -399,7 +399,7 @@ body::before {
 .hero .chip { background: rgba(255, 255, 255, .2); border: 1px solid rgba(255, 255, 255, .38); color: #fff; -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
 .hero-art { position: relative; align-self: end; padding-top: 22px; }
 .hero-art .mascot { display: block; width: 112px; height: auto; animation: floaty 3.4s ease-in-out infinite; filter: drop-shadow(0 8px 10px rgba(5, 20, 70, .3)); }
-.say { position: absolute; right: 6px; top: -4px; background: #fff; color: var(--c-ink); font-family: var(--f-ui); font-weight: 600; font-size: 13px; padding: 6px 11px; border-radius: 14px 14px 4px 14px; box-shadow: 0 6px 14px rgba(5, 20, 70, .25); animation: floaty 3.4s ease-in-out -1s infinite; white-space: nowrap; }
+.say { position: absolute; right: 6px; top: -4px; background: #fff; color: var(--c-face); font-family: var(--f-ui); font-weight: 600; font-size: 13px; padding: 6px 11px; border-radius: 14px 14px 4px 14px; box-shadow: 0 6px 14px rgba(5, 20, 70, .25); animation: floaty 3.4s ease-in-out -1s infinite; white-space: nowrap; }
 .hero-cta { grid-column: 1 / -1; }
 .pool-bar { height: 14px; border-radius: 999px; border: 0; background: var(--surface2); box-shadow: inset 0 0 0 1px var(--line); }
 .pool-bar > i { transition: width .6s cubic-bezier(.2, .8, .2, 1); }

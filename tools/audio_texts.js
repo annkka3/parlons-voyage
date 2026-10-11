@@ -22,7 +22,12 @@ LESSONS.forEach(l => {
 // year grammar course: examples, the solution of every task (read aloud only after an attempt) and the verb infinitives
 // (mirrors gcSolution in js/gc_core.js)
 const gc = JSON.parse(read('data/grammar_course.json'));
-const gcSol = e => e.type === 'cloze' ? e.stimulus_fr.replace('___', e.accepted_answers[0]).replace(/\s*\([^)]*\)\s*$/, '').replace(/([’'])\s+/g, '$1')
+const gcFill = e => {
+  const [before] = e.stimulus_fr.split('___'), a = e.accepted_answers[0];
+  const ans = /(^|[.?!]\s+)$/.test(before) ? a.charAt(0).toUpperCase() + a.slice(1) : a;
+  return e.stimulus_fr.replace('___', ans).replace(/\s*\([^)]*\)\s*$/, '').replace(/([’'])\s+/g, '$1');
+};
+const gcSol = e => e.type === 'cloze' ? gcFill(e)
   : e.type === 'transform' ? e.accepted_answers[0] : e.type === 'choice' ? e.options.find(o => o.id === e.correct_option_id).text : (e.model_answer_fr || '');
 gc.modules.forEach(m => { m.examples.forEach(x => add(x.tts_text)); m.exercises.forEach(e => add(gcSol(e))); });
 gc.checkpoints.forEach(c => c.exercises.forEach(e => add(gcSol(e))));
